@@ -1,0 +1,1787 @@
+From tinyfugue-discuss-bounces@lists.sourceforge.net  Fri Jan  4 22:18:57 2013
+Return-Path: <tinyfugue-discuss-bounces@lists.sourceforge.net>
+Received: from localhost
+	(using TLSv1 with cipher ADH-AES256-SHA (256/256 bits))
+	(No client certificate requested)
+Received: by localhost
+	id 1DE1E39682; Fri,  4 Jan 2013 22:18:57 -0500 (EST)
+Received: from lists.sourceforge.net (lists.sourceforge.net [216.34.181.88])
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(Client did not present a certificate)
+Received: from localhost ([127.0.0.1] helo=sfs-ml-2.v29.ch3.sourceforge.com)
+	by sfs-ml-2.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <tinyfugue-discuss-bounces@lists.sourceforge.net>)
+	id 1TrKHG-0007fg-0Q; Sat, 05 Jan 2013 03:18:30 +0000
+Received: from sog-mx-3.v43.ch3.sourceforge.com ([172.29.43.193]
+	helo=mx.sourceforge.net)
+	by sfs-ml-2.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <zixiekat@gmail.com>) id 1TrKHE-0007fa-V6
+	for tinyfugue-discuss@lists.sourceforge.net;
+	Sat, 05 Jan 2013 03:18:28 +0000
+Received-SPF: pass (sog-mx-3.v43.ch3.sourceforge.com: domain of gmail.com
+	designates 209.85.216.171 as permitted sender)
+	client-ip=209.85.216.171; envelope-from=zixiekat@gmail.com;
+	helo=mail-qc0-f171.google.com; 
+Received: from mail-qc0-f171.google.com ([209.85.216.171])
+	by sog-mx-3.v43.ch3.sourceforge.com with esmtps (TLSv1:RC4-SHA:128)
+	(Exim 4.76) id 1TrKHE-0008Pa-BF
+	for tinyfugue-discuss@lists.sourceforge.net;
+	Sat, 05 Jan 2013 03:18:28 +0000
+Received: by mail-qc0-f171.google.com with SMTP id d1so9270034qca.16
+	for <tinyfugue-discuss@lists.sourceforge.net>;
+	Fri, 04 Jan 2013 19:18:22 -0800 (PST)
+MIME-Version: 1.0
+Received: by 10.49.128.37 with SMTP id nl5mr40574931qeb.59.1357355902847; Fri,
+	04 Jan 2013 19:18:22 -0800 (PST)
+Received: by 10.49.64.194 with HTTP; Fri, 4 Jan 2013 19:18:22 -0800 (PST)
+Date: Fri, 4 Jan 2013 22:18:22 -0500
+Message-ID: <CAPSd_uFGN0JzsdwxRj5rm6R-5T_ORAO0mNcdAyArueAc8f=WeA@mail.gmail.com>
+From: Colin Mackay <zixiekat@gmail.com>
+To: tinyfugue-discuss@lists.sourceforge.net
+X-Headers-End: 1TrKHE-0008Pa-BF
+Subject: Execute Bash script via a trigger
+X-BeenThere: tinyfugue-discuss@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: Talk with other users about TF
+	<tinyfugue-discuss.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss>,
+	<mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=tinyfugue-discuss>
+List-Post: <mailto:tinyfugue-discuss@lists.sourceforge.net>
+List-Help: <mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss>,
+	<mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: multipart/mixed; boundary="===============0474036356569724354=="
+Errors-To: tinyfugue-discuss-bounces@lists.sourceforge.net
+Reply-To: tinyfugue-discuss@lists.sourceforge.net
+
+--===============0474036356569724354==
+Content-Type: multipart/alternative; boundary=047d7b676e6e6c4a5404d2820c5c
+
+--047d7b676e6e6c4a5404d2820c5c
+Content-Type: text/plain; charset=ISO-8859-1
+
+Good day,
+
+I've been using TF for a while now, but only recently have started to delve
+into it's depths. Can anyone out there tell me if it's possible to execute
+an external script, based on a matched line?
+
+So a trigger will run a bash shell script with the matched line as an
+variable:
+
+script.sh "Matched Line Here"
+
+
+Thanks!
+
+--047d7b676e6e6c4a5404d2820c5c
+Content-Type: text/html; charset=ISO-8859-1
+
+Good day,<div><br></div><div>I&#39;ve been using TF for a while now, but only recently have started to delve into it&#39;s depths. Can anyone out there tell me if it&#39;s possible to execute an external script, based on a matched line?</div>
+<div><br></div><div>So a trigger will run a bash shell script with the matched line as an variable:</div><div><br></div><div><span style="background-color:rgb(255,255,153)">script.sh &quot;Matched Line Here&quot;</span></div>
+<div><br></div><div><br></div><div>Thanks!</div>
+
+--047d7b676e6e6c4a5404d2820c5c--
+
+
+--===============0474036356569724354==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+------------------------------------------------------------------------------
+Master Visual Studio, SharePoint, SQL, ASP.NET, C# 2012, HTML5, CSS,
+MVC, Windows 8 Apps, JavaScript and much more. Keep your skills current
+with LearnDevNow - 3,200 step-by-step video tutorials by Microsoft
+MVPs and experts. SALE $99.99 this month only -- learn more at:
+http://p.sf.net/sfu/learnmore_122912
+--===============0474036356569724354==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+TinyFugue-discuss mailing list
+TinyFugue-discuss@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss
+
+--===============0474036356569724354==--
+
+From tinyfugue-discuss-bounces@lists.sourceforge.net  Fri Jan  4 23:57:33 2013
+Return-Path: <tinyfugue-discuss-bounces@lists.sourceforge.net>
+Received: from localhost
+	(using TLSv1 with cipher ADH-AES256-SHA (256/256 bits))
+	(No client certificate requested)
+Received: by localhost
+	id DF5B239682; Fri,  4 Jan 2013 23:57:32 -0500 (EST)
+Received: from lists.sourceforge.net (lists.sourceforge.net [216.34.181.88])
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(Client did not present a certificate)
+Received: from localhost ([127.0.0.1] helo=sfs-ml-4.v29.ch3.sourceforge.com)
+	by sfs-ml-4.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <tinyfugue-discuss-bounces@lists.sourceforge.net>)
+	id 1TrLok-0002XB-M9; Sat, 05 Jan 2013 04:57:10 +0000
+Received: from sog-mx-4.v43.ch3.sourceforge.com ([172.29.43.194]
+	helo=mx.sourceforge.net)
+	by sfs-ml-4.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <keepiru@fur.com>) id 1TrLoi-0002WZ-GY
+	for tinyfugue-discuss@lists.sourceforge.net;
+	Sat, 05 Jan 2013 04:57:08 +0000
+Received-SPF: pass (sog-mx-4.v43.ch3.sourceforge.com: domain of fur.com
+	designates 64.71.152.122 as permitted sender)
+	client-ip=64.71.152.122; envelope-from=keepiru@fur.com;
+	helo=snowfox.fur.com; 
+Received: from snowfox.fur.com ([64.71.152.122])
+	by sog-mx-4.v43.ch3.sourceforge.com with esmtp (Exim 4.76)
+	id 1TrLoh-0002sE-CO for tinyfugue-discuss@lists.sourceforge.net;
+	Sat, 05 Jan 2013 04:57:08 +0000
+Received: from localhost (localhost.localdomain [127.0.0.1])
+	by snowfox.fur.com (Postfix) with ESMTP id 20968236734
+	for <tinyfugue-discuss@lists.sourceforge.net>;
+	Fri,  4 Jan 2013 20:41:44 -0800 (PST)
+X-Virus-Scanned: Debian amavisd-new at fur.com
+Received: from snowfox.fur.com ([127.0.0.1])
+	by localhost (snowfox.fur.com [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id HM6izhZM-gWY
+	for <tinyfugue-discuss@lists.sourceforge.net>;
+	Fri,  4 Jan 2013 20:41:26 -0800 (PST)
+Received: by snowfox.fur.com (Postfix, from userid 552)
+	id EF1AC24BA61; Fri,  4 Jan 2013 20:41:25 -0800 (PST)
+Date: Fri, 4 Jan 2013 20:41:25 -0800
+From: Kai <tinyfugue@neofin.net>
+To: tinyfugue-discuss@lists.sourceforge.net
+Message-ID: <20130105044125.GX28425@fur.com>
+References: <CAPSd_uFGN0JzsdwxRj5rm6R-5T_ORAO0mNcdAyArueAc8f=WeA@mail.gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAPSd_uFGN0JzsdwxRj5rm6R-5T_ORAO0mNcdAyArueAc8f=WeA@mail.gmail.com>
+User-Agent: Mutt/1.5.20 (2009-06-14)
+X-Headers-End: 1TrLoh-0002sE-CO
+Subject: Re: Execute Bash script via a trigger
+X-BeenThere: tinyfugue-discuss@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: Talk with other users about TF
+	<tinyfugue-discuss.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss>,
+	<mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=tinyfugue-discuss>
+List-Post: <mailto:tinyfugue-discuss@lists.sourceforge.net>
+List-Help: <mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss>,
+	<mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Errors-To: tinyfugue-discuss-bounces@lists.sourceforge.net
+Reply-To: tinyfugue-discuss@lists.sourceforge.net
+
+NOT RECOMMENDED - INSECURE
+/def -mregexp -t"run this: (.*)" = /sh ./script %{1}
+NOT RECOMMENDED - INSECURE
+
+And now someone can send you:
+
+Bob says: run this: hello world ; rm -rf some-important-file
+
+Your script will see 'hello world', and the important file will be
+deleted.  Shell escaping is a nightmare and I don't recommend you try
+to fix this when using tfscript.
+
+I suggest using a temp file which you can read in your script:
+
+UNTESTED BUT BETTER
+/def -mregexp -t"run this: (.*)" = \
+  /let tempfh=$[tfopen('tempfile', 'w')] %; \
+  /test tfwrite(tempfh, {1}) %; \
+  /test tfclose(tempfh) %; \
+  /sh ./script tempfile
+UNTESTED BUT BETTER
+
+I have a more advanced version of this in my spellchecker.  Check out:
+
+http://www.neofin.net/kaispell/current/kaispell.tf
+
+--Kai
+
+
+
+
+On Fri, Jan 04, 2013 at 10:18:22PM -0500, Colin Mackay wrote:
+> Good day,
+> 
+> I've been using TF for a while now, but only recently have started to delve
+> into it's depths. Can anyone out there tell me if it's possible to execute
+> an external script, based on a matched line?
+> 
+> So a trigger will run a bash shell script with the matched line as an
+> variable:
+> 
+> script.sh "Matched Line Here"
+> 
+> 
+> Thanks!
+
+> ------------------------------------------------------------------------------
+> Master Visual Studio, SharePoint, SQL, ASP.NET, C# 2012, HTML5, CSS,
+> MVC, Windows 8 Apps, JavaScript and much more. Keep your skills current
+> with LearnDevNow - 3,200 step-by-step video tutorials by Microsoft
+> MVPs and experts. SALE $99.99 this month only -- learn more at:
+> http://p.sf.net/sfu/learnmore_122912
+
+> _______________________________________________
+> TinyFugue-discuss mailing list
+> TinyFugue-discuss@lists.sourceforge.net
+> https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss
+
+
+------------------------------------------------------------------------------
+Master Visual Studio, SharePoint, SQL, ASP.NET, C# 2012, HTML5, CSS,
+MVC, Windows 8 Apps, JavaScript and much more. Keep your skills current
+with LearnDevNow - 3,200 step-by-step video tutorials by Microsoft
+MVPs and experts. SALE $99.99 this month only -- learn more at:
+http://p.sf.net/sfu/learnmore_122912
+_______________________________________________
+TinyFugue-discuss mailing list
+TinyFugue-discuss@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss
+
+From tinyfugue-discuss-bounces@lists.sourceforge.net  Sun Jan  6 13:04:44 2013
+Return-Path: <tinyfugue-discuss-bounces@lists.sourceforge.net>
+Received: from localhost
+	(using TLSv1 with cipher ADH-AES256-SHA (256/256 bits))
+	(No client certificate requested)
+Received: by localhost
+	id DDA1539899; Sun,  6 Jan 2013 13:04:43 -0500 (EST)
+Received: from lists.sourceforge.net (lists.sourceforge.net [216.34.181.88])
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(Client did not present a certificate)
+Received: from localhost ([127.0.0.1] helo=sfs-ml-4.v29.ch3.sourceforge.com)
+	by sfs-ml-4.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <tinyfugue-discuss-bounces@lists.sourceforge.net>)
+	id 1Trua6-0006RY-Kq; Sun, 06 Jan 2013 18:04:22 +0000
+Received: from sog-mx-3.v43.ch3.sourceforge.com ([172.29.43.193]
+	helo=mx.sourceforge.net)
+	by sfs-ml-4.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <kkeys@caida.org>) id 1Trua6-0006RT-2Y
+	for tinyfugue-discuss@lists.sourceforge.net;
+	Sun, 06 Jan 2013 18:04:22 +0000
+Received: from rommie.caida.org ([192.172.226.78] helo=caida.org)
+	by sog-mx-3.v43.ch3.sourceforge.com with esmtps (TLSv1:AES256-SHA:256)
+	(Exim 4.76) id 1Trua4-0002w1-ES
+	for tinyfugue-discuss@lists.sourceforge.net;
+	Sun, 06 Jan 2013 18:04:21 +0000
+Received: by caida.org (Postfix, from userid 2056)
+	id 60139B8DC; Sun,  6 Jan 2013 10:04:14 -0800 (PST)
+Date: Sun, 6 Jan 2013 10:04:14 -0800
+From: Ken Keys <kenkeys@users.sourceforge.net>
+To: Colin Mackay <zixiekat@gmail.com>
+Message-ID: <20130106180414.GA33438@rommie.caida.org>
+References: <CAPSd_uFGN0JzsdwxRj5rm6R-5T_ORAO0mNcdAyArueAc8f=WeA@mail.gmail.com>
+Mime-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAPSd_uFGN0JzsdwxRj5rm6R-5T_ORAO0mNcdAyArueAc8f=WeA@mail.gmail.com>
+User-Agent: Mutt/1.4.2.1i
+X-Headers-End: 1Trua4-0002w1-ES
+Cc: tinyfugue-discuss@lists.sourceforge.net
+Subject: Re: Execute Bash script via a trigger
+X-BeenThere: tinyfugue-discuss@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: Talk with other users about TF
+	<tinyfugue-discuss.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss>,
+	<mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=tinyfugue-discuss>
+List-Post: <mailto:tinyfugue-discuss@lists.sourceforge.net>
+List-Help: <mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss>,
+	<mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Errors-To: tinyfugue-discuss-bounces@lists.sourceforge.net
+Reply-To: tinyfugue-discuss@lists.sourceforge.net
+
+On Fri, Jan 04, 2013 at 10:18:22PM -0500, Colin Mackay wrote:
+> Good day,
+> 
+> I've been using TF for a while now, but only recently have started to delve
+> into it's depths. Can anyone out there tell me if it's possible to execute
+> an external script, based on a matched line?
+> 
+> So a trigger will run a bash shell script with the matched line as an
+> variable:
+> 
+> script.sh "Matched Line Here"
+> 
+> 
+> Thanks!
+
+The tricky part is passing the argument to the script safely, so
+that you can't be tricked into executing something else.  Another
+poster suggested using a temp file, which works, but an easier
+method is to use an environment variable:
+
+/def -t"your_pattern_here" foo = \
+    /test setenv(ARG, {*})%; \
+    /sys script.sh "$ARG"
+
+I used the /sys command, assuming your script needs no additional
+input (i.e., it's not interactive), and if it has any output, you
+want it printed to your screen.  If it is interactive, you'll want
+to use /sh instead.  If you want to do something else with the output,
+you'll want to use some form of the /quote ! command.
+
+-- 
+Ken Keys
+kenkeys@users.sourceforge.net
+
+------------------------------------------------------------------------------
+Master Visual Studio, SharePoint, SQL, ASP.NET, C# 2012, HTML5, CSS,
+MVC, Windows 8 Apps, JavaScript and much more. Keep your skills current
+with LearnDevNow - 3,200 step-by-step video tutorials by Microsoft
+MVPs and experts. ON SALE this month only -- learn more at:
+http://p.sf.net/sfu/learnmore_123012
+_______________________________________________
+TinyFugue-discuss mailing list
+TinyFugue-discuss@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss
+
+From tinyfugue-discuss-bounces@lists.sourceforge.net  Sun Jan 13 20:05:47 2013
+Return-Path: <tinyfugue-discuss-bounces@lists.sourceforge.net>
+Received: from localhost
+	(using TLSv1 with cipher ADH-AES256-SHA (256/256 bits))
+	(No client certificate requested)
+Received: by localhost
+	id CBF58398AB; Sun, 13 Jan 2013 20:05:47 -0500 (EST)
+Received: from lists.sourceforge.net (lists.sourceforge.net [216.34.181.88])
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(Client did not present a certificate)
+Received: from localhost ([127.0.0.1] helo=sfs-ml-1.v29.ch3.sourceforge.com)
+	by sfs-ml-1.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <tinyfugue-discuss-bounces@lists.sourceforge.net>)
+	id 1TuYUF-0003Nu-4K; Mon, 14 Jan 2013 01:05:15 +0000
+Received: from sog-mx-3.v43.ch3.sourceforge.com ([172.29.43.193]
+	helo=mx.sourceforge.net)
+	by sfs-ml-1.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <zixiekat@gmail.com>) id 1TuYUD-0003Np-Rc
+	for tinyfugue-discuss@lists.sourceforge.net;
+	Mon, 14 Jan 2013 01:05:13 +0000
+Received-SPF: pass (sog-mx-3.v43.ch3.sourceforge.com: domain of gmail.com
+	designates 209.85.216.46 as permitted sender)
+	client-ip=209.85.216.46; envelope-from=zixiekat@gmail.com;
+	helo=mail-qa0-f46.google.com; 
+Received: from mail-qa0-f46.google.com ([209.85.216.46])
+	by sog-mx-3.v43.ch3.sourceforge.com with esmtps (TLSv1:RC4-SHA:128)
+	(Exim 4.76) id 1TuYUB-00062j-3c
+	for tinyfugue-discuss@lists.sourceforge.net;
+	Mon, 14 Jan 2013 01:05:13 +0000
+Received: by mail-qa0-f46.google.com with SMTP id r4so1088935qaq.12
+	for <tinyfugue-discuss@lists.sourceforge.net>;
+	Sun, 13 Jan 2013 17:05:05 -0800 (PST)
+MIME-Version: 1.0
+Received: by 10.224.177.79 with SMTP id bh15mr69214846qab.70.1358125505616;
+	Sun, 13 Jan 2013 17:05:05 -0800 (PST)
+Received: by 10.49.64.194 with HTTP; Sun, 13 Jan 2013 17:05:05 -0800 (PST)
+Date: Sun, 13 Jan 2013 20:05:05 -0500
+Message-ID: <CAPSd_uGuN_PhUv0ERWNy=-13J8WdOdQAJibWrTZhi=aAeKE5PQ@mail.gmail.com>
+From: Colin Mackay <zixiekat@gmail.com>
+To: tinyfugue-discuss@lists.sourceforge.net
+X-Headers-End: 1TuYUB-00062j-3c
+Subject: hilight a list of names in a file
+X-BeenThere: tinyfugue-discuss@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: Talk with other users about TF
+	<tinyfugue-discuss.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss>,
+	<mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=tinyfugue-discuss>
+List-Post: <mailto:tinyfugue-discuss@lists.sourceforge.net>
+List-Help: <mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss>,
+	<mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: multipart/mixed; boundary="===============6980673279953132493=="
+Errors-To: tinyfugue-discuss-bounces@lists.sourceforge.net
+Reply-To: tinyfugue-discuss@lists.sourceforge.net
+
+--===============6980673279953132493==
+Content-Type: multipart/alternative; boundary=20cf30334da7529abb04d3353cf8
+
+--20cf30334da7529abb04d3353cf8
+Content-Type: text/plain; charset=ISO-8859-1
+
+Good day,
+
+I've recently been looking around for a way to hilight a list of names.
+ Currently I use one line for each name.
+
+/def -p9 -P1BCwhite -F -t'(\bNAME\b)'
+
+So I am wondering, if there is a way to tell tf to load a plain list of
+names separated by carriage returns and highlight them bright white.  The
+list of names looks to be getting pretty long...
+
+
+And secondly, aside from the TF manual, is are there examples, or advanced
+tutorials I can find out there?  Most of the tutorials seem to be just
+'here is how to set a highlight', 'how to auto-connect', etc...
+
+--20cf30334da7529abb04d3353cf8
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+Good day,<div><br></div><div>I&#39;ve recently been looking around for a wa=
+y to hilight a list of names. =A0Currently I use one line for each name.</d=
+iv><div><br></div><div>/def -p9 -P1BCwhite -F -t&#39;(\bNAME\b)&#39;</div>
+<div><br></div><div>So I am wondering, if there is a way to tell tf to load=
+ a plain list of names=A0separated=A0by carriage returns and highlight them=
+ bright white. =A0The list of names looks to be getting pretty long...</div=
+><div>
+<br></div><div><br></div><div>And secondly, aside from the TF manual, is ar=
+e there examples, or advanced tutorials I can find out there? =A0Most of th=
+e tutorials seem to be just &#39;here is how to set a highlight&#39;, &#39;=
+how to auto-connect&#39;, etc...</div>
+
+--20cf30334da7529abb04d3353cf8--
+
+
+--===============6980673279953132493==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+------------------------------------------------------------------------------
+Master Visual Studio, SharePoint, SQL, ASP.NET, C# 2012, HTML5, CSS,
+MVC, Windows 8 Apps, JavaScript and much more. Keep your skills current
+with LearnDevNow - 3,200 step-by-step video tutorials by Microsoft
+MVPs and experts. SALE $99.99 this month only -- learn more at:
+http://p.sf.net/sfu/learnmore_122412
+--===============6980673279953132493==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+TinyFugue-discuss mailing list
+TinyFugue-discuss@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss
+
+--===============6980673279953132493==--
+
+From tinyfugue-discuss-bounces@lists.sourceforge.net  Sun Jan 13 20:36:32 2013
+Return-Path: <tinyfugue-discuss-bounces@lists.sourceforge.net>
+Received: from localhost
+	(using TLSv1 with cipher ADH-AES256-SHA (256/256 bits))
+	(No client certificate requested)
+Received: by localhost
+	id DF23A398AB; Sun, 13 Jan 2013 20:36:31 -0500 (EST)
+Received: from lists.sourceforge.net (lists.sourceforge.net [216.34.181.88])
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(Client did not present a certificate)
+Received: from localhost ([127.0.0.1] helo=sfs-ml-1.v29.ch3.sourceforge.com)
+	by sfs-ml-1.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <tinyfugue-discuss-bounces@lists.sourceforge.net>)
+	id 1TuYyC-0004Mr-Ul; Mon, 14 Jan 2013 01:36:12 +0000
+Received: from sog-mx-4.v43.ch3.sourceforge.com ([172.29.43.194]
+	helo=mx.sourceforge.net)
+	by sfs-ml-1.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <keepiru@fur.com>) id 1TuYyB-0004Ml-3J
+	for tinyfugue-discuss@lists.sourceforge.net;
+	Mon, 14 Jan 2013 01:36:11 +0000
+Received-SPF: pass (sog-mx-4.v43.ch3.sourceforge.com: domain of fur.com
+	designates 64.71.152.122 as permitted sender)
+	client-ip=64.71.152.122; envelope-from=keepiru@fur.com;
+	helo=snowfox.fur.com; 
+Received: from snowfox.fur.com ([64.71.152.122])
+	by sog-mx-4.v43.ch3.sourceforge.com with esmtp (Exim 4.76)
+	id 1TuYy5-0006xv-KI for tinyfugue-discuss@lists.sourceforge.net;
+	Mon, 14 Jan 2013 01:36:11 +0000
+Received: from localhost (localhost.localdomain [127.0.0.1])
+	by snowfox.fur.com (Postfix) with ESMTP id 13A3324BFE0
+	for <tinyfugue-discuss@lists.sourceforge.net>;
+	Sun, 13 Jan 2013 17:35:57 -0800 (PST)
+X-Virus-Scanned: Debian amavisd-new at fur.com
+Received: from snowfox.fur.com ([127.0.0.1])
+	by localhost (snowfox.fur.com [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id Wg7xegewNYou
+	for <tinyfugue-discuss@lists.sourceforge.net>;
+	Sun, 13 Jan 2013 17:35:47 -0800 (PST)
+Received: by snowfox.fur.com (Postfix, from userid 552)
+	id CEC8F24BFE2; Sun, 13 Jan 2013 17:35:47 -0800 (PST)
+Date: Sun, 13 Jan 2013 17:35:47 -0800
+From: Kai <tinyfugue@neofin.net>
+To: tinyfugue-discuss@lists.sourceforge.net
+Message-ID: <20130114013547.GC17003@fur.com>
+References: <CAPSd_uGuN_PhUv0ERWNy=-13J8WdOdQAJibWrTZhi=aAeKE5PQ@mail.gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAPSd_uGuN_PhUv0ERWNy=-13J8WdOdQAJibWrTZhi=aAeKE5PQ@mail.gmail.com>
+User-Agent: Mutt/1.5.20 (2009-06-14)
+X-Headers-End: 1TuYy5-0006xv-KI
+Subject: Re: hilight a list of names in a file
+X-BeenThere: tinyfugue-discuss@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: Talk with other users about TF
+	<tinyfugue-discuss.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss>,
+	<mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=tinyfugue-discuss>
+List-Post: <mailto:tinyfugue-discuss@lists.sourceforge.net>
+List-Help: <mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss>,
+	<mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Errors-To: tinyfugue-discuss-bounces@lists.sourceforge.net
+Reply-To: tinyfugue-discuss@lists.sourceforge.net
+
+Try this:
+
+/def -p9 -mregexp -P1BCwhite -F -t'\b(name1|name2|name3|name4)\b'
+
+It would also be possible to read a list like you're describing, join
+it with '|', then substitute it when creating the def above, but I
+can't do that off the top of my head.
+
+As for docs, sorry, I don't know a good reference.  I mostly use
+/help.  :/
+
+--Kai
+
+
+On Sun, Jan 13, 2013 at 08:05:05PM -0500, Colin Mackay wrote:
+> Good day,
+> 
+> I've recently been looking around for a way to hilight a list of names.
+>  Currently I use one line for each name.
+> 
+> /def -p9 -P1BCwhite -F -t'(\bNAME\b)'
+> 
+> So I am wondering, if there is a way to tell tf to load a plain list of
+> names separated by carriage returns and highlight them bright white.  The
+> list of names looks to be getting pretty long...
+> 
+> 
+> And secondly, aside from the TF manual, is are there examples, or advanced
+> tutorials I can find out there?  Most of the tutorials seem to be just
+> 'here is how to set a highlight', 'how to auto-connect', etc...
+
+> ------------------------------------------------------------------------------
+> Master Visual Studio, SharePoint, SQL, ASP.NET, C# 2012, HTML5, CSS,
+> MVC, Windows 8 Apps, JavaScript and much more. Keep your skills current
+> with LearnDevNow - 3,200 step-by-step video tutorials by Microsoft
+> MVPs and experts. SALE $99.99 this month only -- learn more at:
+> http://p.sf.net/sfu/learnmore_122412
+
+> _______________________________________________
+> TinyFugue-discuss mailing list
+> TinyFugue-discuss@lists.sourceforge.net
+> https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss
+
+
+------------------------------------------------------------------------------
+Master Visual Studio, SharePoint, SQL, ASP.NET, C# 2012, HTML5, CSS,
+MVC, Windows 8 Apps, JavaScript and much more. Keep your skills current
+with LearnDevNow - 3,200 step-by-step video tutorials by Microsoft
+MVPs and experts. SALE $99.99 this month only -- learn more at:
+http://p.sf.net/sfu/learnmore_122412
+_______________________________________________
+TinyFugue-discuss mailing list
+TinyFugue-discuss@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss
+
+From tinyfugue-discuss-bounces@lists.sourceforge.net  Sun Jan 13 21:07:41 2013
+Return-Path: <tinyfugue-discuss-bounces@lists.sourceforge.net>
+Received: from localhost
+	(using TLSv1 with cipher ADH-AES256-SHA (256/256 bits))
+	(No client certificate requested)
+Received: by localhost
+	id CE987398AB; Sun, 13 Jan 2013 21:07:40 -0500 (EST)
+Received: from lists.sourceforge.net (lists.sourceforge.net [216.34.181.88])
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(Client did not present a certificate)
+Received: from localhost ([127.0.0.1] helo=sfs-ml-4.v29.ch3.sourceforge.com)
+	by sfs-ml-4.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <tinyfugue-discuss-bounces@lists.sourceforge.net>)
+	id 1TuZSA-0006sx-LV; Mon, 14 Jan 2013 02:07:10 +0000
+Received: from sog-mx-2.v43.ch3.sourceforge.com ([172.29.43.192]
+	helo=mx.sourceforge.net)
+	by sfs-ml-4.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <heptite@gmail.com>) id 1TuZS9-0006ss-5Y
+	for tinyfugue-discuss@lists.sourceforge.net;
+	Mon, 14 Jan 2013 02:07:09 +0000
+Received-SPF: pass (sog-mx-2.v43.ch3.sourceforge.com: domain of gmail.com
+	designates 209.85.220.45 as permitted sender)
+	client-ip=209.85.220.45; envelope-from=heptite@gmail.com;
+	helo=mail-pa0-f45.google.com; 
+Received: from mail-pa0-f45.google.com ([209.85.220.45])
+	by sog-mx-2.v43.ch3.sourceforge.com with esmtps (TLSv1:RC4-SHA:128)
+	(Exim 4.76) id 1TuZS3-0007Gs-0Q
+	for tinyfugue-discuss@lists.sourceforge.net;
+	Mon, 14 Jan 2013 02:07:09 +0000
+Received: by mail-pa0-f45.google.com with SMTP id bg2so1945592pad.32
+	for <tinyfugue-discuss@lists.sourceforge.net>;
+	Sun, 13 Jan 2013 18:06:57 -0800 (PST)
+X-Received: by 10.66.85.101 with SMTP id g5mr228060854paz.17.1358129217161;
+	Sun, 13 Jan 2013 18:06:57 -0800 (PST)
+Received: from mnemosyne.localnet (174-19-102-121.bois.qwest.net.
+	[174.19.102.121])
+	by mx.google.com with ESMTPS id ov4sm7226570pbb.45.2013.01.13.18.06.55
+	(version=TLSv1 cipher=RC4-SHA bits=128/128);
+	Sun, 13 Jan 2013 18:06:56 -0800 (PST)
+Date: Sun, 13 Jan 2013 19:06:53 -0700 (Mountain Standard Time)
+From: "Christian J. Robinson" <heptite@gmail.com>
+To: Colin Mackay <zixiekat@gmail.com>
+In-Reply-To: <CAPSd_uGuN_PhUv0ERWNy=-13J8WdOdQAJibWrTZhi=aAeKE5PQ@mail.gmail.com>
+Message-ID: <alpine.WNT.2.00.1301131854260.4400@mnemosyne>
+References: <CAPSd_uGuN_PhUv0ERWNy=-13J8WdOdQAJibWrTZhi=aAeKE5PQ@mail.gmail.com>
+User-Agent: Alpine 2.00 (WNT 1167 2008-08-23)
+X-Email-Facts-of-Life: http://christianrobinson.name/text/email_facts_of_life
+X-Email-Etiquette: http://learn.to/edit_messages
+X-Editor: VIM - Vi IMproved 7.3 (http://www.vim.org/)
+X-URL: http://christianrobinson.name/
+X-PGP-Key: 0xCE43DE0F http://christianrobinson.name/pgp
+X-OpenPGP-KeyID: 0xCE43DE0F
+X-X-Sender: heptite@gmail.com@gmail-imap.l.google.com
+MIME-Version: 1.0
+Content-Type: MULTIPART/MIXED; BOUNDARY="3459864-26709-1358129215=:4400"
+X-Headers-End: 1TuZS3-0007Gs-0Q
+Cc: tinyfugue-discuss@lists.sourceforge.net
+Subject: Re: hilight a list of names in a file
+X-BeenThere: tinyfugue-discuss@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: Talk with other users about TF
+	<tinyfugue-discuss.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss>,
+	<mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=tinyfugue-discuss>
+List-Post: <mailto:tinyfugue-discuss@lists.sourceforge.net>
+List-Help: <mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss>,
+	<mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=subscribe>
+Errors-To: tinyfugue-discuss-bounces@lists.sourceforge.net
+Reply-To: tinyfugue-discuss@lists.sourceforge.net
+
+  This message is in MIME format.  The first part should be readable text,
+  while the remaining parts are likely unreadable without MIME-aware tools.
+
+--3459864-26709-1358129215=:4400
+Content-Type: TEXT/PLAIN; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 8BIT
+
+On Sun, 13 Jan 2013, Colin Mackay wrote:
+
+> I've recently been looking around for a way to hilight a list of 
+> names.  Currently I use one line for each name.
+> 
+> /def -p9 -P1BCwhite -F -t'(\bNAME\b)'
+> 
+> So I am wondering, if there is a way to tell tf to load a plain list 
+> of names separated by carriage returns and highlight them bright 
+> white.  The list of names looks to be getting pretty long...
+
+I don't MU* any more, so my TF scripting skill is getting very rusty, 
+but try this:
+
+   /set name_hilights_file names
+
+   /def readnamehighlights = \
+     /let file $[tfopen(name_hilights_file, 'r')] %; \
+     /if (file != -1) \
+       /while (tfread(file, name) != -1) \
+         /let _name $[replace(' ', '_', name)] %; \
+         /eval /def -p9 -P1BCwhite -F -t'(\\\\b%name\\\\b)' name_highlight_%_name %; \
+       /done %; \
+     /endif %; \
+     /test $[tfclose(file)]
+
+   /readnamehighlights
+
+
+Change the value of "name_hilights_file" at the top from "names" to 
+whatever the name of the file you keep your list of names in.
+
+- Christian
+
+-- 
+   "If you can find something everyone agrees on, it's wrong."  -- Mo Udall
+Christian J. Robinson <heptite@gmail.com>      http://christianrobinson.name/
+--3459864-26709-1358129215=:4400
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+------------------------------------------------------------------------------
+Master Visual Studio, SharePoint, SQL, ASP.NET, C# 2012, HTML5, CSS,
+MVC, Windows 8 Apps, JavaScript and much more. Keep your skills current
+with LearnDevNow - 3,200 step-by-step video tutorials by Microsoft
+MVPs and experts. SALE $99.99 this month only -- learn more at:
+http://p.sf.net/sfu/learnmore_122412
+--3459864-26709-1358129215=:4400
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+TinyFugue-discuss mailing list
+TinyFugue-discuss@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss
+
+--3459864-26709-1358129215=:4400--
+
+From tinyfugue-discuss-bounces@lists.sourceforge.net  Tue Jan 15 19:51:02 2013
+Return-Path: <tinyfugue-discuss-bounces@lists.sourceforge.net>
+Received: from localhost
+	(using TLSv1 with cipher ADH-AES256-SHA (256/256 bits))
+	(No client certificate requested)
+Received: by localhost
+	id 5A50939752; Tue, 15 Jan 2013 19:51:02 -0500 (EST)
+Received: from lists.sourceforge.net (lists.sourceforge.net [216.34.181.88])
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(Client did not present a certificate)
+Received: from localhost ([127.0.0.1] helo=sfs-ml-2.v29.ch3.sourceforge.com)
+	by sfs-ml-2.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <tinyfugue-discuss-bounces@lists.sourceforge.net>)
+	id 1TvHD6-00017V-4P; Wed, 16 Jan 2013 00:50:32 +0000
+Received: from sog-mx-4.v43.ch3.sourceforge.com ([172.29.43.194]
+	helo=mx.sourceforge.net)
+	by sfs-ml-2.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <film.the.dead@gmail.com>) id 1TvHD4-00017P-MV
+	for TinyFugue-discuss@lists.sourceforge.net;
+	Wed, 16 Jan 2013 00:50:30 +0000
+Received-SPF: pass (sog-mx-4.v43.ch3.sourceforge.com: domain of gmail.com
+	designates 74.125.83.45 as permitted sender)
+	client-ip=74.125.83.45; envelope-from=film.the.dead@gmail.com;
+	helo=mail-ee0-f45.google.com; 
+Received: from mail-ee0-f45.google.com ([74.125.83.45])
+	by sog-mx-4.v43.ch3.sourceforge.com with esmtps (TLSv1:RC4-SHA:128)
+	(Exim 4.76) id 1TvHD3-00016b-Sl
+	for TinyFugue-discuss@lists.sourceforge.net;
+	Wed, 16 Jan 2013 00:50:30 +0000
+Received: by mail-ee0-f45.google.com with SMTP id b57so379005eek.32
+	for <TinyFugue-discuss@lists.sourceforge.net>;
+	Tue, 15 Jan 2013 16:50:23 -0800 (PST)
+MIME-Version: 1.0
+Received: by 10.14.221.9 with SMTP id q9mr247602032eep.3.1358297423630; Tue,
+	15 Jan 2013 16:50:23 -0800 (PST)
+Received: by 10.223.75.155 with HTTP; Tue, 15 Jan 2013 16:50:23 -0800 (PST)
+Date: Tue, 15 Jan 2013 19:50:23 -0500
+Message-ID: <CA+F1+Xg500MOPReJJtGrUzg2q5sEsnyOeH6eiex3dTb2pB5wCg@mail.gmail.com>
+From: lost addams <film.the.dead@gmail.com>
+To: TF Tinyfugue <TinyFugue-discuss@lists.sourceforge.net>
+X-Headers-End: 1TvHD3-00016b-Sl
+Subject: warnings
+X-BeenThere: tinyfugue-discuss@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: Talk with other users about TF
+	<tinyfugue-discuss.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss>,
+	<mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=tinyfugue-discuss>
+List-Post: <mailto:tinyfugue-discuss@lists.sourceforge.net>
+List-Help: <mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss>,
+	<mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: multipart/mixed; boundary="===============7440845595372573428=="
+Errors-To: tinyfugue-discuss-bounces@lists.sourceforge.net
+Reply-To: tinyfugue-discuss@lists.sourceforge.net
+
+--===============7440845595372573428==
+Content-Type: multipart/alternative; boundary=047d7b6049ba6f4f9404d35d434b
+
+--047d7b6049ba6f4f9404d35d434b
+Content-Type: text/plain; charset=ISO-8859-1
+
+I'm currently using a set of trigs to test for a few different kinds of
+regmatching. The problem I am encountering is that for one of the
+regmatches, I am trying to get a return value of exactly 1... no more and
+no less. Now, I could of course set it up so that when I'm looking for a
+regmatch of 1 I have a var set to 1, and when I'm looking for a regmatch of
+>1 I have the var set to 0, and then I can make a check for the var
+integral to the following code, but that seems silly and unnecessary.
+
+When I try to do regmatch(regexp, text) == 1, I keep getting an message:
+
+% function_name: Warning: regmatch() may return >= 1 for success.
+
+What I'm wondering is if there's a way to disable this warning message
+(like the curly warning message), or whether I will have to do this a
+different way in order to not see 30 lines of this warning every time this
+macro gets used.
+
+-- 
+Film the dead; see how they lie.
+
+--047d7b6049ba6f4f9404d35d434b
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+I&#39;m currently using a set of trigs to test for a few different kinds of=
+ regmatching. The problem I am encountering is that for one of the regmatch=
+es, I am trying to get a return value of exactly 1... no more and no less. =
+Now, I could of course set it up so that when I&#39;m looking for a regmatc=
+h of 1 I have a var set to 1, and when I&#39;m looking for a regmatch of &g=
+t;1 I have the var set to 0, and then I can make a check for the var integr=
+al to the following code, but that seems silly and unnecessary.<br>
+<br>When I try to do regmatch(regexp, text) =3D=3D 1, I keep getting an mes=
+sage:<br><br>% function_name: Warning: regmatch() may return &gt;=3D 1 for =
+success.<br><br>What I&#39;m wondering is if there&#39;s a way to disable t=
+his warning message (like the curly warning message), or whether I will hav=
+e to do this a different way in order to not see 30 lines of this warning e=
+very time this macro gets used.<br clear=3D"all">
+<br>-- <br>Film the dead; see how they lie.
+
+--047d7b6049ba6f4f9404d35d434b--
+
+
+--===============7440845595372573428==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+------------------------------------------------------------------------------
+Master Java SE, Java EE, Eclipse, Spring, Hibernate, JavaScript, jQuery
+and much more. Keep your Java skills current with LearnJavaNow -
+200+ hours of step-by-step video tutorials by Java experts.
+SALE $49.99 this month only -- learn more at:
+http://p.sf.net/sfu/learnmore_122612 
+--===============7440845595372573428==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+TinyFugue-discuss mailing list
+TinyFugue-discuss@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss
+
+--===============7440845595372573428==--
+
+From tinyfugue-discuss-bounces@lists.sourceforge.net  Tue Jan 15 20:28:35 2013
+Return-Path: <tinyfugue-discuss-bounces@lists.sourceforge.net>
+Received: from localhost
+	(using TLSv1 with cipher ADH-AES256-SHA (256/256 bits))
+	(No client certificate requested)
+Received: by localhost
+	id 9DA1E39752; Tue, 15 Jan 2013 20:28:35 -0500 (EST)
+Received: from lists.sourceforge.net (lists.sourceforge.net [216.34.181.88])
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(Client did not present a certificate)
+Received: from localhost ([127.0.0.1] helo=sfs-ml-1.v29.ch3.sourceforge.com)
+	by sfs-ml-1.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <tinyfugue-discuss-bounces@lists.sourceforge.net>)
+	id 1TvHnT-00006M-Sb; Wed, 16 Jan 2013 01:28:07 +0000
+Received: from sog-mx-4.v43.ch3.sourceforge.com ([172.29.43.194]
+	helo=mx.sourceforge.net)
+	by sfs-ml-1.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <schrepfer@gmail.com>) id 1TvHnS-000069-G6
+	for TinyFugue-discuss@lists.sourceforge.net;
+	Wed, 16 Jan 2013 01:28:06 +0000
+Received-SPF: pass (sog-mx-4.v43.ch3.sourceforge.com: domain of gmail.com
+	designates 209.85.216.42 as permitted sender)
+	client-ip=209.85.216.42; envelope-from=schrepfer@gmail.com;
+	helo=mail-qa0-f42.google.com; 
+Received: from mail-qa0-f42.google.com ([209.85.216.42])
+	by sog-mx-4.v43.ch3.sourceforge.com with esmtps (TLSv1:RC4-SHA:128)
+	(Exim 4.76) id 1TvHnR-0004qM-D1
+	for TinyFugue-discuss@lists.sourceforge.net;
+	Wed, 16 Jan 2013 01:28:06 +0000
+Received: by mail-qa0-f42.google.com with SMTP id hg5so2957539qab.15
+	for <TinyFugue-discuss@lists.sourceforge.net>;
+	Tue, 15 Jan 2013 17:28:00 -0800 (PST)
+MIME-Version: 1.0
+Received: by 10.229.75.224 with SMTP id z32mr18857291qcj.148.1358299679856;
+	Tue, 15 Jan 2013 17:27:59 -0800 (PST)
+Received: by 10.49.109.233 with HTTP; Tue, 15 Jan 2013 17:27:59 -0800 (PST)
+In-Reply-To: <CA+F1+Xg500MOPReJJtGrUzg2q5sEsnyOeH6eiex3dTb2pB5wCg@mail.gmail.com>
+References: <CA+F1+Xg500MOPReJJtGrUzg2q5sEsnyOeH6eiex3dTb2pB5wCg@mail.gmail.com>
+Date: Tue, 15 Jan 2013 17:27:59 -0800
+X-Google-Sender-Auth: GY_WG6ZnKYj9qm3Gk2R10f27wqA
+Message-ID: <CAPbeLRrZ8B3=POGtPv3ZzbWeTKZrn37gQiyG4thPLzzLVRy8Vw@mail.gmail.com>
+From: "Alexander C. Schrepfer" <tf@maddcow.us>
+To: lost addams <film.the.dead@gmail.com>
+X-Headers-End: 1TvHnR-0004qM-D1
+Cc: TF Tinyfugue <TinyFugue-discuss@lists.sourceforge.net>
+Subject: Re: warnings
+X-BeenThere: tinyfugue-discuss@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: Talk with other users about TF
+	<tinyfugue-discuss.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss>,
+	<mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=tinyfugue-discuss>
+List-Post: <mailto:tinyfugue-discuss@lists.sourceforge.net>
+List-Help: <mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss>,
+	<mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: multipart/mixed; boundary="===============5716675627668485015=="
+Errors-To: tinyfugue-discuss-bounces@lists.sourceforge.net
+Reply-To: tinyfugue-discuss@lists.sourceforge.net
+
+--===============5716675627668485015==
+Content-Type: multipart/alternative; boundary=00032556269eea97c104d35dc92d
+
+--00032556269eea97c104d35dc92d
+Content-Type: text/plain; charset=ISO-8859-1
+
+I took a quick look at the source, and it doesn't look like there's an easy
+way of ignoring that message. That said you can probably trick the logic
+here by storing the value and then comparing the result afterwards. This
+code seems to be pretty specific.
+
+------>> find -type f -print0 | xargs -0r grep -B10 -A2 'regmatch() may return'
+./src/expr.c- promoted_type = TYPE_ATIME;
+./src/expr.c-    }
+./src/expr.c-
+./src/expr.c-    if ((op == OP_EQUAL || op == OP_NOTEQ) &&
+./src/expr.c- ((val[0]->type & TYPE_REGMATCH) || (val[1]->type &
+TYPE_REGMATCH)))
+./src/expr.c-    {
+./src/expr.c- if ((val[0]->type & TYPE_REGMATCH && valint(val[1]) == 1) ||
+./src/expr.c-    (val[1]->type & TYPE_REGMATCH && valint(val[0]) == 1) ||
+./src/expr.c-    ((val[0]->type & TYPE_REGMATCH) && (val[1]->type &
+TYPE_REGMATCH)))
+./src/expr.c- {
+*./src/expr.c:    wprintf("regmatch() may return >= 1 for success.");*
+./src/expr.c- }
+./src/expr.c-    }
+
+
+
+On Tue, Jan 15, 2013 at 4:50 PM, lost addams <film.the.dead@gmail.com>wrote:
+
+> regmatch() may return
+
+
+
+
+
+-- 
+Alexander C. Schrepfer - 206.289.0239
+
+--00032556269eea97c104d35dc92d
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div class=3D"gmail_extra" style>I took a quick look at th=
+e source, and it doesn&#39;t look like there&#39;s an easy way of ignoring =
+that message. That said you can probably trick the logic here by storing th=
+e value and then comparing the result afterwards. This code seems to be pre=
+tty specific.</div>
+<div class=3D"gmail_extra" style><br></div><div class=3D"gmail_extra" style=
+><div class=3D"gmail_extra">&#8213;&#8213;&#8213;&raquo; find -type f -prin=
+t0 | xargs -0r grep -B10 -A2 &#39;regmatch() may return&#39;</div><div clas=
+s=3D"gmail_extra">./src/expr.c-<span class=3D"" style=3D"white-space:pre">	=
+</span>promoted_type =3D TYPE_ATIME;</div>
+<div class=3D"gmail_extra">./src/expr.c- &nbsp; &nbsp;}</div><div class=3D"=
+gmail_extra">./src/expr.c-</div><div class=3D"gmail_extra">./src/expr.c- &n=
+bsp; &nbsp;if ((op =3D=3D OP_EQUAL || op =3D=3D OP_NOTEQ) &amp;&amp;</div><=
+div class=3D"gmail_extra">./src/expr.c-<span class=3D"" style=3D"white-spac=
+e:pre">	</span>((val[0]-&gt;type &amp; TYPE_REGMATCH) || (val[1]-&gt;type &=
+amp; TYPE_REGMATCH)))</div>
+<div class=3D"gmail_extra">./src/expr.c- &nbsp; &nbsp;{</div><div class=3D"=
+gmail_extra">./src/expr.c-<span class=3D"" style=3D"white-space:pre">	</spa=
+n>if ((val[0]-&gt;type &amp; TYPE_REGMATCH &amp;&amp; valint(val[1]) =3D=3D=
+ 1) ||</div><div class=3D"gmail_extra">
+./src/expr.c-<span class=3D"" style=3D"white-space:pre">	</span> &nbsp; &nb=
+sp;(val[1]-&gt;type &amp; TYPE_REGMATCH &amp;&amp; valint(val[0]) =3D=3D 1)=
+ ||</div><div class=3D"gmail_extra">./src/expr.c-<span class=3D"" style=3D"=
+white-space:pre">	</span> &nbsp; &nbsp;((val[0]-&gt;type &amp; TYPE_REGMATC=
+H) &amp;&amp; (val[1]-&gt;type &amp; TYPE_REGMATCH)))</div>
+<div class=3D"gmail_extra">./src/expr.c-<span class=3D"" style=3D"white-spa=
+ce:pre">	</span>{</div><div class=3D"gmail_extra"><b>./src/expr.c:<span cla=
+ss=3D"" style=3D"white-space:pre">	</span> &nbsp; &nbsp;wprintf(&quot;regma=
+tch() may return &gt;=3D 1 for success.&quot;);</b></div>
+<div class=3D"gmail_extra">./src/expr.c-<span class=3D"" style=3D"white-spa=
+ce:pre">	</span>}</div><div class=3D"gmail_extra">./src/expr.c- &nbsp; &nbs=
+p;}</div><div><br></div></div><div class=3D"gmail_extra"><br></div><div cla=
+ss=3D"gmail_extra">
+<br><div class=3D"gmail_quote">On Tue, Jan 15, 2013 at 4:50 PM, lost addams=
+ <span dir=3D"ltr">&lt;<a href=3D"mailto:film.the.dead@gmail.com" target=3D=
+"_blank">film.the.dead@gmail.com</a>&gt;</span> wrote:<br><blockquote class=
+=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;border-left-width:1px;bo=
+rder-left-color:rgb(204,204,204);border-left-style:solid;padding-left:1ex">
+regmatch() may return</blockquote></div><br><br><br clear=3D"all"><div><br>=
+</div>-- <br>Alexander C. Schrepfer - 206.289.0239
+</div></div>
+
+--00032556269eea97c104d35dc92d--
+
+
+--===============5716675627668485015==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+------------------------------------------------------------------------------
+Master Java SE, Java EE, Eclipse, Spring, Hibernate, JavaScript, jQuery
+and much more. Keep your Java skills current with LearnJavaNow -
+200+ hours of step-by-step video tutorials by Java experts.
+SALE $49.99 this month only -- learn more at:
+http://p.sf.net/sfu/learnmore_122612 
+--===============5716675627668485015==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+TinyFugue-discuss mailing list
+TinyFugue-discuss@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss
+
+--===============5716675627668485015==--
+
+From tinyfugue-discuss-bounces@lists.sourceforge.net  Wed Jan 16 04:02:34 2013
+Return-Path: <tinyfugue-discuss-bounces@lists.sourceforge.net>
+	version=3.3.1
+Received: from localhost
+	(using TLSv1 with cipher ADH-AES256-SHA (256/256 bits))
+	(No client certificate requested)
+Received: by localhost
+	id BD23E398AC; Wed, 16 Jan 2013 04:02:06 -0500 (EST)
+Received: from lists.sourceforge.net (lists.sourceforge.net [216.34.181.88])
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(Client did not present a certificate)
+Received: from localhost ([127.0.0.1] helo=sfs-ml-4.v29.ch3.sourceforge.com)
+	by sfs-ml-4.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <tinyfugue-discuss-bounces@lists.sourceforge.net>)
+	id 1TvOsR-0007SX-0l; Wed, 16 Jan 2013 09:01:43 +0000
+Received: from sog-mx-4.v43.ch3.sourceforge.com ([172.29.43.194]
+	helo=mx.sourceforge.net)
+	by sfs-ml-4.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <kkeys@caida.org>) id 1TvOsO-0007SC-E6
+	for TinyFugue-discuss@lists.sourceforge.net;
+	Wed, 16 Jan 2013 09:01:40 +0000
+Received: from rommie.caida.org ([192.172.226.78] helo=caida.org)
+	by sog-mx-4.v43.ch3.sourceforge.com with esmtps (TLSv1:AES256-SHA:256)
+	(Exim 4.76) id 1TvOsN-0007hn-IN
+	for TinyFugue-discuss@lists.sourceforge.net;
+	Wed, 16 Jan 2013 09:01:40 +0000
+Received: by caida.org (Postfix, from userid 2056)
+	id 88B4AB9C9; Wed, 16 Jan 2013 01:01:33 -0800 (PST)
+Date: Wed, 16 Jan 2013 01:01:33 -0800
+From: Ken Keys <kenkeys@users.sourceforge.net>
+To: lost addams <film.the.dead@gmail.com>
+Message-ID: <20130116090133.GE33438@rommie.caida.org>
+References: <CA+F1+Xg500MOPReJJtGrUzg2q5sEsnyOeH6eiex3dTb2pB5wCg@mail.gmail.com>
+Mime-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CA+F1+Xg500MOPReJJtGrUzg2q5sEsnyOeH6eiex3dTb2pB5wCg@mail.gmail.com>
+User-Agent: Mutt/1.4.2.1i
+X-Headers-End: 1TvOsN-0007hn-IN
+Cc: TF Tinyfugue <TinyFugue-discuss@lists.sourceforge.net>
+Subject: Re: warnings
+X-BeenThere: tinyfugue-discuss@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: Talk with other users about TF
+	<tinyfugue-discuss.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss>,
+	<mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=tinyfugue-discuss>
+List-Post: <mailto:tinyfugue-discuss@lists.sourceforge.net>
+List-Help: <mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss>,
+	<mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Errors-To: tinyfugue-discuss-bounces@lists.sourceforge.net
+Reply-To: tinyfugue-discuss@lists.sourceforge.net
+
+On Tue, Jan 15, 2013 at 07:50:23PM -0500, lost addams wrote:
+> I'm currently using a set of trigs to test for a few different kinds of
+> regmatching. The problem I am encountering is that for one of the
+> regmatches, I am trying to get a return value of exactly 1... no more and
+> no less. Now, I could of course set it up so that when I'm looking for a
+> regmatch of 1 I have a var set to 1, and when I'm looking for a regmatch of
+> >1 I have the var set to 0, and then I can make a check for the var
+> integral to the following code, but that seems silly and unnecessary.
+> 
+> When I try to do regmatch(regexp, text) == 1, I keep getting an message:
+> 
+> % function_name: Warning: regmatch() may return >= 1 for success.
+> 
+> What I'm wondering is if there's a way to disable this warning message
+> (like the curly warning message), or whether I will have to do this a
+> different way in order to not see 30 lines of this warning every time this
+> macro gets used.
+
+Testing for exactly 1 seems like an odd requirement, but if that really is
+what you want, you can avoid the warning with any kind of intermediate
+operation between the regmatch and the comparison.  One of the simplest
+intermediate expressions is just adding 0:
+
+    (regmatch(regexp, text) + 0) == 1
+
+-- 
+Ken Keys
+kenkeys@users.sourceforge.net
+
+------------------------------------------------------------------------------
+Master Java SE, Java EE, Eclipse, Spring, Hibernate, JavaScript, jQuery
+and much more. Keep your Java skills current with LearnJavaNow -
+200+ hours of step-by-step video tutorials by Java experts.
+SALE $49.99 this month only -- learn more at:
+http://p.sf.net/sfu/learnmore_122612 
+_______________________________________________
+TinyFugue-discuss mailing list
+TinyFugue-discuss@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss
+
+From tinyfugue-discuss-bounces@lists.sourceforge.net  Thu Jan 24 17:58:36 2013
+Return-Path: <tinyfugue-discuss-bounces@lists.sourceforge.net>
+Received: from localhost
+	(using TLSv1 with cipher ADH-AES256-SHA (256/256 bits))
+	(No client certificate requested)
+Received: by localhost
+	id 556D339898; Thu, 24 Jan 2013 17:58:36 -0500 (EST)
+Received: from lists.sourceforge.net (lists.sourceforge.net [216.34.181.88])
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(Client did not present a certificate)
+Received: from localhost ([127.0.0.1] helo=sfs-ml-4.v29.ch3.sourceforge.com)
+	by sfs-ml-4.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <tinyfugue-discuss-bounces@lists.sourceforge.net>)
+	id 1TyVi6-0005GJ-6p; Thu, 24 Jan 2013 22:55:54 +0000
+Received: from sog-mx-3.v43.ch3.sourceforge.com ([172.29.43.193]
+	helo=mx.sourceforge.net)
+	by sfs-ml-4.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <zixiekat@gmail.com>) id 1TyVi4-0005Fz-VE
+	for tinyfugue-discuss@lists.sourceforge.net;
+	Thu, 24 Jan 2013 22:55:53 +0000
+Received-SPF: pass (sog-mx-3.v43.ch3.sourceforge.com: domain of gmail.com
+	designates 209.85.216.51 as permitted sender)
+	client-ip=209.85.216.51; envelope-from=zixiekat@gmail.com;
+	helo=mail-qa0-f51.google.com; 
+Received: from mail-qa0-f51.google.com ([209.85.216.51])
+	by sog-mx-3.v43.ch3.sourceforge.com with esmtps (TLSv1:RC4-SHA:128)
+	(Exim 4.76) id 1TyVi0-0003PH-I7
+	for tinyfugue-discuss@lists.sourceforge.net;
+	Thu, 24 Jan 2013 22:55:52 +0000
+Received: by mail-qa0-f51.google.com with SMTP id dx4so773646qab.3
+	for <tinyfugue-discuss@lists.sourceforge.net>;
+	Thu, 24 Jan 2013 14:55:43 -0800 (PST)
+MIME-Version: 1.0
+X-Received: by 10.224.182.70 with SMTP id cb6mr3716654qab.80.1359068142939;
+	Thu, 24 Jan 2013 14:55:42 -0800 (PST)
+Received: by 10.49.64.194 with HTTP; Thu, 24 Jan 2013 14:55:42 -0800 (PST)
+In-Reply-To: <alpine.WNT.2.00.1301131854260.4400@mnemosyne>
+References: <CAPSd_uGuN_PhUv0ERWNy=-13J8WdOdQAJibWrTZhi=aAeKE5PQ@mail.gmail.com>
+	<alpine.WNT.2.00.1301131854260.4400@mnemosyne>
+Date: Thu, 24 Jan 2013 17:55:42 -0500
+Message-ID: <CAPSd_uEjV=5NmnkKGmma9rQaUmNGm48o2hSwi8JspELBiOXcZw@mail.gmail.com>
+From: Colin Mackay <zixiekat@gmail.com>
+To: "Christian J. Robinson" <heptite@gmail.com>
+X-Headers-End: 1TyVi0-0003PH-I7
+Cc: tinyfugue-discuss@lists.sourceforge.net
+Subject: Re: hilight a list of names in a file
+X-BeenThere: tinyfugue-discuss@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: Talk with other users about TF
+	<tinyfugue-discuss.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss>,
+	<mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=tinyfugue-discuss>
+List-Post: <mailto:tinyfugue-discuss@lists.sourceforge.net>
+List-Help: <mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss>,
+	<mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Errors-To: tinyfugue-discuss-bounces@lists.sourceforge.net
+Reply-To: tinyfugue-discuss@lists.sourceforge.net
+
+Thank you very much for the script.  It not only worked (without
+modification), I now get a better idea of tf scripting.
+
+Thanks! :D
+
+On Sun, Jan 13, 2013 at 9:06 PM, Christian J. Robinson
+<heptite@gmail.com> wrote:
+> On Sun, 13 Jan 2013, Colin Mackay wrote:
+>
+>> I've recently been looking around for a way to hilight a list of names.
+>> Currently I use one line for each name.
+>>
+>> /def -p9 -P1BCwhite -F -t'(\bNAME\b)'
+>>
+>> So I am wondering, if there is a way to tell tf to load a plain list of
+>> names separated by carriage returns and highlight them bright white.  The
+>> list of names looks to be getting pretty long...
+>
+>
+> I don't MU* any more, so my TF scripting skill is getting very rusty, but
+> try this:
+>
+>   /set name_hilights_file names
+>
+>   /def readnamehighlights = \
+>     /let file $[tfopen(name_hilights_file, 'r')] %; \
+>     /if (file != -1) \
+>       /while (tfread(file, name) != -1) \
+>         /let _name $[replace(' ', '_', name)] %; \
+>         /eval /def -p9 -P1BCwhite -F -t'(\\\\b%name\\\\b)'
+> name_highlight_%_name %; \
+>       /done %; \
+>     /endif %; \
+>     /test $[tfclose(file)]
+>
+>   /readnamehighlights
+>
+>
+> Change the value of "name_hilights_file" at the top from "names" to whatever
+> the name of the file you keep your list of names in.
+>
+> - Christian
+>
+> --
+>   "If you can find something everyone agrees on, it's wrong."  -- Mo Udall
+> Christian J. Robinson <heptite@gmail.com>
+> http://christianrobinson.name/
+
+------------------------------------------------------------------------------
+Master Visual Studio, SharePoint, SQL, ASP.NET, C# 2012, HTML5, CSS,
+MVC, Windows 8 Apps, JavaScript and much more. Keep your skills current
+with LearnDevNow - 3,200 step-by-step video tutorials by Microsoft
+MVPs and experts. ON SALE this month only -- learn more at:
+http://p.sf.net/sfu/learnnow-d2d
+_______________________________________________
+TinyFugue-discuss mailing list
+TinyFugue-discuss@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss
+
+From tinyfugue-discuss-bounces@lists.sourceforge.net  Thu Jan 24 20:39:53 2013
+Return-Path: <tinyfugue-discuss-bounces@lists.sourceforge.net>
+Received: from localhost
+	(using TLSv1 with cipher ADH-AES256-SHA (256/256 bits))
+	(No client certificate requested)
+Received: by localhost
+	id AD8A339898; Thu, 24 Jan 2013 20:39:52 -0500 (EST)
+Received: from lists.sourceforge.net (lists.sourceforge.net [216.34.181.88])
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(Client did not present a certificate)
+Received: from localhost ([127.0.0.1] helo=sfs-ml-4.v29.ch3.sourceforge.com)
+	by sfs-ml-4.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <tinyfugue-discuss-bounces@lists.sourceforge.net>)
+	id 1TyYFQ-0001hn-Bx; Fri, 25 Jan 2013 01:38:28 +0000
+Received: from sog-mx-1.v43.ch3.sourceforge.com ([172.29.43.191]
+	helo=mx.sourceforge.net)
+	by sfs-ml-4.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <hair@vnet.net>) id 1TyYFP-0001hV-0E
+	for tinyfugue-discuss@lists.sourceforge.net;
+	Fri, 25 Jan 2013 01:38:27 +0000
+X-ACL-Warn: 
+Received: from pacmmta53-web.windstream.net ([162.39.147.134])
+	by sog-mx-1.v43.ch3.sourceforge.com with esmtp (Exim 4.76)
+	id 1TyYFM-0004l4-2t for tinyfugue-discuss@lists.sourceforge.net;
+	Fri, 25 Jan 2013 01:38:26 +0000
+X-WS-COS: WSOB806
+X-Cloudmark-Category: Undefined:Undefined
+X-Cloudmark-Analysis: v=1.1 cv=asOxBwkBAZGV0T+WtrXzpfep39GF0kV392HEIHOPyDY=
+	c=1 sm=0 a=6Xb_cEpGmTYA:10 a=wTepMqc-nkIA:10 a=aNLfFpuEDSMA:10
+	a=IkcTkHD0fZMA:10 a=pGLkceISAAAA:8 a=TOHeU-P0_3rHVI5CD5IA:9
+	a=QEXdDO2ut3YA:10 a=MSl-tDqOz04A:10
+	a=HbRf/nLsqh/bllKN8Z4VaQ==:117
+X-Cloudmark-Score: 0
+Received: from [10.135.134.96] ([10.135.134.96:39660] helo=pamxwww11-z01)
+	by pacmmta53 (envelope-from <hair@vnet.net>)
+	(ecelerity 2.2.3.47 r(39824M)) with ESMTP
+	id 8C/00-08543-55DD1015; Thu, 24 Jan 2013 20:18:13 -0500
+Message-ID: <20130124201813.WEO1E.109169.root@pamxwww11-z01>
+Date: Thu, 24 Jan 2013 19:18:13 -0600
+From: <hair@vnet.net>
+To: tinyfugue-discuss@lists.sourceforge.net, Colin Mackay <zixiekat@gmail.com>
+In-Reply-To: <CAPSd_uGuN_PhUv0ERWNy=-13J8WdOdQAJibWrTZhi=aAeKE5PQ@mail.gmail.com>
+MIME-Version: 1.0
+X-Priority: 3 (Normal)
+Sensitivity: Normal
+X-Originating-IP: 98.24.7.33
+X-Auth-IP: 98.24.7.33
+X-Headers-End: 1TyYFM-0004l4-2t
+Subject: Re: hilight a list of names in a file
+X-BeenThere: tinyfugue-discuss@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: Talk with other users about TF
+	<tinyfugue-discuss.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss>,
+	<mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=tinyfugue-discuss>
+List-Post: <mailto:tinyfugue-discuss@lists.sourceforge.net>
+List-Help: <mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss>,
+	<mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Errors-To: tinyfugue-discuss-bounces@lists.sourceforge.net
+Reply-To: tinyfugue-discuss@lists.sourceforge.net
+
+Even though you already have an answer that works for you, here is what I use to hilite specific words or phrases.  Syntax is just:  litemin (name|name with spaces|name with \^ special character)
+or: litemin clear
+But this has to be set manually rather than being set from a file.
+
+/DEF -i -ag -h"send {litemin}*" hilite_mineral_name = \
+        /IF (%{-1} !~ "") \
+                /IF (%{-1} =~ "clear") \
+                        /clear_mineral_lite %; \
+                /ELSEIF (%{-1} !~ "clear") \
+                        /set_mineral_lite %{-1} %; \
+                /ENDIF %; \
+        /ELSE /ECHO -aCblack,Cbgyellow *** Mineral lite is: %{lited_mineral} *** %; \
+        /ENDIF
+
+/DEF -i clear_mineral_lite = \
+        /ECHO -aCblack,Cbgyellow *** Clearing mineral lite *** %; \
+        /SET lited_mineral= %; \
+        /UNDEF litemin
+
+/DEF -i set_mineral_lite = \
+        /SET lited_mineral=%{*} %; \
+        /DEF -F -P0BCyellow -t"%{lited_mineral}" litemin = %; \
+        /ECHO -aCblack,Cbgyellow *** Now liting: %{lited_mineral} ***
+
+
+--Tommy
+
+---- Colin Mackay <zixiekat@gmail.com> wrote: 
+> Good day,
+> 
+> I've recently been looking around for a way to hilight a list of names.
+>  Currently I use one line for each name.
+> 
+> /def -p9 -P1BCwhite -F -t'(\bNAME\b)'
+> 
+> So I am wondering, if there is a way to tell tf to load a plain list of
+> names separated by carriage returns and highlight them bright white.  The
+> list of names looks to be getting pretty long...
+> 
+> 
+> And secondly, aside from the TF manual, is are there examples, or advanced
+> tutorials I can find out there?  Most of the tutorials seem to be just
+> 'here is how to set a highlight', 'how to auto-connect', etc...
+
+
+------------------------------------------------------------------------------
+Master Visual Studio, SharePoint, SQL, ASP.NET, C# 2012, HTML5, CSS,
+MVC, Windows 8 Apps, JavaScript and much more. Keep your skills current
+with LearnDevNow - 3,200 step-by-step video tutorials by Microsoft
+MVPs and experts. ON SALE this month only -- learn more at:
+http://p.sf.net/sfu/learnnow-d2d
+_______________________________________________
+TinyFugue-discuss mailing list
+TinyFugue-discuss@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss
+
+From tinyfugue-discuss-bounces@lists.sourceforge.net  Sun Jun 16 13:17:51 2013
+Return-Path: <tinyfugue-discuss-bounces@lists.sourceforge.net>
+Received: from localhost
+	(using TLSv1 with cipher ADH-AES256-SHA (256/256 bits))
+	(No client certificate requested)
+Received: by localhost
+	id B5A1B39C64; Sun, 16 Jun 2013 13:23:15 -0400 (EDT)
+Received: from lists.sourceforge.net (lists.sourceforge.net [216.34.181.88])
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(Client did not present a certificate)
+Received: from localhost ([127.0.0.1] helo=sfs-ml-1.v29.ch3.sourceforge.com)
+	by sfs-ml-1.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <tinyfugue-discuss-bounces@lists.sourceforge.net>)
+	id 1UoGcF-0004x1-8H; Sun, 16 Jun 2013 17:19:47 +0000
+Received: from sog-mx-1.v43.ch3.sourceforge.com ([172.29.43.191]
+	helo=mx.sourceforge.net)
+	by sfs-ml-1.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <miguel.guasch@hushmail.com>) id 1UoGcC-0004wv-Mj
+	for tinyfugue-discuss@lists.sourceforge.net;
+	Sun, 16 Jun 2013 17:19:44 +0000
+Received-SPF: pass (sog-mx-1.v43.ch3.sourceforge.com: domain of hushmail.com
+	designates 65.39.178.134 as permitted sender)
+	client-ip=65.39.178.134;
+	envelope-from=miguel.guasch@hushmail.com;
+	helo=smtp2.hushmail.com; 
+Received: from smtp2.hushmail.com ([65.39.178.134])
+	by sog-mx-1.v43.ch3.sourceforge.com with esmtps (TLSv1:AES256-SHA:256)
+	(Exim 4.76) id 1UoGcB-0005Pv-Iv
+	for tinyfugue-discuss@lists.sourceforge.net;
+	Sun, 16 Jun 2013 17:19:44 +0000
+Received: from smtp2.hushmail.com (localhost.localdomain [127.0.0.1])
+	by smtp2.hushmail.com (Postfix) with SMTP id 7F3EDE7BDF
+	for <tinyfugue-discuss@lists.sourceforge.net>;
+	Sun, 16 Jun 2013 17:19:37 +0000 (UTC)
+Received: from smtp.hushmail.com (w4.hushmail.com [65.39.178.50])
+	by smtp2.hushmail.com (Postfix) with ESMTP
+	for <tinyfugue-discuss@lists.sourceforge.net>;
+	Sun, 16 Jun 2013 17:19:37 +0000 (UTC)
+Message-ID: <a88ead2c3cb0043aa8fe8b7de060a80a@smtp.hushmail.com>
+Date: Sun, 16 Jun 2013 19:19:34 +0200
+From: Miguel Guasch <miguel.guasch@hushmail.com>
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64;
+	rv:17.0) Gecko/20130509 Thunderbird/17.0.6
+MIME-Version: 1.0
+To: tinyfugue-discuss@lists.sourceforge.net
+X-Headers-End: 1UoGcB-0005Pv-Iv
+Subject: Two decades late - I start with TF
+X-BeenThere: tinyfugue-discuss@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: Talk with other users about TF
+	<tinyfugue-discuss.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss>,
+	<mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=tinyfugue-discuss>
+List-Post: <mailto:tinyfugue-discuss@lists.sourceforge.net>
+List-Help: <mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss>,
+	<mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Errors-To: tinyfugue-discuss-bounces@lists.sourceforge.net
+Reply-To: tinyfugue-discuss@lists.sourceforge.net
+
+Hello to whomever may read this mail.
+
+I have recently made the complete switch to Linux and was looking for a 
+good mud client to play Genesis (www.genesismud.org) on. Up until now I 
+have used CMUD on Windows, and although I have known of TF for a while, 
+I never dared to use it for more than logging in.
+
+I've searched around for some tutorials, but most are a bit confusing 
+and/or specific for certain Muds, and so I was wondering if anybody had 
+any "for dummies" information that might help me start using TF and let 
+it grow in me little by little, eventually, hopefully, "mastering" it.
+
+Thanks in advance,
+Miguel.
+
+
+
+------------------------------------------------------------------------------
+This SF.net email is sponsored by Windows:
+
+Build for Windows Store.
+
+http://p.sf.net/sfu/windows-dev2dev
+_______________________________________________
+TinyFugue-discuss mailing list
+TinyFugue-discuss@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss
+
+From tinyfugue-discuss-bounces@lists.sourceforge.net  Sun Jun 16 21:45:27 2013
+Return-Path: <tinyfugue-discuss-bounces@lists.sourceforge.net>
+Received: from localhost
+	(using TLSv1 with cipher ADH-AES256-SHA (256/256 bits))
+	(No client certificate requested)
+Received: by localhost
+	id B18EA39C64; Sun, 16 Jun 2013 21:50:55 -0400 (EDT)
+Received: from lists.sourceforge.net (lists.sourceforge.net [216.34.181.88])
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(Client did not present a certificate)
+Received: from localhost ([127.0.0.1] helo=sfs-ml-1.v29.ch3.sourceforge.com)
+	by sfs-ml-1.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <tinyfugue-discuss-bounces@lists.sourceforge.net>)
+	id 1UoOYU-0007Au-14; Mon, 17 Jun 2013 01:48:26 +0000
+Received: from sog-mx-2.v43.ch3.sourceforge.com ([172.29.43.192]
+	helo=mx.sourceforge.net)
+	by sfs-ml-1.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <dru@druware.com>) id 1UoOYR-0007Ao-4S
+	for tinyfugue-discuss@lists.sourceforge.net;
+	Mon, 17 Jun 2013 01:48:23 +0000
+X-ACL-Warn: 
+Received: from fmailhost06.isp.att.net ([207.115.11.56])
+	by sog-mx-2.v43.ch3.sourceforge.com with esmtp (Exim 4.76)
+	id 1UoOYP-0005rf-14 for tinyfugue-discuss@lists.sourceforge.net;
+	Mon, 17 Jun 2013 01:48:23 +0000
+Received: from [192.168.1.81]
+	(adsl-074-232-152-174.sip.asm.bellsouth.net[74.232.152.174])
+	by isp.att.net (frfwmhc06) with SMTP
+	id <20130617012706H06004uga8e>; Mon, 17 Jun 2013 01:27:06 +0000
+X-Originating-IP: [74.232.152.174]
+References: <a88ead2c3cb0043aa8fe8b7de060a80a@smtp.hushmail.com>
+Mime-Version: 1.0 (1.0)
+In-Reply-To: <a88ead2c3cb0043aa8fe8b7de060a80a@smtp.hushmail.com>
+Message-Id: <9EC3CFA3-EEED-46C7-A350-4A219B96197A@druware.com>
+X-Mailer: iPad Mail (10B329)
+From: D <dru@druware.com>
+Date: Sun, 16 Jun 2013 21:27:07 -0400
+To: Miguel Guasch <miguel.guasch@hushmail.com>
+X-Headers-End: 1UoOYP-0005rf-14
+Cc: "tinyfugue-discuss@lists.sourceforge.net"
+	<tinyfugue-discuss@lists.sourceforge.net>
+Subject: Re: Two decades late - I start with TF
+X-BeenThere: tinyfugue-discuss@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: Talk with other users about TF
+	<tinyfugue-discuss.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss>,
+	<mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=tinyfugue-discuss>
+List-Post: <mailto:tinyfugue-discuss@lists.sourceforge.net>
+List-Help: <mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss>,
+	<mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Errors-To: tinyfugue-discuss-bounces@lists.sourceforge.net
+Reply-To: tinyfugue-discuss@lists.sourceforge.net
+
+Sigh.  Really?  You finally make the switch and don't send me a direct email?  You, sir, fail.
+
+
+:).   Welcome to the dark side!
+
+All typos courtesy of an iPad and my fat fingers - Andy 'dru' Satori
+
+On Jun 16, 2013, at 1:19 PM, Miguel Guasch <miguel.guasch@hushmail.com> wrote:
+
+> Hello to whomever may read this mail.
+> 
+> I have recently made the complete switch to Linux and was looking for a 
+> good mud client to play Genesis (www.genesismud.org) on. Up until now I 
+> have used CMUD on Windows, and although I have known of TF for a while, 
+> I never dared to use it for more than logging in.
+> 
+> I've searched around for some tutorials, but most are a bit confusing 
+> and/or specific for certain Muds, and so I was wondering if anybody had 
+> any "for dummies" information that might help me start using TF and let 
+> it grow in me little by little, eventually, hopefully, "mastering" it.
+> 
+> Thanks in advance,
+> Miguel.
+> 
+> 
+> 
+> ------------------------------------------------------------------------------
+> This SF.net email is sponsored by Windows:
+> 
+> Build for Windows Store.
+> 
+> http://p.sf.net/sfu/windows-dev2dev
+> _______________________________________________
+> TinyFugue-discuss mailing list
+> TinyFugue-discuss@lists.sourceforge.net
+> https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss
+
+------------------------------------------------------------------------------
+This SF.net email is sponsored by Windows:
+
+Build for Windows Store.
+
+http://p.sf.net/sfu/windows-dev2dev
+_______________________________________________
+TinyFugue-discuss mailing list
+TinyFugue-discuss@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss
+
+From tinyfugue-discuss-bounces@lists.sourceforge.net  Mon Jun 17 22:22:01 2013
+Return-Path: <tinyfugue-discuss-bounces@lists.sourceforge.net>
+Received: from localhost
+	(using TLSv1 with cipher ADH-AES256-SHA (256/256 bits))
+	(No client certificate requested)
+Received: by localhost
+	id DA48339C64; Mon, 17 Jun 2013 22:27:41 -0400 (EDT)
+Received: from lists.sourceforge.net (lists.sourceforge.net [216.34.181.88])
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(Client did not present a certificate)
+Received: from localhost ([127.0.0.1] helo=sfs-ml-2.v29.ch3.sourceforge.com)
+	by sfs-ml-2.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <tinyfugue-discuss-bounces@lists.sourceforge.net>)
+	id 1UolZp-0006lD-JU; Tue, 18 Jun 2013 02:23:21 +0000
+Received: from sog-mx-4.v43.ch3.sourceforge.com ([172.29.43.194]
+	helo=mx.sourceforge.net)
+	by sfs-ml-2.v29.ch3.sourceforge.com with esmtp (Exim 4.76)
+	(envelope-from <super.aardvark@gmail.com>) id 1UolZn-0006l7-KC
+	for tinyfugue-discuss@lists.sourceforge.net;
+	Tue, 18 Jun 2013 02:23:19 +0000
+Received-SPF: pass (sog-mx-4.v43.ch3.sourceforge.com: domain of gmail.com
+	designates 209.85.160.48 as permitted sender)
+	client-ip=209.85.160.48; envelope-from=super.aardvark@gmail.com;
+	helo=mail-pb0-f48.google.com; 
+Received: from mail-pb0-f48.google.com ([209.85.160.48])
+	by sog-mx-4.v43.ch3.sourceforge.com with esmtps (TLSv1:RC4-SHA:128)
+	(Exim 4.76) id 1UolZl-0000mG-8q
+	for tinyfugue-discuss@lists.sourceforge.net;
+	Tue, 18 Jun 2013 02:23:19 +0000
+Received: by mail-pb0-f48.google.com with SMTP id ma3so3370173pbc.21
+	for <tinyfugue-discuss@lists.sourceforge.net>;
+	Mon, 17 Jun 2013 19:23:11 -0700 (PDT)
+MIME-Version: 1.0
+X-Received: by 10.66.159.168 with SMTP id xd8mr145687pab.146.1371522191241;
+	Mon, 17 Jun 2013 19:23:11 -0700 (PDT)
+Received: by 10.70.45.233 with HTTP; Mon, 17 Jun 2013 19:23:11 -0700 (PDT)
+In-Reply-To: <a88ead2c3cb0043aa8fe8b7de060a80a@smtp.hushmail.com>
+References: <a88ead2c3cb0043aa8fe8b7de060a80a@smtp.hushmail.com>
+Date: Mon, 17 Jun 2013 19:23:11 -0700
+Message-ID: <CAJPL-fBE-ENzX-Vqmt0UvjYtycSfy+Z0kVW-5hQLkkeupekXqA@mail.gmail.com>
+From: Jacob Finn <super.aardvark@gmail.com>
+To: Miguel Guasch <miguel.guasch@hushmail.com>
+X-Headers-End: 1UolZl-0000mG-8q
+Cc: tinyfugue-discuss@lists.sourceforge.net
+Subject: Re: Two decades late - I start with TF
+X-BeenThere: tinyfugue-discuss@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: Talk with other users about TF
+	<tinyfugue-discuss.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss>,
+	<mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=tinyfugue-discuss>
+List-Post: <mailto:tinyfugue-discuss@lists.sourceforge.net>
+List-Help: <mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss>,
+	<mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: multipart/mixed; boundary="===============3211135653821916151=="
+Errors-To: tinyfugue-discuss-bounces@lists.sourceforge.net
+Reply-To: tinyfugue-discuss@lists.sourceforge.net
+
+--===============3211135653821916151==
+Content-Type: multipart/alternative; boundary=047d7b86e59e02ba8904df6465b9
+
+--047d7b86e59e02ba8904df6465b9
+Content-Type: text/plain; charset=ISO-8859-1
+
+I don't know of any tutorials out there.  TF's help files are great,
+though, and I can give some recommendations on where to begin there.
+
+"/def" is probably the built-in command you'll use most often, so you might
+as well start with "/help def"
+Then move on to: macros, triggers, glob, regex, substitution, evaluation.
+ Some of those can be hard to wrap your head around--if you manage to fully
+understand all of those help files, you'll probably be 80-90% proficient in
+using TF.  So, take what you can on your first read, and go back when you
+run into problems doing what you want to do.
+
+
+
+On Sun, Jun 16, 2013 at 10:19 AM, Miguel Guasch
+<miguel.guasch@hushmail.com>wrote:
+
+> Hello to whomever may read this mail.
+>
+> I have recently made the complete switch to Linux and was looking for a
+> good mud client to play Genesis (www.genesismud.org) on. Up until now I
+> have used CMUD on Windows, and although I have known of TF for a while,
+> I never dared to use it for more than logging in.
+>
+> I've searched around for some tutorials, but most are a bit confusing
+> and/or specific for certain Muds, and so I was wondering if anybody had
+> any "for dummies" information that might help me start using TF and let
+> it grow in me little by little, eventually, hopefully, "mastering" it.
+>
+> Thanks in advance,
+> Miguel.
+>
+>
+>
+>
+> ------------------------------------------------------------------------------
+> This SF.net email is sponsored by Windows:
+>
+> Build for Windows Store.
+>
+> http://p.sf.net/sfu/windows-dev2dev
+> _______________________________________________
+> TinyFugue-discuss mailing list
+> TinyFugue-discuss@lists.sourceforge.net
+> https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss
+>
+
+--047d7b86e59e02ba8904df6465b9
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">I don&#39;t know of any tutorials out there. =A0TF&#39;s h=
+elp files are great, though, and I can give some recommendations on where t=
+o begin there.<div><br></div><div style>&quot;/def&quot; is probably the bu=
+ilt-in command you&#39;ll use most often, so you might as well start with &=
+quot;/help def&quot;</div>
+<div style>Then move on to: macros, triggers, glob, regex, substitution, ev=
+aluation. =A0Some of those can be hard to wrap your head around--if you man=
+age to fully understand all of those help files, you&#39;ll probably be 80-=
+90% proficient in using TF. =A0So, take what you can on your first read, an=
+d go back when you run into problems doing what you want to do.</div>
+<div style><br></div></div><div class=3D"gmail_extra"><br><br><div class=3D=
+"gmail_quote">On Sun, Jun 16, 2013 at 10:19 AM, Miguel Guasch <span dir=3D"=
+ltr">&lt;<a href=3D"mailto:miguel.guasch@hushmail.com" target=3D"_blank">mi=
+guel.guasch@hushmail.com</a>&gt;</span> wrote:<br>
+<blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1p=
+x #ccc solid;padding-left:1ex">Hello to whomever may read this mail.<br>
+<br>
+I have recently made the complete switch to Linux and was looking for a<br>
+good mud client to play Genesis (<a href=3D"http://www.genesismud.org" targ=
+et=3D"_blank">www.genesismud.org</a>) on. Up until now I<br>
+have used CMUD on Windows, and although I have known of TF for a while,<br>
+I never dared to use it for more than logging in.<br>
+<br>
+I&#39;ve searched around for some tutorials, but most are a bit confusing<b=
+r>
+and/or specific for certain Muds, and so I was wondering if anybody had<br>
+any &quot;for dummies&quot; information that might help me start using TF a=
+nd let<br>
+it grow in me little by little, eventually, hopefully, &quot;mastering&quot=
+; it.<br>
+<br>
+Thanks in advance,<br>
+Miguel.<br>
+<br>
+<br>
+<br>
+---------------------------------------------------------------------------=
+---<br>
+This SF.net email is sponsored by Windows:<br>
+<br>
+Build for Windows Store.<br>
+<br>
+<a href=3D"http://p.sf.net/sfu/windows-dev2dev" target=3D"_blank">http://p.=
+sf.net/sfu/windows-dev2dev</a><br>
+_______________________________________________<br>
+TinyFugue-discuss mailing list<br>
+<a href=3D"mailto:TinyFugue-discuss@lists.sourceforge.net">TinyFugue-discus=
+s@lists.sourceforge.net</a><br>
+<a href=3D"https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss" =
+target=3D"_blank">https://lists.sourceforge.net/lists/listinfo/tinyfugue-di=
+scuss</a><br>
+</blockquote></div><br></div>
+
+--047d7b86e59e02ba8904df6465b9--
+
+
+--===============3211135653821916151==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+------------------------------------------------------------------------------
+This SF.net email is sponsored by Windows:
+
+Build for Windows Store.
+
+http://p.sf.net/sfu/windows-dev2dev
+--===============3211135653821916151==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+TinyFugue-discuss mailing list
+TinyFugue-discuss@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss
+
+--===============3211135653821916151==--
+

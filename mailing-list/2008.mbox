@@ -1,0 +1,1779 @@
+From tinyfugue-discuss-bounces@lists.sourceforge.net  Sat Jun 14 02:15:30 2008
+Return-Path: <tinyfugue-discuss-bounces@lists.sourceforge.net>
+Received: from localhost
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(envelope-from tinyfugue-discuss-bounces@lists.sourceforge.net)
+Received: by localhost
+	id 57D5912835C; Sat, 14 Jun 2008 02:15:28 -0400 (EDT)
+Received: from lists-outbound.sourceforge.net (lists-outbound.sourceforge.net [66.35.250.225])
+Received: from sc8-sf-list2-new.sourceforge.net (sc8-sf-list2-new-b.sourceforge.net [10.3.1.94])
+	by sc8-sf-spam2.sourceforge.net (Postfix) with ESMTP
+	id B1A87134D5; Fri, 13 Jun 2008 23:15:22 -0700 (PDT)
+Received: from sc8-sf-mx2-b.sourceforge.net ([10.3.1.92]
+	helo=mail.sourceforge.net)
+	by sc8-sf-list2-new.sourceforge.net with esmtp (Exim 4.43)
+	id 1K7P2c-0006at-5Z for TinyFugue-discuss@lists.sourceforge.net;
+	Fri, 13 Jun 2008 23:15:10 -0700
+Received: from yw-out-1718.google.com ([74.125.46.156])
+	by mail.sourceforge.net with esmtp (Exim 4.44) id 1K7P2l-0005sK-Vc
+	for TinyFugue-discuss@lists.sourceforge.net;
+	Fri, 13 Jun 2008 23:15:20 -0700
+Received: by yw-out-1718.google.com with SMTP id 6so2755202ywa.82
+	for <TinyFugue-discuss@lists.sourceforge.net>;
+	Fri, 13 Jun 2008 23:15:18 -0700 (PDT)
+Received: by 10.151.100.17 with SMTP id c17mr5936964ybm.210.1213424118624;
+	Fri, 13 Jun 2008 23:15:18 -0700 (PDT)
+Received: by 10.151.78.10 with HTTP; Fri, 13 Jun 2008 23:15:17 -0700 (PDT)
+Message-ID: <c30988c30806132315j3f72b14bk4f4166d61b4718ad@mail.gmail.com>
+Date: Sat, 14 Jun 2008 02:15:17 -0400
+From: "Joshua Murphy" <poisonbl@gmail.com>
+To: TinyFugue-discuss@lists.sourceforge.net
+MIME-Version: 1.0
+Content-Disposition: inline
+Subject: Binary Tree/Priority Queue
+X-BeenThere: tinyfugue-discuss@lists.sourceforge.net
+X-Mailman-Version: 2.1.8
+Precedence: list
+List-Id: Talk with other users about TF
+	<tinyfugue-discuss.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss>,
+	<mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=tinyfugue-discuss>
+List-Post: <mailto:tinyfugue-discuss@lists.sourceforge.net>
+List-Help: <mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss>,
+	<mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Sender: tinyfugue-discuss-bounces@lists.sourceforge.net
+Errors-To: tinyfugue-discuss-bounces@lists.sourceforge.net
+Reply-To: tinyfugue-discuss@lists.sourceforge.net
+
+I'm in need of a priority queue of strings of arbitrary length (any
+legal variable data characters, including whitespace), and while I can
+likely implement most of a binary tree for the job, I've run into
+issues with dynamic variable names (nesting variable references within
+variable references) ... and also in figuring out how best to manage
+the more complex deletions in the tree.
+
+Anyone happen to have an implementation of a priority queue or an
+ordered list handy?  If not, I'll throw my (terribly written,
+painfully complex and broken, and utterly incomplete) code online
+somewhere for anyone who's willing to consider taking a look at it.
+
+--
+Poison [BLX]
+
+-------------------------------------------------------------------------
+Check out the new SourceForge.net Marketplace.
+It's the best place to buy or sell services for
+just about anything Open Source.
+http://sourceforge.net/services/buy/index.php
+_______________________________________________
+TinyFugue-discuss mailing list
+TinyFugue-discuss@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss
+
+From tinyfugue-discuss-bounces@lists.sourceforge.net  Tue Jul  1 21:48:47 2008
+Return-Path: <tinyfugue-discuss-bounces@lists.sourceforge.net>
+Received: from localhost
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(envelope-from tinyfugue-discuss-bounces@lists.sourceforge.net)
+Received: by localhost
+	id 187C6128421; Tue,  1 Jul 2008 21:48:46 -0400 (EDT)
+Received: from lists-outbound.sourceforge.net (lists-outbound.sourceforge.net [66.35.250.225])
+Received: from sc8-sf-list2-new.sourceforge.net (sc8-sf-list2-new-b.sourceforge.net [10.3.1.94])
+	by sc8-sf-spam2.sourceforge.net (Postfix) with ESMTP
+	id B4513120E7; Tue,  1 Jul 2008 18:48:44 -0700 (PDT)
+Received: from sc8-sf-mx1-b.sourceforge.net ([10.3.1.91]
+	helo=mail.sourceforge.net)
+	by sc8-sf-list2-new.sourceforge.net with esmtp (Exim 4.43)
+	id 1KDrSS-00030g-9e for TinyFugue-discuss@lists.sourceforge.net;
+	Tue, 01 Jul 2008 18:48:32 -0700
+Received: from nf-out-0910.google.com ([64.233.182.186])
+	by mail.sourceforge.net with esmtp (Exim 4.44) id 1KDrSb-0002CG-BZ
+	for TinyFugue-discuss@lists.sourceforge.net;
+	Tue, 01 Jul 2008 18:48:42 -0700
+Received: by nf-out-0910.google.com with SMTP id g16so43817nfd.2
+	for <TinyFugue-discuss@lists.sourceforge.net>;
+	Tue, 01 Jul 2008 18:48:40 -0700 (PDT)
+Received: by 10.210.73.12 with SMTP id v12mr6004122eba.101.1214963319960;
+	Tue, 01 Jul 2008 18:48:39 -0700 (PDT)
+Received: by 10.210.120.20 with HTTP; Tue, 1 Jul 2008 18:48:39 -0700 (PDT)
+Message-ID: <7d20977a0807011848h4b047b9fn21df42a109a12b07@mail.gmail.com>
+Date: Tue, 1 Jul 2008 18:48:39 -0700
+From: Korthrun <korthrun@gmail.com>
+To: TinyFugue-discuss@lists.sourceforge.net
+In-Reply-To: <c30988c30806132315j3f72b14bk4f4166d61b4718ad@mail.gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+References: <c30988c30806132315j3f72b14bk4f4166d61b4718ad@mail.gmail.com>
+Subject: Re: Binary Tree/Priority Queue
+X-BeenThere: tinyfugue-discuss@lists.sourceforge.net
+X-Mailman-Version: 2.1.8
+Precedence: list
+List-Id: Talk with other users about TF
+	<tinyfugue-discuss.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss>,
+	<mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=tinyfugue-discuss>
+List-Post: <mailto:tinyfugue-discuss@lists.sourceforge.net>
+List-Help: <mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss>,
+	<mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Sender: tinyfugue-discuss-bounces@lists.sourceforge.net
+Errors-To: tinyfugue-discuss-bounces@lists.sourceforge.net
+Reply-To: tinyfugue-discuss@lists.sourceforge.net
+
+On Fri, Jun 13, 2008 at 11:15 PM, Joshua Murphy <poisonbl@gmail.com> wrote:
+> I'm in need of a priority queue of strings of arbitrary length (any
+> legal variable data characters, including whitespace), and while I can
+> likely implement most of a binary tree for the job, I've run into
+> issues with dynamic variable names (nesting variable references within
+> variable references) ... and also in figuring out how best to manage
+> the more complex deletions in the tree.
+>
+> Anyone happen to have an implementation of a priority queue or an
+> ordered list handy?  If not, I'll throw my (terribly written,
+> painfully complex and broken, and utterly incomplete) code online
+> somewhere for anyone who's willing to consider taking a look at it.
+>
+> --
+> Poison [BLX]
+>
+> -------------------------------------------------------------------------
+> Check out the new SourceForge.net Marketplace.
+> It's the best place to buy or sell services for
+> just about anything Open Source.
+> http://sourceforge.net/services/buy/index.php
+> _______________________________________________
+> TinyFugue-discuss mailing list
+> TinyFugue-discuss@lists.sourceforge.net
+> https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss
+>
+foo_id = 12
+bar = foo
+/expr %{bar}_id
+returns 12
+I know that's only half of the whole dynamic variable thing, but there's that.
+
+Might be easier to do a hashmap implementation than to do full
+variable variables?
+
+But wtf do I know, I just use this thing to play MUD's. Sounds like
+some of you all are building nukes.
+
+Did you know that it's against the itunes licensing to use itunes for
+the development, design, manufacture or production of nuclear,
+missiles, or chemical or biological weapons?
+
+
+-- 
+() The ASCII Ribbon Campaign - against HTML Email,
+/\ vCards, and proprietary formats.
+
+-------------------------------------------------------------------------
+Sponsored by: SourceForge.net Community Choice Awards: VOTE NOW!
+Studies have shown that voting for your favorite open source project,
+along with a healthy diet, reduces your potential for chronic lameness
+and boredom. Vote Now at http://www.sourceforge.net/community/cca08
+_______________________________________________
+TinyFugue-discuss mailing list
+TinyFugue-discuss@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss
+
+From tinyfugue-discuss-bounces@lists.sourceforge.net  Sun Jul 20 17:06:09 2008
+Return-Path: <tinyfugue-discuss-bounces@lists.sourceforge.net>
+Received: from localhost
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(envelope-from tinyfugue-discuss-bounces@lists.sourceforge.net)
+Received: by localhost
+	id 40041128444; Sun, 20 Jul 2008 17:06:08 -0400 (EDT)
+Received: from lists-outbound.sourceforge.net (lists-outbound.sourceforge.net [66.35.250.225])
+Received: from sc8-sf-list2-new.sourceforge.net (sc8-sf-list2-new-b.sourceforge.net [10.3.1.94])
+	by sc8-sf-spam2.sourceforge.net (Postfix) with ESMTP
+	id 0043213774; Sun, 20 Jul 2008 14:06:03 -0700 (PDT)
+Received: from sc8-sf-mx1-b.sourceforge.net ([10.3.1.91]
+	helo=mail.sourceforge.net)
+	by sc8-sf-list2-new.sourceforge.net with esmtp (Exim 4.43)
+	id 1KKg6I-0000Rk-0l for TinyFugue-discuss@lists.sourceforge.net;
+	Sun, 20 Jul 2008 14:05:50 -0700
+Received: from rcmdxobspool2.cavtel.net ([67.62.218.107])
+	by mail.sourceforge.net with esmtp (Exim 4.44) id 1KKg6R-0007JL-QQ
+	for TinyFugue-discuss@lists.sourceforge.net;
+	Sun, 20 Jul 2008 14:06:01 -0700
+Received: from localhost (unknown [192.168.247.86])
+	by rcmdxobspool2.cavtel.net (Postfix) with ESMTP id EF774F8002
+	for <TinyFugue-discuss@lists.sourceforge.net>;
+	Sun, 20 Jul 2008 17:05:56 -0400 (EDT)
+X-Virus-Scanned: Debian amavisd-new at rcmdxob1.cavtel.net
+Received: from rcmdxob1.cavtel.net ([127.0.0.1])
+	by localhost (rcmdxob1.cavtel.net [127.0.0.1]) (amavisd-new, port 10026)
+	with ESMTP id Q9-tIkGA6xmB
+	for <TinyFugue-discuss@lists.sourceforge.net>;
+	Sun, 20 Jul 2008 17:05:50 -0400 (EDT)
+Received: from [192.168.99.144] (static-66-173-176-39.dsl.cavtel.net
+	[66.173.176.39])
+	by rcmdxob1.cavtel.net (Postfix) with ESMTP id E2087EAA40
+	for <TinyFugue-discuss@lists.sourceforge.net>;
+	Sun, 20 Jul 2008 17:05:49 -0400 (EDT)
+Mime-Version: 1.0
+Message-Id: <a06240800c4a955646475@[192.168.99.17]>
+Date: Sun, 20 Jul 2008 17:05:46 -0400
+To: TinyFugue-discuss@lists.sourceforge.net
+From: "Michael G. Schabert" <mikeride@localnet.com>
+Subject: telnet negotiation strings
+X-BeenThere: tinyfugue-discuss@lists.sourceforge.net
+X-Mailman-Version: 2.1.8
+Precedence: list
+List-Id: Talk with other users about TF
+	<tinyfugue-discuss.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss>,
+	<mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=tinyfugue-discuss>
+List-Post: <mailto:tinyfugue-discuss@lists.sourceforge.net>
+List-Help: <mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss>,
+	<mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Sender: tinyfugue-discuss-bounces@lists.sourceforge.net
+Errors-To: tinyfugue-discuss-bounces@lists.sourceforge.net
+Reply-To: tinyfugue-discuss@lists.sourceforge.net
+
+The main MUD I frequent is now using telnet negotiation code 102 for 
+sending some neat commands to the MUD, and for the MUD to send 
+extremely helpful information back to the client.
+
+http://www.aardwolf.com/blog/2008/07/10/telnet-negotiation-control-mud-client-interaction
+
+This would be extremely useful to be added to future versions of tinyfugue IMO.
+
+If there is already a way to do this, whether the sending or the 
+receiving part, I'd be interested in hearing it (other than %telopt).
+
+Thanks,
+Mike/Abe
+-- 
+Bikers don't *DO* taglines.
+
+-------------------------------------------------------------------------
+This SF.Net email is sponsored by the Moblin Your Move Developer's challenge
+Build the coolest Linux based applications with Moblin SDK & win great prizes
+Grand prize is a trip for two to an Open Source event anywhere in the world
+http://moblin-contest.org/redirect.php?banner_id=100&url=/
+_______________________________________________
+TinyFugue-discuss mailing list
+TinyFugue-discuss@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss
+
+From tinyfugue-discuss-bounces@lists.sourceforge.net  Mon Jul 21 00:33:25 2008
+Return-Path: <tinyfugue-discuss-bounces@lists.sourceforge.net>
+Received: from localhost
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(envelope-from tinyfugue-discuss-bounces@lists.sourceforge.net)
+Received: by localhost
+	id 35C7312844A; Mon, 21 Jul 2008 00:02:16 -0400 (EDT)
+Received: from lists-outbound.sourceforge.net (lists-outbound.sourceforge.net [66.35.250.225])
+Received: from sc8-sf-list2-new.sourceforge.net (sc8-sf-list2-new-b.sourceforge.net [10.3.1.94])
+	by sc8-sf-spam2.sourceforge.net (Postfix) with ESMTP
+	id 2D430121BB; Sun, 20 Jul 2008 21:02:12 -0700 (PDT)
+Received: from sc8-sf-mx2-b.sourceforge.net ([10.3.1.92]
+	helo=mail.sourceforge.net)
+	by sc8-sf-list2-new.sourceforge.net with esmtp (Exim 4.43)
+	id 1KKmb1-0006Hx-13 for TinyFugue-discuss@lists.sourceforge.net;
+	Sun, 20 Jul 2008 21:01:59 -0700
+Received: from yw-out-1718.google.com ([74.125.46.152])
+	by mail.sourceforge.net with esmtp (Exim 4.44) id 1KKmbA-0003dM-Oj
+	for TinyFugue-discuss@lists.sourceforge.net;
+	Sun, 20 Jul 2008 21:02:10 -0700
+Received: by yw-out-1718.google.com with SMTP id 6so529335ywa.82
+	for <TinyFugue-discuss@lists.sourceforge.net>;
+	Sun, 20 Jul 2008 21:02:08 -0700 (PDT)
+Received: by 10.150.139.15 with SMTP id m15mr3275608ybd.132.1216612927256;
+	Sun, 20 Jul 2008 21:02:07 -0700 (PDT)
+Received: by 10.151.78.10 with HTTP; Sun, 20 Jul 2008 21:02:07 -0700 (PDT)
+Message-ID: <c30988c30807202102u714a716bicb182a5db2540a48@mail.gmail.com>
+Date: Mon, 21 Jul 2008 00:02:07 -0400
+From: "Joshua Murphy" <poisonbl@gmail.com>
+To: "Michael G. Schabert" <mikeride@localnet.com>
+In-Reply-To: <a06240800c4a955646475@192.168.99.17>
+MIME-Version: 1.0
+Content-Disposition: inline
+References: <a06240800c4a955646475@192.168.99.17>
+Cc: TinyFugue-discuss@lists.sourceforge.net
+Subject: Re: telnet negotiation strings
+X-BeenThere: tinyfugue-discuss@lists.sourceforge.net
+X-Mailman-Version: 2.1.8
+Precedence: list
+List-Id: Talk with other users about TF
+	<tinyfugue-discuss.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss>,
+	<mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=tinyfugue-discuss>
+List-Post: <mailto:tinyfugue-discuss@lists.sourceforge.net>
+List-Help: <mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss>,
+	<mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Sender: tinyfugue-discuss-bounces@lists.sourceforge.net
+Errors-To: tinyfugue-discuss-bounces@lists.sourceforge.net
+Reply-To: tinyfugue-discuss@lists.sourceforge.net
+
+On Sun, Jul 20, 2008 at 5:05 PM, Michael G. Schabert
+<mikeride@localnet.com> wrote:
+> The main MUD I frequent is now using telnet negotiation code 102 for
+> sending some neat commands to the MUD, and for the MUD to send
+> extremely helpful information back to the client.
+>
+> http://www.aardwolf.com/blog/2008/07/10/telnet-negotiation-control-mud-client-interaction
+>
+> This would be extremely useful to be added to future versions of tinyfugue IMO.
+>
+> If there is already a way to do this, whether the sending or the
+> receiving part, I'd be interested in hearing it (other than %telopt).
+>
+> Thanks,
+> Mike/Abe
+> --
+> Bikers don't *DO* taglines.
+
+Iron Realms Entertainment has been using telnet option 200 for a long
+time in their muds to give a bit of extra info to the client (calling
+it ATCP). There's a patch to negotiate use of that somewhere around.
+It doesn't apply perfectly on the newest source, mostly from changes
+in ./configure, if I recall, but after I did a little hand work on
+that it came through fine. It could likely be adapted to Ardwolf's use
+of 102 fairly easily.
+
+http://forums.lusternia.com/index.php?showtopic=10144&mode=linear
+
+Needless to say, it does require a recompile of TF.
+
+-- 
+Poison [BLX]
+Joshua M. Murphy
+
+-------------------------------------------------------------------------
+This SF.Net email is sponsored by the Moblin Your Move Developer's challenge
+Build the coolest Linux based applications with Moblin SDK & win great prizes
+Grand prize is a trip for two to an Open Source event anywhere in the world
+http://moblin-contest.org/redirect.php?banner_id=100&url=/
+_______________________________________________
+TinyFugue-discuss mailing list
+TinyFugue-discuss@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss
+
+From tinyfugue-discuss-bounces@lists.sourceforge.net  Sat Aug  9 00:43:06 2008
+Return-Path: <tinyfugue-discuss-bounces@lists.sourceforge.net>
+Received: from localhost
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(envelope-from tinyfugue-discuss-bounces@lists.sourceforge.net)
+Received: by localhost
+	id A45F6128456; Sat,  9 Aug 2008 00:43:04 -0400 (EDT)
+Received: from lists-outbound.sourceforge.net (lists-outbound.sourceforge.net [66.35.250.225])
+Received: from sc8-sf-list2-new.sourceforge.net (sc8-sf-list2-new-b.sourceforge.net [10.3.1.94])
+	by sc8-sf-spam2.sourceforge.net (Postfix) with ESMTP
+	id CB3A513FB0; Fri,  8 Aug 2008 21:43:02 -0700 (PDT)
+Received: from sc8-sf-mx1-b.sourceforge.net ([10.3.1.91]
+	helo=mail.sourceforge.net)
+	by sc8-sf-list2-new.sourceforge.net with esmtp (Exim 4.43)
+	id 1KRgHt-0006yF-11 for TinyFugue-discuss@lists.sourceforge.net;
+	Fri, 08 Aug 2008 21:42:47 -0700
+Received: from fg-out-1718.google.com ([72.14.220.154])
+	by mail.sourceforge.net with esmtp (Exim 4.44) id 1KRgI4-0007Fo-El
+	for TinyFugue-discuss@lists.sourceforge.net;
+	Fri, 08 Aug 2008 21:42:56 -0700
+Received: by fg-out-1718.google.com with SMTP id d23so626194fga.32
+	for <TinyFugue-discuss@lists.sourceforge.net>;
+	Fri, 08 Aug 2008 21:42:55 -0700 (PDT)
+Received: by 10.86.50.8 with SMTP id x8mr4106440fgx.30.1218256975080;
+	Fri, 08 Aug 2008 21:42:55 -0700 (PDT)
+Received: by 10.86.78.19 with HTTP; Fri, 8 Aug 2008 21:42:55 -0700 (PDT)
+Message-ID: <ba45601b0808082142j5fc861bej10f4f15f26fda418@mail.gmail.com>
+Date: Sat, 9 Aug 2008 00:42:55 -0400
+From: doug <emudoug@gmail.com>
+To: TinyFugue-discuss@lists.sourceforge.net
+MIME-Version: 1.0
+Content-Disposition: inline
+Subject: Tinyfugue compilation issues
+X-BeenThere: tinyfugue-discuss@lists.sourceforge.net
+X-Mailman-Version: 2.1.8
+Precedence: list
+List-Id: Talk with other users about TF
+	<tinyfugue-discuss.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss>,
+	<mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=tinyfugue-discuss>
+List-Post: <mailto:tinyfugue-discuss@lists.sourceforge.net>
+List-Help: <mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss>,
+	<mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Sender: tinyfugue-discuss-bounces@lists.sourceforge.net
+Errors-To: tinyfugue-discuss-bounces@lists.sourceforge.net
+Reply-To: tinyfugue-discuss@lists.sourceforge.net
+
+Hello, I just got myself a shiny new mac mini and went to install tf
+-- it gets down to signals.c and seems to have some big time issues
+with
+typedef RETSIGTYPE (SigHandler)(int sig);
+I can't seem to find any good workaround for this, though. Any tips?
+
+(in particular, here is the first error:
+signals.c:72: error: 'RETSIGTYPE' declared as function returning a function
+signals.c:72: warning: parameter names (without types) in function declaration
+
+Thanks!
+
+-------------------------------------------------------------------------
+This SF.Net email is sponsored by the Moblin Your Move Developer's challenge
+Build the coolest Linux based applications with Moblin SDK & win great prizes
+Grand prize is a trip for two to an Open Source event anywhere in the world
+http://moblin-contest.org/redirect.php?banner_id=100&url=/
+_______________________________________________
+TinyFugue-discuss mailing list
+TinyFugue-discuss@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss
+
+From tinyfugue-discuss-bounces@lists.sourceforge.net  Sat Sep  6 15:36:00 2008
+Return-Path: <tinyfugue-discuss-bounces@lists.sourceforge.net>
+Received: from localhost
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(envelope-from tinyfugue-discuss-bounces@lists.sourceforge.net)
+Received: by localhost
+	id 866F91281BC; Sat,  6 Sep 2008 15:35:59 -0400 (EDT)
+Received: from lists-outbound.sourceforge.net (lists-outbound.sourceforge.net [66.35.250.225])
+Received: from sc8-sf-list2-new.sourceforge.net (sc8-sf-list2-new-b.sourceforge.net [10.3.1.94])
+	by sc8-sf-spam2.sourceforge.net (Postfix) with ESMTP
+	id 193AE12C01; Sat,  6 Sep 2008 12:35:57 -0700 (PDT)
+Received: from sc8-sf-mx2-b.sourceforge.net ([10.3.1.92]
+	helo=mail.sourceforge.net)
+	by sc8-sf-list2-new.sourceforge.net with esmtp (Exim 4.43)
+	id 1Kc3ZO-0000GO-Vb for tinyfugue-discuss@lists.sourceforge.net;
+	Sat, 06 Sep 2008 12:35:43 -0700
+Received: from qb-out-1314.google.com ([72.14.204.169])
+	by mail.sourceforge.net with esmtp (Exim 4.44) id 1Kc3Za-0008UO-8T
+	for tinyfugue-discuss@lists.sourceforge.net;
+	Sat, 06 Sep 2008 12:35:55 -0700
+Received: by qb-out-1314.google.com with SMTP id q14so1663968qbq.32
+	for <tinyfugue-discuss@lists.sourceforge.net>;
+	Sat, 06 Sep 2008 12:35:53 -0700 (PDT)
+Received: by 10.103.23.4 with SMTP id a4mr5060874muj.0.1220729752104;
+	Sat, 06 Sep 2008 12:35:52 -0700 (PDT)
+Received: by 10.103.243.17 with HTTP; Sat, 6 Sep 2008 12:35:52 -0700 (PDT)
+Message-ID: <15983eb30809061235k4136b750r702e230a46acd5e1@mail.gmail.com>
+Date: Sat, 6 Sep 2008 15:35:52 -0400
+From: onno3940@gmail.com
+To: tinyfugue-discuss@lists.sourceforge.net
+MIME-Version: 1.0
+Subject: python-tf patch
+X-BeenThere: tinyfugue-discuss@lists.sourceforge.net
+X-Mailman-Version: 2.1.8
+Precedence: list
+List-Id: Talk with other users about TF
+	<tinyfugue-discuss.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss>,
+	<mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=tinyfugue-discuss>
+List-Post: <mailto:tinyfugue-discuss@lists.sourceforge.net>
+List-Help: <mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss>,
+	<mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: multipart/mixed; boundary="===============1186639110=="
+Sender: tinyfugue-discuss-bounces@lists.sourceforge.net
+Errors-To: tinyfugue-discuss-bounces@lists.sourceforge.net
+Reply-To: tinyfugue-discuss@lists.sourceforge.net
+
+--===============1186639110==
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_25154_10287658.1220729752096"
+
+------=_Part_25154_10287658.1220729752096
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+I'm having trouble configuring tf that's patched to embed python - as found
+on http://sizer99.com/tf/. <http://sizer99.com/tf/> When I configure the
+basic tf50b8 config.log gives me warnings about conflicting types for
+built-in functions like strstr, strftime, h_errno, etc. The configure
+finishes, however, and the subsequent make and make install work fine, as
+does the program.
+
+When i configure with the patched tf_python I get the same 'conflicting
+types' messages but ./configure gets hung up on it:
+
+configure:8163: checking for strstr
+configure:8220: gcc -o conftest -g -O2 -DTFPYTHON
+-I/Library/Frameworks/Python.framework/Versions/2.5/include/python2.5
+-Lpcre-2.08 conftest.c -lssl -lcrypto -lpython2.5 >&5
+conftest.c:69: warning: conflicting types for built-in function 'strstr'
+/usr/bin/ld: warning -L: directory name (pcre-2.08) does not exist
+/usr/bin/ld: can't locate file for: -lpython2.5
+collect2: ld returned 1 exit status
+configure:8226: $? = 1
+configure: failed program was:
+| /* confdefs.h. */
+
+The configure script exits with
+
+checking for strstr... no
+configure: error: Missing required standard function.
+
+I'm running Mac OS 10.4.11 and python 2.5.2. I can provide any of the
+config.logs if that would help.
+
+------=_Part_25154_10287658.1220729752096
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+<div dir="ltr">I&#39;m having trouble configuring tf that&#39;s patched to embed python - as found on <a href="http://sizer99.com/tf/" target="_blank">http://sizer99.com/tf/.</a>
+When I configure the basic tf50b8 config.log gives me warnings about
+conflicting types for built-in functions like strstr, strftime,
+h_errno, etc. The configure finishes, however, and the subsequent make
+and make install work fine, as does the program.<br>
+&nbsp;<br>
+When i configure with the patched tf_python I get the same &#39;conflicting types&#39; messages but ./configure gets hung up on it: &nbsp;<br>
+&nbsp;<br>
+configure:8163: checking for strstr&nbsp;<br>
+configure:8220: gcc -o conftest -g -O2 -DTFPYTHON
+-I/Library/Frameworks/Python.<div dir="ltr">framework/Versions/2.5/include/python2.5
+-Lpcre-2.08 conftest.c -lssl -lcrypto -lpython2.5 &gt;&amp;5&nbsp;<br>
+conftest.c:69: warning: conflicting types for built-in function &#39;strstr&#39;&nbsp;<br>
+/usr/bin/ld: warning -L: directory name (pcre-2.08) does not exist&nbsp;<br>
+/usr/bin/ld: can&#39;t locate file for: -lpython2.5&nbsp;<br>
+collect2: ld returned 1 exit status&nbsp;<br>
+configure:8226: $? = 1&nbsp;<br>
+configure: failed program was:&nbsp;<br>
+| /* confdefs.h.  */&nbsp;<br>
+&nbsp;<br>
+The configure script exits with &nbsp;<br>
+&nbsp;<br>
+checking for strstr... no&nbsp;<br>
+configure: error: Missing required standard function.<br><br>
+I&#39;m running Mac OS 10.4.11 and python <a href="http://2.5.2./" target="_blank">2.5.2.</a>  I can provide any of the config.logs if that would help. 
+			</div></div>
+
+------=_Part_25154_10287658.1220729752096--
+
+
+--===============1186639110==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+-------------------------------------------------------------------------
+This SF.Net email is sponsored by the Moblin Your Move Developer's challenge
+Build the coolest Linux based applications with Moblin SDK & win great prizes
+Grand prize is a trip for two to an Open Source event anywhere in the world
+http://moblin-contest.org/redirect.php?banner_id=100&url=/
+--===============1186639110==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+TinyFugue-discuss mailing list
+TinyFugue-discuss@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss
+
+--===============1186639110==--
+
+From tinyfugue-discuss-bounces@lists.sourceforge.net  Sat Sep 20 21:23:36 2008
+Return-Path: <tinyfugue-discuss-bounces@lists.sourceforge.net>
+Received: from localhost
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(envelope-from tinyfugue-discuss-bounces@lists.sourceforge.net)
+Received: by localhost
+	id 50A9C128207; Sat, 20 Sep 2008 21:23:35 -0400 (EDT)
+Received: from lists.sourceforge.net (lists.sourceforge.net [216.34.181.88])
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(Client did not present a certificate)
+Received: from localhost ([127.0.0.1] helo=sfs-ml-4.v29.ch3.sourceforge.com)
+	by 335xhf1.ch3.sourceforge.com with esmtp (Exim 4.69)
+	(envelope-from <tinyfugue-discuss-bounces@lists.sourceforge.net>)
+	id 1KhDev-000156-Ni; Sun, 21 Sep 2008 01:22:45 +0000
+Received: from sfi-mx-3.v28.ch3.sourceforge.com ([172.29.28.123]
+	helo=mx.sourceforge.net)
+	by 335xhf1.ch3.sourceforge.com with esmtp (Exim 4.69)
+	(envelope-from <onno3940@gmail.com>) id 1KhDev-000151-4U
+	for tinyfugue-discuss@lists.sourceforge.net;
+	Sun, 21 Sep 2008 01:22:45 +0000
+Received-SPF: pass (3b2kzd1.ch3.sourceforge.com: domain of gmail.com
+	designates 209.85.128.188 as permitted sender)
+	client-ip=209.85.128.188; envelope-from=onno3940@gmail.com;
+	helo=fk-out-0910.google.com; 
+Received: from fk-out-0910.google.com ([209.85.128.188])
+	by 3b2kzd1.ch3.sourceforge.com with esmtp (Exim 4.69)
+	id 1KhDek-0000Un-9P for tinyfugue-discuss@lists.sourceforge.net;
+	Sun, 21 Sep 2008 01:22:45 +0000
+Received: by fk-out-0910.google.com with SMTP id 18so1077544fkq.10
+	for <tinyfugue-discuss@lists.sourceforge.net>;
+	Sat, 20 Sep 2008 18:22:31 -0700 (PDT)
+Received: by 10.103.249.19 with SMTP id b19mr1511007mus.50.1221960150375;
+	Sat, 20 Sep 2008 18:22:30 -0700 (PDT)
+Received: by 10.103.243.17 with HTTP; Sat, 20 Sep 2008 18:22:30 -0700 (PDT)
+Message-ID: <15983eb30809201822gdc63f2cu6df9873d0874fe09@mail.gmail.com>
+Date: Sat, 20 Sep 2008 21:22:30 -0400
+From: onno3940@gmail.com
+To: tinyfugue-discuss@lists.sourceforge.net
+MIME-Version: 1.0
+X-Headers-End: 1KhDek-0000Un-9P
+Subject: an application of /recall
+X-BeenThere: tinyfugue-discuss@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: Talk with other users about TF
+	<tinyfugue-discuss.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss>,
+	<mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=tinyfugue-discuss>
+List-Post: <mailto:tinyfugue-discuss@lists.sourceforge.net>
+List-Help: <mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss>,
+	<mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: multipart/mixed; boundary="===============6759048388829461859=="
+Errors-To: tinyfugue-discuss-bounces@lists.sourceforge.net
+Reply-To: tinyfugue-discuss@lists.sourceforge.net
+
+--===============6759048388829461859==
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_33435_22280699.1221960150357"
+
+------=_Part_33435_22280699.1221960150357
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+Here's my current project.  I'd like to see if the line preceding some line
+of text is blank.  Simple right?  The character sequence $^ should match an
+empty line, so my code looks like this:
+
+/def look_back = /recall -q -mregexp - -1 ^$
+/def -t'trigger text here' look_test = \
+    /look_back %; \
+        /IF /test ({?}) %; \
+            /THEN /echo success!! %; \
+        /ENDIF
+
+
+Now the extra macro 'look_back' is unnecessary, but I'm including it for
+some clarity.  I'm under the impression that '/recall' returns the number of
+matched lines, so I should be able to do this:
+
+/def -t'hello' look_test =
+        /IF /test (?(/recall -q -mregexp - -1 ^$)) %; \
+            /THEN /echo success!! %; \
+        /ENDIF
+
+
+I must be missing something, because neither of these work.  Looking at
+smaller components of the same problem, if I echo a blank line to the world
+stream (with /echo -w) and then type "/recall -mregexp - -1 ^$" into the
+command line I get what I would expect,
+
+
+/echo -w
++ USER: /echo -w
+
+/recall -mregexp - -1 ^$
++ USER: /recall -mregexp - -1 ^$
+================ Recall start ================
+
+================= Recall end =================
+
+
+... one matched empty line.  If, however, I plug the same command into a
+macro, call it 'look_back', and then test for a blank line I get this:
+
+
+/look_back
++ USER: /look_back
+++ /look_back: /recall -q -mregexp - -1 ^$
+% macro not defined:
+++ /look_back: $ -->
+
+
+I'm assuming this is at the root of the problem, and not my use of the /IF
+command (or substitution, because I've tried that every which way).
+
+------=_Part_33435_22280699.1221960150357
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+<div dir="ltr">Here&#39;s my current project. &nbsp;I&#39;d like to see if the line preceding some
+line of text is blank. &nbsp;Simple right? &nbsp;The character sequence $^ should
+match an empty line, so
+my code looks like this:<br><br>/def look_back = /recall -q -mregexp - -1 ^$<br>/def -t&#39;trigger text here&#39; look_test = \<br>&nbsp; &nbsp; /look_back %; \<br>&nbsp; &nbsp; &nbsp; &nbsp; /IF /test ({?}) %;  \<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /THEN /echo success!! %; \ <br>
+&nbsp; &nbsp; &nbsp; &nbsp; /ENDIF<br><br><br>Now
+the extra macro &#39;look_back&#39; is unnecessary, but I&#39;m including it for
+some clarity. &nbsp;I&#39;m under the impression that &#39;/recall&#39; returns the
+number of matched lines, so I should be able to do this:<br><br>/def -t&#39;hello&#39; look_test = <br>&nbsp; &nbsp; &nbsp; &nbsp; /IF /test (?(/recall -q -mregexp - -1 ^$)) %; \<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /THEN /echo success!! %; \<br>&nbsp; &nbsp; &nbsp; &nbsp; /ENDIF<br>
+<br><br>I must be missing something, because neither of these work. &nbsp;Looking at
+smaller components of the same problem, if I echo a blank line to the
+world stream (with /echo -w) and then type &quot;/recall -mregexp - -1 ^$&quot;
+into the command line I get what I would expect,<br><br><br>/echo -w<br>+ USER: /echo -w<br><br>/recall -mregexp - -1 ^$<br>+ USER: /recall -mregexp - -1 ^$<br>================ Recall start ================<br><br>================= Recall end =================<br>
+<br><br>...
+one matched empty line. &nbsp;If, however, I plug the same command into a
+macro, call it &#39;look_back&#39;, and then test for a blank line I get this:<br><br><br>/look_back<br>+ USER: /look_back<br>++ /look_back: /recall -q -mregexp - -1 ^$<br>% macro not defined: <br>++ /look_back: $ --&gt; <br>
+<br><br>I&#39;m
+assuming this is at the root of the problem, and not my use of the /IF
+command (or substitution, because I&#39;ve tried that every which way).<br></div>
+
+------=_Part_33435_22280699.1221960150357--
+
+
+--===============6759048388829461859==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+-------------------------------------------------------------------------
+This SF.Net email is sponsored by the Moblin Your Move Developer's challenge
+Build the coolest Linux based applications with Moblin SDK & win great prizes
+Grand prize is a trip for two to an Open Source event anywhere in the world
+http://moblin-contest.org/redirect.php?banner_id=100&url=/
+--===============6759048388829461859==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+TinyFugue-discuss mailing list
+TinyFugue-discuss@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss
+
+--===============6759048388829461859==--
+
+From tinyfugue-discuss-bounces@lists.sourceforge.net  Sat Sep 20 22:56:52 2008
+Return-Path: <tinyfugue-discuss-bounces@lists.sourceforge.net>
+Received: from localhost
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(envelope-from tinyfugue-discuss-bounces@lists.sourceforge.net)
+Received: by localhost
+	id 5100C128208; Sat, 20 Sep 2008 22:56:52 -0400 (EDT)
+Received: from lists.sourceforge.net (lists.sourceforge.net [216.34.181.88])
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(Client did not present a certificate)
+Received: from localhost ([127.0.0.1] helo=sfs-ml-3.v29.ch3.sourceforge.com)
+	by h25xhf1.ch3.sourceforge.com with esmtp (Exim 4.69)
+	(envelope-from <tinyfugue-discuss-bounces@lists.sourceforge.net>)
+	id 1KhF7N-000662-NG; Sun, 21 Sep 2008 02:56:13 +0000
+Received: from sfi-mx-1.v28.ch3.sourceforge.com ([172.29.28.121]
+	helo=mx.sourceforge.net)
+	by h25xhf1.ch3.sourceforge.com with esmtp (Exim 4.69)
+	(envelope-from <mark@mivok.net>) id 1KhF7M-00065x-IT
+	for tinyfugue-discuss@lists.sourceforge.net;
+	Sun, 21 Sep 2008 02:56:12 +0000
+Received-SPF: pass (29vjzd1.ch3.sourceforge.com: domain of mivok.net
+	designates 67.207.148.53 as permitted sender)
+	client-ip=67.207.148.53; envelope-from=mark@mivok.net;
+	helo=eris.mivok.net; 
+Received: from eris.mivok.net ([67.207.148.53])
+	by 29vjzd1.ch3.sourceforge.com with esmtp (Exim 4.69)
+	id 1KhF74-0002u5-2u for tinyfugue-discuss@lists.sourceforge.net;
+	Sun, 21 Sep 2008 02:56:12 +0000
+Received: from localhost (dynamic-acs-72-23-73-109.zoominternet.net
+	[72.23.73.109])
+	by eris.mivok.net (Postfix) with ESMTPSA id E224168085
+	for <tinyfugue-discuss@lists.sourceforge.net>;
+	Sun, 21 Sep 2008 02:36:47 +0000 (UTC)
+Date: Sat, 20 Sep 2008 22:36:44 -0400
+From: Mark Harrison <mark@mivok.net>
+To: tinyfugue-discuss@lists.sourceforge.net
+Message-ID: <20080921023643.GA13976@rigel.Belkin>
+References: <15983eb30809201822gdc63f2cu6df9873d0874fe09@mail.gmail.com>
+MIME-Version: 1.0
+In-Reply-To: <15983eb30809201822gdc63f2cu6df9873d0874fe09@mail.gmail.com>
+User-Agent: Mutt/1.5.18 (2008-05-17)
+X-Headers-End: 1KhF74-0002u5-2u
+Subject: Re: an application of /recall
+X-BeenThere: tinyfugue-discuss@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: Talk with other users about TF
+	<tinyfugue-discuss.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss>,
+	<mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=tinyfugue-discuss>
+List-Post: <mailto:tinyfugue-discuss@lists.sourceforge.net>
+List-Help: <mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss>,
+	<mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: multipart/mixed; boundary="===============0087180495132496007=="
+Errors-To: tinyfugue-discuss-bounces@lists.sourceforge.net
+Reply-To: tinyfugue-discuss@lists.sourceforge.net
+
+
+--===============0087180495132496007==
+Content-Type: multipart/signed; micalg=pgp-sha1;
+	protocol="application/pgp-signature"; boundary="fUYQa+Pmc3FrFX/N"
+Content-Disposition: inline
+
+
+--fUYQa+Pmc3FrFX/N
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+> /def look_back =3D /recall -q -mregexp - -1 ^$
+
+The $ is being expanded as part of a macro substitution, although there is =
+no
+macro following, which is why you get the macro not defined error. The
+following macro appears to do what you want in my quick tests:
+
+/def look_back =3D /recall -q -mregexp - -1 ^$$
+
+(/help substitution explains this. Look at the Macro substitution and Dollar
+compression sections)
+
+Hope that helps,
+
+Mark
+
+--=20
+Mark Harrison
+
+--fUYQa+Pmc3FrFX/N
+Content-Type: application/pgp-signature
+Content-Disposition: inline
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.6 (GNU/Linux)
+
+iD8DBQFI1bM7W4/sWJvQjhMRAmEWAJ9RhtuHa/4SeEx0rGuKszqRIoEEAQCdHR8c
+0BUd5nBhbr7GqK0N0dCLYfw=
+=mfeQ
+-----END PGP SIGNATURE-----
+
+--fUYQa+Pmc3FrFX/N--
+
+
+--===============0087180495132496007==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+-------------------------------------------------------------------------
+This SF.Net email is sponsored by the Moblin Your Move Developer's challenge
+Build the coolest Linux based applications with Moblin SDK & win great prizes
+Grand prize is a trip for two to an Open Source event anywhere in the world
+http://moblin-contest.org/redirect.php?banner_id=100&url=/
+--===============0087180495132496007==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+TinyFugue-discuss mailing list
+TinyFugue-discuss@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss
+
+--===============0087180495132496007==--
+
+From tinyfugue-discuss-bounces@lists.sourceforge.net  Thu Oct  2 20:58:59 2008
+Return-Path: <tinyfugue-discuss-bounces@lists.sourceforge.net>
+Received: from localhost
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(envelope-from tinyfugue-discuss-bounces@lists.sourceforge.net)
+Received: by localhost
+	id A5FD7128CFE; Thu,  2 Oct 2008 19:07:01 -0400 (EDT)
+Received: from lists.sourceforge.net (lists.sourceforge.net [216.34.181.88])
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(Client did not present a certificate)
+Received: from localhost ([127.0.0.1] helo=sfs-ml-2.v29.ch3.sourceforge.com)
+	by 3yr0jf1.ch3.sourceforge.com with esmtp (Exim 4.69)
+	(envelope-from <tinyfugue-discuss-bounces@lists.sourceforge.net>)
+	id 1KlXFc-0001pZ-70; Thu, 02 Oct 2008 23:06:28 +0000
+Received: from sfi-mx-3.v28.ch3.sourceforge.com ([172.29.28.123]
+	helo=mx.sourceforge.net)
+	by 3yr0jf1.ch3.sourceforge.com with esmtp (Exim 4.69)
+	(envelope-from <onno3940@gmail.com>) id 1KlXFa-0001pO-Jj
+	for tinyfugue-discuss@lists.sourceforge.net;
+	Thu, 02 Oct 2008 23:06:26 +0000
+Received-SPF: pass (3b2kzd1.ch3.sourceforge.com: domain of gmail.com
+	designates 66.249.92.174 as permitted sender)
+	client-ip=66.249.92.174; envelope-from=onno3940@gmail.com;
+	helo=ug-out-1314.google.com; 
+Received: from ug-out-1314.google.com ([66.249.92.174])
+	by 3b2kzd1.ch3.sourceforge.com with esmtp (Exim 4.69)
+	id 1KlXBO-0001oY-AV for tinyfugue-discuss@lists.sourceforge.net;
+	Thu, 02 Oct 2008 23:06:26 +0000
+Received: by ug-out-1314.google.com with SMTP id z36so1481085uge.17
+	for <tinyfugue-discuss@lists.sourceforge.net>;
+	Thu, 02 Oct 2008 16:02:05 -0700 (PDT)
+Received: by 10.102.218.6 with SMTP id q6mr123064mug.127.1222987924578;
+	Thu, 02 Oct 2008 15:52:04 -0700 (PDT)
+Received: by 10.103.243.17 with HTTP; Thu, 2 Oct 2008 15:52:04 -0700 (PDT)
+Message-ID: <15983eb30810021552l17eaada9k11da762ec74d9820@mail.gmail.com>
+Date: Thu, 2 Oct 2008 18:52:04 -0400
+From: onno3940@gmail.com
+To: tinyfugue-discuss@lists.sourceforge.net
+MIME-Version: 1.0
+X-Headers-End: 1KlXBO-0001oY-AV
+Subject: lists, sets, text files
+X-BeenThere: tinyfugue-discuss@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: Talk with other users about TF
+	<tinyfugue-discuss.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss>,
+	<mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=tinyfugue-discuss>
+List-Post: <mailto:tinyfugue-discuss@lists.sourceforge.net>
+List-Help: <mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss>,
+	<mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: multipart/mixed; boundary="===============6029219869178734661=="
+Errors-To: tinyfugue-discuss-bounces@lists.sourceforge.net
+Reply-To: tinyfugue-discuss@lists.sourceforge.net
+
+--===============6029219869178734661==
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_10414_1148804.1222987924578"
+
+------=_Part_10414_1148804.1222987924578
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+I have a file that looks like this:
+
+health 2352645 4572345 462345
+mana 123 2 42 434 252
+adr 1231 2314 234 234 123
+...
+empty 23428 29832 3857 2352645 4572345 462345
+
+My goal is to test elements of one line for membership in another line.
+For example, I might ask if any of the members of the health set are also in
+the empty set.  I've written some code for it and it seems to work, but it's
+really bloated. Moreover, while gives me what i want currently, if I alter
+it a bit I find some strange behavior, so it'd be nice to fix that.
+
+Firstly, can the code below be made more efficient?
+
+;; read the file and pass it along
+/def erm = /readfile ~/Documents/Programming_Projects/pot_script %|
+/list_compare
+
+;; The below finds the line beginning with "health" and then
+;; passes each of its numbers to /empty_compare with the
+;; /mapcar function.
+/def list_compare = \
+/let _line=%; \
+/let _pattern ^health %; \
+/while (tfread(_line) >= 0) \
+/if (regmatch(_pattern,_line)) \
+/mapcar /empty_compare %{PR} %; \
+/endif %; \
+/done
+
+;; /empty_compare first grabs the numbers after the line
+;; beginning with "empty", and then passes each number
+;; (word) to be compared to whatever was passed to
+;; /empty_compare
+/def list_items_of = /eval /maplist /car %{*}
+/def empty_compare = \
+/let _arg %{1} %; \
+/let _line %; \
+/let _handle $[tfopen('~/Documents/Programming_Projects/pot_script','r')] %;
+\
+/while (tfread(_handle,_line) >= 0) \
+/let _pattern ^empty %; \
+/if (regmatch(_pattern,_line)) \
+/test tfclose(_handle) %; \
+/set empty_list %{PR} %; \
+/break %; \
+/endif %; \
+/done %; \
+/list_items_of %{empty_list} %| \
+/let _word=%; \
+/while (tfread(_word) > 0) \
+/if (_arg == _word) \
+/echo %_word success!!! %; \
+/endif %; \
+/done
+
+Again, the above works, but it's far from elegant.  Also, if i run
+/empty_compare separately the while loop doesn't terminate.  I don't know
+how to fix that yet.
+
+Finally, there's this oddity:
+
+/let _word=%; \
+/while (tfread(_word) > 0) \
+/if (_arg == _word) \
+/echo %_word success!!! %; \
+/else /echo nope %; \
+/endif %; \
+/done
+
+This is the final while/if loop with an added else statement.  If I leave it
+out the final return is,
+
+2352645 success!!!
+4572345 success!!!
+462345 success!!!
+
+if include the else statment:
+
+nope
+nope
+nope
+nope
+nope
+nope
+nope
+nope
+nope
+
+------=_Part_10414_1148804.1222987924578
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+<div dir="ltr">I have a file that looks like this:&nbsp;<br>
+&nbsp;<br>
+health 2352645 4572345 462345&nbsp;<br>
+mana 123 2 42 434 252&nbsp;<br>
+adr 1231 2314 234 234 123&nbsp;<br>
+...&nbsp;<br>
+empty 23428 29832 3857 2352645 4572345 462345&nbsp;<br>
+&nbsp;<br>
+My goal is to test elements of one line for membership in another line.&nbsp;&nbsp; For example, I might ask if any of the members of the health set are also in the empty set.&nbsp; I&#39;ve written some code for it and it seems to work, but
+it&#39;s really bloated. Moreover, while gives me what i want currently, if I alter it
+a bit I find some strange behavior, so it&#39;d be nice to fix that. &nbsp;<br><br>Firstly, can the code below be made more efficient? <br><br>
+;; read the file and pass it along&nbsp;<br>
+/def erm = /readfile ~/Documents/Programming_Projects/pot_script %| /list_compare&nbsp;<br>
+&nbsp;<br>
+;; The below finds the line beginning with &quot;health&quot; and then <br>;; passes each of its numbers to /empty_compare with the &nbsp;<br>
+;; /mapcar function.<br>
+/def list_compare = \&nbsp;<br>
+	/let _line=%; \&nbsp;<br>
+	/let _pattern ^health %; \&nbsp;<br>
+		/while (tfread(_line) &gt;= 0) \&nbsp;<br>
+			/if (regmatch(_pattern,_line)) \&nbsp;<br>
+				/mapcar /empty_compare %{PR} %; \&nbsp;<br>
+			/endif %; \&nbsp;<br>
+		/done&nbsp;<br>
+&nbsp;<br>
+;; /empty_compare first grabs the numbers after the line &nbsp;<br>
+;; beginning with &quot;empty&quot;, and then passes each number &nbsp;<br>
+;; (word) to be compared to whatever was passed to &nbsp;<br>
+;; /empty_compare&nbsp;<br>
+/def list_items_of = /eval /maplist /car %{*}<br>
+/def empty_compare = \&nbsp;<br>
+	/let _arg %{1} %; \&nbsp;<br>
+		/let _line %; \&nbsp;<br>
+		/let _handle $[tfopen(&#39;~/Documents/Programming_Projects/pot_script&#39;,&#39;r&#39;)] %; \&nbsp;<br>
+			/while (tfread(_handle,_line) &gt;= 0) \&nbsp;<br>
+				/let _pattern ^empty %; \&nbsp;<br>
+				/if (regmatch(_pattern,_line)) \&nbsp;<br>
+					/test tfclose(_handle) %; \&nbsp;<br>
+					/set empty_list %{PR} %; \&nbsp;<br>
+					/break %; \&nbsp;<br>
+				/endif %; \&nbsp;<br>
+			/done %; \&nbsp;<br>
+	/list_items_of %{empty_list} %| \&nbsp;<br>
+		/let _word=%; \&nbsp;<br>
+		/while (tfread(_word) &gt; 0) \&nbsp;<br>
+			/if (_arg == _word) \&nbsp;<br>
+			/echo %_word success!!! %; \&nbsp;<br>
+			/endif %; \&nbsp;<br>
+		/done&nbsp;<br>
+<br>Again, the above works, but it&#39;s far from elegant.&nbsp; Also, if i run
+/empty_compare separately the while loop doesn&#39;t terminate.&nbsp; I don&#39;t
+know how to fix that yet. <br><br>Finally, there&#39;s this oddity:<br><br>/let _word=%; \&nbsp;<br>
+		/while (tfread(_word) &gt; 0) \&nbsp;<br>
+			/if (_arg == _word) \&nbsp;<br>
+			/echo %_word success!!! %; \&nbsp;<br>
+			/else /echo nope %; \&nbsp;<br>
+			/endif %; \&nbsp;<br>
+		/done&nbsp;<br>
+&nbsp;<br>
+This is the final while/if loop with an added else statement.&nbsp; If I leave it out the final return is,<br><br>2352645 success!!!<br>4572345 success!!!<br>462345 success!!!<br><br>if include the else statment:<br><br>nope<br>
+nope<br>nope<br>nope<br>nope<br>nope<br>nope<br>nope<br>nope<br><br><br></div>
+
+------=_Part_10414_1148804.1222987924578--
+
+
+--===============6029219869178734661==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+-------------------------------------------------------------------------
+This SF.Net email is sponsored by the Moblin Your Move Developer's challenge
+Build the coolest Linux based applications with Moblin SDK & win great prizes
+Grand prize is a trip for two to an Open Source event anywhere in the world
+http://moblin-contest.org/redirect.php?banner_id=100&url=/
+--===============6029219869178734661==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+TinyFugue-discuss mailing list
+TinyFugue-discuss@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss
+
+--===============6029219869178734661==--
+
+From tinyfugue-discuss-bounces@lists.sourceforge.net  Thu Oct  2 21:35:40 2008
+Return-Path: <tinyfugue-discuss-bounces@lists.sourceforge.net>
+Received: from localhost
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(envelope-from tinyfugue-discuss-bounces@lists.sourceforge.net)
+Received: by localhost
+	id 6F963128CC6; Thu,  2 Oct 2008 18:55:49 -0400 (EDT)
+Received: from lists.sourceforge.net (lists.sourceforge.net [216.34.181.88])
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(Client did not present a certificate)
+Received: from localhost ([127.0.0.1] helo=sfs-ml-3.v29.ch3.sourceforge.com)
+	by h25xhf1.ch3.sourceforge.com with esmtp (Exim 4.69)
+	(envelope-from <tinyfugue-discuss-bounces@lists.sourceforge.net>)
+	id 1KlX4K-0000VA-RF; Thu, 02 Oct 2008 22:54:48 +0000
+Received: from sfi-mx-4.v28.ch3.sourceforge.com ([172.29.28.124]
+	helo=mx.sourceforge.net)
+	by h25xhf1.ch3.sourceforge.com with esmtp (Exim 4.69)
+	(envelope-from <onno3940@gmail.com>) id 1KlX4J-0000V5-IL
+	for tinyfugue-discuss@lists.sourceforge.net;
+	Thu, 02 Oct 2008 22:54:47 +0000
+Received-SPF: pass (1b2kzd1.ch3.sourceforge.com: domain of gmail.com
+	designates 209.85.134.186 as permitted sender)
+	client-ip=209.85.134.186; envelope-from=onno3940@gmail.com;
+	helo=mu-out-0910.google.com; 
+Received: from mu-out-0910.google.com ([209.85.134.186])
+	by 1b2kzd1.ch3.sourceforge.com with esmtp (Exim 4.69)
+	id 1KlX1j-0001TU-8j for tinyfugue-discuss@lists.sourceforge.net;
+	Thu, 02 Oct 2008 22:54:47 +0000
+Received: by mu-out-0910.google.com with SMTP id w1so1637079mue.2
+	for <tinyfugue-discuss@lists.sourceforge.net>;
+	Thu, 02 Oct 2008 15:52:04 -0700 (PDT)
+Received: by 10.102.218.6 with SMTP id q6mr123064mug.127.1222987924578;
+	Thu, 02 Oct 2008 15:52:04 -0700 (PDT)
+Received: by 10.103.243.17 with HTTP; Thu, 2 Oct 2008 15:52:04 -0700 (PDT)
+Message-ID: <15983eb30810021552l17eaada9k11da762ec74d9820@mail.gmail.com>
+Date: Thu, 2 Oct 2008 18:52:04 -0400
+From: onno3940@gmail.com
+To: tinyfugue-discuss@lists.sourceforge.net
+MIME-Version: 1.0
+X-Headers-End: 1KlX1j-0001TU-8j
+Subject: lists, sets, text files
+X-BeenThere: tinyfugue-discuss@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: Talk with other users about TF
+	<tinyfugue-discuss.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss>,
+	<mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=tinyfugue-discuss>
+List-Post: <mailto:tinyfugue-discuss@lists.sourceforge.net>
+List-Help: <mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss>,
+	<mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: multipart/mixed; boundary="===============7479424833353414775=="
+Errors-To: tinyfugue-discuss-bounces@lists.sourceforge.net
+Reply-To: tinyfugue-discuss@lists.sourceforge.net
+
+--===============7479424833353414775==
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_10414_1148804.1222987924578"
+
+------=_Part_10414_1148804.1222987924578
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+I have a file that looks like this:
+
+health 2352645 4572345 462345
+mana 123 2 42 434 252
+adr 1231 2314 234 234 123
+...
+empty 23428 29832 3857 2352645 4572345 462345
+
+My goal is to test elements of one line for membership in another line.
+For example, I might ask if any of the members of the health set are also in
+the empty set.  I've written some code for it and it seems to work, but it's
+really bloated. Moreover, while gives me what i want currently, if I alter
+it a bit I find some strange behavior, so it'd be nice to fix that.
+
+Firstly, can the code below be made more efficient?
+
+;; read the file and pass it along
+/def erm = /readfile ~/Documents/Programming_Projects/pot_script %|
+/list_compare
+
+;; The below finds the line beginning with "health" and then
+;; passes each of its numbers to /empty_compare with the
+;; /mapcar function.
+/def list_compare = \
+/let _line=%; \
+/let _pattern ^health %; \
+/while (tfread(_line) >= 0) \
+/if (regmatch(_pattern,_line)) \
+/mapcar /empty_compare %{PR} %; \
+/endif %; \
+/done
+
+;; /empty_compare first grabs the numbers after the line
+;; beginning with "empty", and then passes each number
+;; (word) to be compared to whatever was passed to
+;; /empty_compare
+/def list_items_of = /eval /maplist /car %{*}
+/def empty_compare = \
+/let _arg %{1} %; \
+/let _line %; \
+/let _handle $[tfopen('~/Documents/Programming_Projects/pot_script','r')] %;
+\
+/while (tfread(_handle,_line) >= 0) \
+/let _pattern ^empty %; \
+/if (regmatch(_pattern,_line)) \
+/test tfclose(_handle) %; \
+/set empty_list %{PR} %; \
+/break %; \
+/endif %; \
+/done %; \
+/list_items_of %{empty_list} %| \
+/let _word=%; \
+/while (tfread(_word) > 0) \
+/if (_arg == _word) \
+/echo %_word success!!! %; \
+/endif %; \
+/done
+
+Again, the above works, but it's far from elegant.  Also, if i run
+/empty_compare separately the while loop doesn't terminate.  I don't know
+how to fix that yet.
+
+Finally, there's this oddity:
+
+/let _word=%; \
+/while (tfread(_word) > 0) \
+/if (_arg == _word) \
+/echo %_word success!!! %; \
+/else /echo nope %; \
+/endif %; \
+/done
+
+This is the final while/if loop with an added else statement.  If I leave it
+out the final return is,
+
+2352645 success!!!
+4572345 success!!!
+462345 success!!!
+
+if include the else statment:
+
+nope
+nope
+nope
+nope
+nope
+nope
+nope
+nope
+nope
+
+------=_Part_10414_1148804.1222987924578
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+<div dir="ltr">I have a file that looks like this:&nbsp;<br>
+&nbsp;<br>
+health 2352645 4572345 462345&nbsp;<br>
+mana 123 2 42 434 252&nbsp;<br>
+adr 1231 2314 234 234 123&nbsp;<br>
+...&nbsp;<br>
+empty 23428 29832 3857 2352645 4572345 462345&nbsp;<br>
+&nbsp;<br>
+My goal is to test elements of one line for membership in another line.&nbsp;&nbsp; For example, I might ask if any of the members of the health set are also in the empty set.&nbsp; I&#39;ve written some code for it and it seems to work, but
+it&#39;s really bloated. Moreover, while gives me what i want currently, if I alter it
+a bit I find some strange behavior, so it&#39;d be nice to fix that. &nbsp;<br><br>Firstly, can the code below be made more efficient? <br><br>
+;; read the file and pass it along&nbsp;<br>
+/def erm = /readfile ~/Documents/Programming_Projects/pot_script %| /list_compare&nbsp;<br>
+&nbsp;<br>
+;; The below finds the line beginning with &quot;health&quot; and then <br>;; passes each of its numbers to /empty_compare with the &nbsp;<br>
+;; /mapcar function.<br>
+/def list_compare = \&nbsp;<br>
+	/let _line=%; \&nbsp;<br>
+	/let _pattern ^health %; \&nbsp;<br>
+		/while (tfread(_line) &gt;= 0) \&nbsp;<br>
+			/if (regmatch(_pattern,_line)) \&nbsp;<br>
+				/mapcar /empty_compare %{PR} %; \&nbsp;<br>
+			/endif %; \&nbsp;<br>
+		/done&nbsp;<br>
+&nbsp;<br>
+;; /empty_compare first grabs the numbers after the line &nbsp;<br>
+;; beginning with &quot;empty&quot;, and then passes each number &nbsp;<br>
+;; (word) to be compared to whatever was passed to &nbsp;<br>
+;; /empty_compare&nbsp;<br>
+/def list_items_of = /eval /maplist /car %{*}<br>
+/def empty_compare = \&nbsp;<br>
+	/let _arg %{1} %; \&nbsp;<br>
+		/let _line %; \&nbsp;<br>
+		/let _handle $[tfopen(&#39;~/Documents/Programming_Projects/pot_script&#39;,&#39;r&#39;)] %; \&nbsp;<br>
+			/while (tfread(_handle,_line) &gt;= 0) \&nbsp;<br>
+				/let _pattern ^empty %; \&nbsp;<br>
+				/if (regmatch(_pattern,_line)) \&nbsp;<br>
+					/test tfclose(_handle) %; \&nbsp;<br>
+					/set empty_list %{PR} %; \&nbsp;<br>
+					/break %; \&nbsp;<br>
+				/endif %; \&nbsp;<br>
+			/done %; \&nbsp;<br>
+	/list_items_of %{empty_list} %| \&nbsp;<br>
+		/let _word=%; \&nbsp;<br>
+		/while (tfread(_word) &gt; 0) \&nbsp;<br>
+			/if (_arg == _word) \&nbsp;<br>
+			/echo %_word success!!! %; \&nbsp;<br>
+			/endif %; \&nbsp;<br>
+		/done&nbsp;<br>
+<br>Again, the above works, but it&#39;s far from elegant.&nbsp; Also, if i run
+/empty_compare separately the while loop doesn&#39;t terminate.&nbsp; I don&#39;t
+know how to fix that yet. <br><br>Finally, there&#39;s this oddity:<br><br>/let _word=%; \&nbsp;<br>
+		/while (tfread(_word) &gt; 0) \&nbsp;<br>
+			/if (_arg == _word) \&nbsp;<br>
+			/echo %_word success!!! %; \&nbsp;<br>
+			/else /echo nope %; \&nbsp;<br>
+			/endif %; \&nbsp;<br>
+		/done&nbsp;<br>
+&nbsp;<br>
+This is the final while/if loop with an added else statement.&nbsp; If I leave it out the final return is,<br><br>2352645 success!!!<br>4572345 success!!!<br>462345 success!!!<br><br>if include the else statment:<br><br>nope<br>
+nope<br>nope<br>nope<br>nope<br>nope<br>nope<br>nope<br>nope<br><br><br></div>
+
+------=_Part_10414_1148804.1222987924578--
+
+
+--===============7479424833353414775==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+-------------------------------------------------------------------------
+This SF.Net email is sponsored by the Moblin Your Move Developer's challenge
+Build the coolest Linux based applications with Moblin SDK & win great prizes
+Grand prize is a trip for two to an Open Source event anywhere in the world
+http://moblin-contest.org/redirect.php?banner_id=100&url=/
+--===============7479424833353414775==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+TinyFugue-discuss mailing list
+TinyFugue-discuss@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss
+
+--===============7479424833353414775==--
+
+From tinyfugue-discuss-bounces@lists.sourceforge.net  Thu Oct  2 21:36:13 2008
+Return-Path: <tinyfugue-discuss-bounces@lists.sourceforge.net>
+Received: from localhost
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(envelope-from tinyfugue-discuss-bounces@lists.sourceforge.net)
+Received: by localhost
+	id 68900128D3D; Thu,  2 Oct 2008 19:22:36 -0400 (EDT)
+Received: from lists.sourceforge.net (lists.sourceforge.net [216.34.181.88])
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(Client did not present a certificate)
+Received: from localhost ([127.0.0.1] helo=sfs-ml-3.v29.ch3.sourceforge.com)
+	by h25xhf1.ch3.sourceforge.com with esmtp (Exim 4.69)
+	(envelope-from <tinyfugue-discuss-bounces@lists.sourceforge.net>)
+	id 1KlXUx-0001kC-Cp; Thu, 02 Oct 2008 23:22:19 +0000
+Received: from sfi-mx-3.v28.ch3.sourceforge.com ([172.29.28.123]
+	helo=mx.sourceforge.net)
+	by h25xhf1.ch3.sourceforge.com with esmtp (Exim 4.69)
+	(envelope-from <onno3940@gmail.com>) id 1KlXUv-0001k4-Js
+	for tinyfugue-discuss@lists.sourceforge.net;
+	Thu, 02 Oct 2008 23:22:17 +0000
+Received-SPF: pass (3b2kzd1.ch3.sourceforge.com: domain of gmail.com
+	designates 209.85.134.185 as permitted sender)
+	client-ip=209.85.134.185; envelope-from=onno3940@gmail.com;
+	helo=mu-out-0910.google.com; 
+Received: from mu-out-0910.google.com ([209.85.134.185])
+	by 3b2kzd1.ch3.sourceforge.com with esmtp (Exim 4.69)
+	id 1KlXUm-0002r0-Js for tinyfugue-discuss@lists.sourceforge.net;
+	Thu, 02 Oct 2008 23:22:17 +0000
+Received: by mu-out-0910.google.com with SMTP id w1so1654465mue.2
+	for <tinyfugue-discuss@lists.sourceforge.net>;
+	Thu, 02 Oct 2008 16:22:06 -0700 (PDT)
+Received: by 10.102.218.6 with SMTP id q6mr123064mug.127.1222987924578;
+	Thu, 02 Oct 2008 15:52:04 -0700 (PDT)
+Received: by 10.103.243.17 with HTTP; Thu, 2 Oct 2008 15:52:04 -0700 (PDT)
+Message-ID: <15983eb30810021552l17eaada9k11da762ec74d9820@mail.gmail.com>
+Date: Thu, 2 Oct 2008 18:52:04 -0400
+From: onno3940@gmail.com
+To: tinyfugue-discuss@lists.sourceforge.net
+MIME-Version: 1.0
+X-Headers-End: 1KlXUm-0002r0-Js
+Subject: lists, sets, text files
+X-BeenThere: tinyfugue-discuss@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: Talk with other users about TF
+	<tinyfugue-discuss.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss>,
+	<mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=tinyfugue-discuss>
+List-Post: <mailto:tinyfugue-discuss@lists.sourceforge.net>
+List-Help: <mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss>,
+	<mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: multipart/mixed; boundary="===============2427268139131677347=="
+Errors-To: tinyfugue-discuss-bounces@lists.sourceforge.net
+Reply-To: tinyfugue-discuss@lists.sourceforge.net
+
+--===============2427268139131677347==
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_10414_1148804.1222987924578"
+
+------=_Part_10414_1148804.1222987924578
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+I have a file that looks like this:
+
+health 2352645 4572345 462345
+mana 123 2 42 434 252
+adr 1231 2314 234 234 123
+...
+empty 23428 29832 3857 2352645 4572345 462345
+
+My goal is to test elements of one line for membership in another line.
+For example, I might ask if any of the members of the health set are also in
+the empty set.  I've written some code for it and it seems to work, but it's
+really bloated. Moreover, while gives me what i want currently, if I alter
+it a bit I find some strange behavior, so it'd be nice to fix that.
+
+Firstly, can the code below be made more efficient?
+
+;; read the file and pass it along
+/def erm = /readfile ~/Documents/Programming_Projects/pot_script %|
+/list_compare
+
+;; The below finds the line beginning with "health" and then
+;; passes each of its numbers to /empty_compare with the
+;; /mapcar function.
+/def list_compare = \
+/let _line=%; \
+/let _pattern ^health %; \
+/while (tfread(_line) >= 0) \
+/if (regmatch(_pattern,_line)) \
+/mapcar /empty_compare %{PR} %; \
+/endif %; \
+/done
+
+;; /empty_compare first grabs the numbers after the line
+;; beginning with "empty", and then passes each number
+;; (word) to be compared to whatever was passed to
+;; /empty_compare
+/def list_items_of = /eval /maplist /car %{*}
+/def empty_compare = \
+/let _arg %{1} %; \
+/let _line %; \
+/let _handle $[tfopen('~/Documents/Programming_Projects/pot_script','r')] %;
+\
+/while (tfread(_handle,_line) >= 0) \
+/let _pattern ^empty %; \
+/if (regmatch(_pattern,_line)) \
+/test tfclose(_handle) %; \
+/set empty_list %{PR} %; \
+/break %; \
+/endif %; \
+/done %; \
+/list_items_of %{empty_list} %| \
+/let _word=%; \
+/while (tfread(_word) > 0) \
+/if (_arg == _word) \
+/echo %_word success!!! %; \
+/endif %; \
+/done
+
+Again, the above works, but it's far from elegant.  Also, if i run
+/empty_compare separately the while loop doesn't terminate.  I don't know
+how to fix that yet.
+
+Finally, there's this oddity:
+
+/let _word=%; \
+/while (tfread(_word) > 0) \
+/if (_arg == _word) \
+/echo %_word success!!! %; \
+/else /echo nope %; \
+/endif %; \
+/done
+
+This is the final while/if loop with an added else statement.  If I leave it
+out the final return is,
+
+2352645 success!!!
+4572345 success!!!
+462345 success!!!
+
+if include the else statment:
+
+nope
+nope
+nope
+nope
+nope
+nope
+nope
+nope
+nope
+
+------=_Part_10414_1148804.1222987924578
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+<div dir="ltr">I have a file that looks like this:&nbsp;<br>
+&nbsp;<br>
+health 2352645 4572345 462345&nbsp;<br>
+mana 123 2 42 434 252&nbsp;<br>
+adr 1231 2314 234 234 123&nbsp;<br>
+...&nbsp;<br>
+empty 23428 29832 3857 2352645 4572345 462345&nbsp;<br>
+&nbsp;<br>
+My goal is to test elements of one line for membership in another line.&nbsp;&nbsp; For example, I might ask if any of the members of the health set are also in the empty set.&nbsp; I&#39;ve written some code for it and it seems to work, but
+it&#39;s really bloated. Moreover, while gives me what i want currently, if I alter it
+a bit I find some strange behavior, so it&#39;d be nice to fix that. &nbsp;<br><br>Firstly, can the code below be made more efficient? <br><br>
+;; read the file and pass it along&nbsp;<br>
+/def erm = /readfile ~/Documents/Programming_Projects/pot_script %| /list_compare&nbsp;<br>
+&nbsp;<br>
+;; The below finds the line beginning with &quot;health&quot; and then <br>;; passes each of its numbers to /empty_compare with the &nbsp;<br>
+;; /mapcar function.<br>
+/def list_compare = \&nbsp;<br>
+	/let _line=%; \&nbsp;<br>
+	/let _pattern ^health %; \&nbsp;<br>
+		/while (tfread(_line) &gt;= 0) \&nbsp;<br>
+			/if (regmatch(_pattern,_line)) \&nbsp;<br>
+				/mapcar /empty_compare %{PR} %; \&nbsp;<br>
+			/endif %; \&nbsp;<br>
+		/done&nbsp;<br>
+&nbsp;<br>
+;; /empty_compare first grabs the numbers after the line &nbsp;<br>
+;; beginning with &quot;empty&quot;, and then passes each number &nbsp;<br>
+;; (word) to be compared to whatever was passed to &nbsp;<br>
+;; /empty_compare&nbsp;<br>
+/def list_items_of = /eval /maplist /car %{*}<br>
+/def empty_compare = \&nbsp;<br>
+	/let _arg %{1} %; \&nbsp;<br>
+		/let _line %; \&nbsp;<br>
+		/let _handle $[tfopen(&#39;~/Documents/Programming_Projects/pot_script&#39;,&#39;r&#39;)] %; \&nbsp;<br>
+			/while (tfread(_handle,_line) &gt;= 0) \&nbsp;<br>
+				/let _pattern ^empty %; \&nbsp;<br>
+				/if (regmatch(_pattern,_line)) \&nbsp;<br>
+					/test tfclose(_handle) %; \&nbsp;<br>
+					/set empty_list %{PR} %; \&nbsp;<br>
+					/break %; \&nbsp;<br>
+				/endif %; \&nbsp;<br>
+			/done %; \&nbsp;<br>
+	/list_items_of %{empty_list} %| \&nbsp;<br>
+		/let _word=%; \&nbsp;<br>
+		/while (tfread(_word) &gt; 0) \&nbsp;<br>
+			/if (_arg == _word) \&nbsp;<br>
+			/echo %_word success!!! %; \&nbsp;<br>
+			/endif %; \&nbsp;<br>
+		/done&nbsp;<br>
+<br>Again, the above works, but it&#39;s far from elegant.&nbsp; Also, if i run
+/empty_compare separately the while loop doesn&#39;t terminate.&nbsp; I don&#39;t
+know how to fix that yet. <br><br>Finally, there&#39;s this oddity:<br><br>/let _word=%; \&nbsp;<br>
+		/while (tfread(_word) &gt; 0) \&nbsp;<br>
+			/if (_arg == _word) \&nbsp;<br>
+			/echo %_word success!!! %; \&nbsp;<br>
+			/else /echo nope %; \&nbsp;<br>
+			/endif %; \&nbsp;<br>
+		/done&nbsp;<br>
+&nbsp;<br>
+This is the final while/if loop with an added else statement.&nbsp; If I leave it out the final return is,<br><br>2352645 success!!!<br>4572345 success!!!<br>462345 success!!!<br><br>if include the else statment:<br><br>nope<br>
+nope<br>nope<br>nope<br>nope<br>nope<br>nope<br>nope<br>nope<br><br><br></div>
+
+------=_Part_10414_1148804.1222987924578--
+
+
+--===============2427268139131677347==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+-------------------------------------------------------------------------
+This SF.Net email is sponsored by the Moblin Your Move Developer's challenge
+Build the coolest Linux based applications with Moblin SDK & win great prizes
+Grand prize is a trip for two to an Open Source event anywhere in the world
+http://moblin-contest.org/redirect.php?banner_id=100&url=/
+--===============2427268139131677347==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+TinyFugue-discuss mailing list
+TinyFugue-discuss@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss
+
+--===============2427268139131677347==--
+
+From tinyfugue-discuss-bounces@lists.sourceforge.net  Sat Oct 11 18:25:02 2008
+Return-Path: <tinyfugue-discuss-bounces@lists.sourceforge.net>
+Received: from localhost
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(envelope-from tinyfugue-discuss-bounces@lists.sourceforge.net)
+Received: by localhost
+	id A3984128474; Sat, 11 Oct 2008 18:25:01 -0400 (EDT)
+Received: from lists.sourceforge.net (lists.sourceforge.net [216.34.181.88])
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(Client did not present a certificate)
+Received: from localhost ([127.0.0.1] helo=sfs-ml-2.v29.ch3.sourceforge.com)
+	by 3yr0jf1.ch3.sourceforge.com with esmtp (Exim 4.69)
+	(envelope-from <tinyfugue-discuss-bounces@lists.sourceforge.net>)
+	id 1KomsS-0005QP-UU; Sat, 11 Oct 2008 22:24:00 +0000
+Received: from sfi-mx-4.v28.ch3.sourceforge.com ([172.29.28.124]
+	helo=mx.sourceforge.net)
+	by 3yr0jf1.ch3.sourceforge.com with esmtp (Exim 4.69)
+	(envelope-from <onno3940@gmail.com>) id 1KomsR-0005QK-DV
+	for tinyfugue-discuss@lists.sourceforge.net;
+	Sat, 11 Oct 2008 22:23:59 +0000
+Received-SPF: pass (1b2kzd1.ch3.sourceforge.com: domain of gmail.com
+	designates 72.14.204.172 as permitted sender)
+	client-ip=72.14.204.172; envelope-from=onno3940@gmail.com;
+	helo=qb-out-1314.google.com; 
+Received: from qb-out-1314.google.com ([72.14.204.172])
+	by 1b2kzd1.ch3.sourceforge.com with esmtp (Exim 4.69)
+	id 1KomsL-0003Oo-Nf for tinyfugue-discuss@lists.sourceforge.net;
+	Sat, 11 Oct 2008 22:23:59 +0000
+Received: by qb-out-1314.google.com with SMTP id q14so997857qbq.32
+	for <tinyfugue-discuss@lists.sourceforge.net>;
+	Sat, 11 Oct 2008 15:23:52 -0700 (PDT)
+Received: by 10.102.253.13 with SMTP id a13mr2308556mui.74.1223763831831;
+	Sat, 11 Oct 2008 15:23:51 -0700 (PDT)
+Received: by 10.103.243.17 with HTTP; Sat, 11 Oct 2008 15:23:51 -0700 (PDT)
+Message-ID: <15983eb30810111523n35d22b27gc244793bf2245031@mail.gmail.com>
+Date: Sat, 11 Oct 2008 18:23:51 -0400
+From: onno3940@gmail.com
+To: tinyfugue-discuss@lists.sourceforge.net
+MIME-Version: 1.0
+X-Headers-End: 1KomsL-0003Oo-Nf
+Subject: quicksort routine
+X-BeenThere: tinyfugue-discuss@lists.sourceforge.net
+X-Mailman-Version: 2.1.9
+Precedence: list
+List-Id: Talk with other users about TF
+	<tinyfugue-discuss.lists.sourceforge.net>
+List-Unsubscribe: <https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss>,
+	<mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=unsubscribe>
+List-Archive: <http://sourceforge.net/mailarchive/forum.php?forum_name=tinyfugue-discuss>
+List-Post: <mailto:tinyfugue-discuss@lists.sourceforge.net>
+List-Help: <mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=help>
+List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss>,
+	<mailto:tinyfugue-discuss-request@lists.sourceforge.net?subject=subscribe>
+Content-Type: multipart/mixed; boundary="===============0727636560618803849=="
+Errors-To: tinyfugue-discuss-bounces@lists.sourceforge.net
+Reply-To: tinyfugue-discuss@lists.sourceforge.net
+
+--===============0727636560618803849==
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_117262_32242722.1223763831830"
+
+------=_Part_117262_32242722.1223763831830
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+Is there a faster, more efficient way to sort a group of numbers, e.g. from
+least to greatest, than the quicksort routine below?
+
+;; a quicksort routine
+;; usage: /qsort <comparison-function> <list>
+
+;; for least to greatest I would use this as the comparison-function
+/def diff = /return %{1} - %{2}
+
+/def qsort = \
+    /if ({#} <= 2) \
+    /_echo %{-1} %; \
+    /else \
+    /let compare=%{1} %;\
+    /shift %;\
+/let key=%{R} %;\
+;/let key=%{1} %;\
+    /let same=%;\
+    /let small=%;\
+    /let large=%;\
+    /let diff=%;\
+        /while ({#}) \
+            /test diff:=%compare({1}, key) %;\
+                /if (!diff) \
+                /let same=%same %1 %; \
+                /elseif (diff < 0) \
+                /let small=%small %1 %; \
+                /else \
+                /let large=%large %1 %; \
+                /endif %; \
+            /shift %; \
+        /done %; \
+/_echo $(/qsort %compare %small) %same $(/qsort %compare %large) %; \
+/endif
+
+------=_Part_117262_32242722.1223763831830
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+<div dir="ltr">Is there a faster, more efficient way to sort a group of numbers, e.g. from least to greatest, than the quicksort routine below?<br><br>;; a quicksort routine<br>;; usage: /qsort &lt;comparison-function&gt; &lt;list&gt;<br>
+<br>;; for least to greatest I would use this as the comparison-function<br>/def diff = /return %{1} - %{2}<br><br>/def qsort = \<br>&nbsp;&nbsp;&nbsp; /if ({#} &lt;= 2) \<br>&nbsp;&nbsp;&nbsp; /_echo %{-1} %; \<br>&nbsp;&nbsp;&nbsp; /else \<br>&nbsp;&nbsp;&nbsp; /let compare=%{1} %;\<br>
+&nbsp;&nbsp;&nbsp; /shift %;\<br>/let key=%{R} %;\<br>;/let key=%{1} %;\<br>&nbsp;&nbsp;&nbsp; /let same=%;\<br>&nbsp;&nbsp;&nbsp; /let small=%;\<br>&nbsp;&nbsp;&nbsp; /let large=%;\<br>&nbsp;&nbsp;&nbsp; /let diff=%;\<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; /while ({#}) \<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; /test diff:=%compare({1}, key) %;\<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; /if (!diff) \<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; /let same=%same %1 %; \<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; /elseif (diff &lt; 0) \<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; /let small=%small %1 %; \<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; /else \<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; /let large=%large %1 %; \<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; /endif %; \<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; /shift %; \<br>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; /done %; \<br>/_echo $(/qsort %compare %small) %same $(/qsort %compare %large) %; \<br>/endif<br></div>
+
+------=_Part_117262_32242722.1223763831830--
+
+
+--===============0727636560618803849==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+-------------------------------------------------------------------------
+This SF.Net email is sponsored by the Moblin Your Move Developer's challenge
+Build the coolest Linux based applications with Moblin SDK & win great prizes
+Grand prize is a trip for two to an Open Source event anywhere in the world
+http://moblin-contest.org/redirect.php?banner_id=100&url=/
+--===============0727636560618803849==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+TinyFugue-discuss mailing list
+TinyFugue-discuss@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/tinyfugue-discuss
+
+--===============0727636560618803849==--
+

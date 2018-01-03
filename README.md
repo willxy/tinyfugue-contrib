@@ -5,6 +5,9 @@ no longer maintained and risk disappearing entirely from the web.
 
 ### Files
 
+ - Mailing list archive in mbox files, from 1996-2014
+   - [mailing-list](mailing-list/)
+
  - Files by Andrew "Andy" Mortimer (various tf code, Intro to TF Guide)
    - [andy.mortimer](andy.mortimer/)
 
