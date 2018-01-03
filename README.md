@@ -42,7 +42,7 @@ no longer maintained and risk disappearing entirely from the web.
    - http://www.gwen-morse.com/wiki/index.php/Gwen%27s_Complete_TFRC
    - and more
 
- - Mushcode archive
+ - Mushcode archive:
    - http://www.mushcode.com/File/Intro-to-TinyFugue
    - http://www.mushcode.com/File/TinyFugue-Doing-Machine
 
