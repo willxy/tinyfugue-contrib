@@ -1,0 +1,546 @@
+;; An outside basic tutorial I learned about through the TF mailing list,
+;; exact author unknown.
+
+
+; Look to the end of the log file for a summary of commands.
+; +mail Strongbark with questions regarding TF and this log. Thanks!
+
+You say, "Welcome to my class on tinyfugue coding. Hopefully after the class 
+	we'll be able to have an macro you have online ported to tinyfugue to 
+	save much needed database space :)"
+
+You say, "Just as a reference, how many people have done any tinyfugue coding 
+	whatsoever in here?"
+
+Glendor did some coding
+
+Frodo raises his hand about an inch.
+
+Lithait says, "not I"
+
+Glendo says, "Actually, He had his before mine."
+
+Tulvhon raises his hand, "a little
+
+Torn raises his toe, but then gets nervous and drops it.
+
+You say, "Okay, no problem. I am constructing this class so that anyone can 
+	use it. If you know tf coding, the first few topics will be very 
+	basic."
+
+Yarrow says, "None at all."
+
+You say, "First and most important thing in tinyfugue coding: Save your work 
+	in a file!"
+
+You say, "You CANNOT type /defs at the prompt and expect them to be there the 
+	next time you load up tinyfugue :) It's much better to work with them 
+	offline."
+
+Torn says, "uhh...you mean the .tfrc file ?"
+
+You say, "So, the people that have tinyfugue here (and can multitask), please 
+	pull up a window of a blank file so that you can follow along."
+
+Paleran nods to Torn, ".tfrc can be one of them. You can have other files as 
+	well that contain your macros, as long as you /load them. Which leads 
+	to /load, the first command you should learn.
+
+You say, "/load <filename>"
+
+Torn ahhs..
+
+You say, "Pretty simple. It will just execute each of the commands in your 
+	file. I will go over more in detail on how to construct files later."
+
+You say, "First basic topic: simple macro programming."
+
+You say, "I bet there are many people here, or many people on the MUSH that 
+	have macros like:
+$ic:+set ic
+
+Paleran had it for the longest time before he got tf. This is the very easiest 
+	macro to port into tf. Those that have their files up, type this into 
+	it:
+/def thinker=think [switch(hasflag(*paleran,connected),1,Paleran is connected!)]"
+
+You say, "Then, type /load <file>."
+
+You say, "..after saving of course."
+
+You say, "And type /thinker."
+
+Frodo kewls.
+
+You say, "Very simple, very straightfoward. It can be used to port any of 
+	your simple macros that do not require arguments. Some more examples 
+	might be:
+
+/def ic=+set ic
+
+/def armory=@tel #12345
+
+You say, "Also, you can use walking macros in this manner, but I'll go over 
+	how to do those more efficiently later."
+
+You say, "Next in line for macros that people commonly use: those 
+	with arguments."
+
+Yarrow raises her hand, "I know this is a basic question...but how do you 
+	"save a file" in TF?"
+
+You say, "How many people have coded a $pub:+com public=%0?"
+
+Glendor coded it, but not for <public> :)
+
+You say, "Um, you don't save a file through tf. You pull up an editor 
+	(like pico, emacs) and save from there."
+
+Glendor says, "Can you recall /defs?"
+
+Yarrow nods.
+
+You say, "Saving from tf is a more complex problem."
+
+Dragan says, "Can you put notes in a file, like thinks that are ignored 
+	when you use /load?"
+
+Tulvhon has ctrl-w input '+com public=' into his tf input buffer....
+
+Paleran nods, "/list, Glendor."
+
+You say, "Dragan, all you have to do is place a semi-colon (;) at the 
+	beginning of the line. Tf will ignore that line."
+
+Dragan says, "Cool."
+
+You say, "Now, to code a com channel macro in tf, the following is required:
+/def pub=+com public=%0
+
+You say, "Here is where I'll give a brief explanation of how tinyfugue 
+	handles arguments."
+
+You say, "A more in depth explanation can be found in /help substitution."
+
+You say, "Basically, there are three types of arguments:
+	%0 or %*: these two will select the entire argument line
+	%1, %2, %3: these will select the Nth word from the argument list.
+	%-1, %-2, %-3: these will select the entire list from the nth 
+		argument."
+
+You say, "Any questions regarding the three types of arguments? I'll use an 
+	example that contains the bottom two in a moment."
+
+Torn says, "any difference with %0 or %*?"
+
+You say, "No, %0 and %* are the same in tinyfugue."
+
+Torn nods
+
+You say, "Okay, here is a simple (but stupid) macro you might want to use 
+	in tinyfugue:
+/def com=+com %1=%-1
+
+You say, "Now, this exactly emulates the +com command. The channel is passed 
+	in as argument 1 (%1), and everything after the channel is the text 
+	to say on the channel, so to use the macro, you would type:
+/com public Hello everyone!
+
+You say, "Any questions regarding arguments? Realize this can be used for 
+	ANY command. Your +looker's, OOC macros, etc."
+
+Glendor has a question related to this macro.
+
+You say, "Glendor?"
+
+Glendor says, "In softcode, I can make a macro +os which will take +os:bahs 
+	and +os :bahs and produce <OOC> Glendor bahs. Can I do it in TF so 
+	/os:bahs works?"
+
+You say, "No, you cannot. Tf will interpret everything from the / to the 
+	first space as a command."
+
+Glendor nods
+
+You say, "Now I'll move on to multiple line commands. As a former smith, 
+	I liked to keep a macro online that would enable me to describe a 
+	helmet, shield or armor quickly using one command. Something like:
+$dshield:+eqset shield/describe=blah;+eqset shield/osucc=blah, etc...
+
+You say, "Now, in tf, you can make things easier on the MUSH (and yourself) 
+	by doing something like this:
+/def dshield=+eqset shield/describe=blah%; \
+        +eqset shiield/osucc=blah%; \
+        Etc.
+
+You say, "Here I bring up two more points in tf coding. The %; will define 
+	the end of a command, and the \ will allow you to place one command 
+	on multiple lines."
+
+Glendor says, "TF understands \ at the end of the line?"
+
+Paleran nods, "TF will wrap the next line as part of the command if \ is 
+	the last character of that line."
+
+Glendor says, "Does it add space there, or strip trailing spaces?"
+
+You say, "Take a look in your tf-lib directory. Like map.tf. A little 
+	beyond the scope of what I want to cover today, but it contains 
+	quite a few macros that illustrate what I'm saying."
+
+Paleran hmmms, "Not sure, actually. Let me find out real quick."
+
+You say, "It will strip the whitespace on the beginning of the next line."
+
+You say, "Here's an example I just did:"
+
+You say, "/def tester=think blah \
+        blah2\
+        blah3%;
+
+You say, "When I typed /tester at the prompt, I got:
+blah blah2blah3
+
+You say, "Good question, Glendor :)"
+
+You say, "Everyone following?"
+
+Yarrow says, "Sort of."
+
+You say, "Keep in mind tf is not MUSH. It's a whole programming language in 
+	itself, essentially."
+
+You say, "Now, for this is where you songbook/harp writers want to take heed."
+
+You say, "You can easily code your songbooks offline and just load them in 
+	with tf using the examples I have previously illustrated."
+
+You say, "All I have covered so far is simple interaction of a user typing a 
+	command at the prompt, and tf sending information to the MUSH that 
+	you would exactly have on the MUSH. What I'm going to go over now 
+	is tf-MUSH interaction."
+
+You say, "How many people have the TF Edit macro? Probably everyone, right?"
+
+Tulvhon nodsnods
+
+Dragan noders.
+
+Yarrow says, "I don't know. Sorry...I'm very basic here."
+
+Torn doesn't actually know =)
+
+Glendor nods
+
+Torn goes sit by Yarrow =)
+
+Yarrow grins at Torn. :)
+
+You say, "This is a little harder to program offline. It requires a little more knowledge of tinyfugue and how it handles triggers. As an example, this is my robust version of that macro:"
+
+You say, "/def ed = /send @swi [setq(0,sort(lattr(before(%0,/)/[after(%0,/)]*)))][words(\%q0)]= 0,@pemit/s me=%%% No such attribute(s).,@pemit/s me=[switch(#\$,>1,pemit(me/s,Additional attributes: [rest(\%q0)]))]Edit : &[setq(0,first(sort(lattr(before(%0,
+
+/)/[after(%0,/)]*))))][first(\%q0)] [before(%0,/)]=[xget(before(%0,/),first(\%q0))]"
+
+You say, "And the standard trigger afterwards."
+
+You say, "Now, this macro is totally unnecessary for most people :) It takes 
+	into account wildcards and other silly stuff."
+
+You say, "But what I want to point out is the words() function."
+
+Yarrow says, "What does the macro do?"
+
+You say, "Notice how I escaped out the %q0? That's because tf will try to 
+	analyze it. Make sure you escape out things you want the MUSH to 
+	understand, like registers."
+
+You say, "It will take an attribute and place it into your input buffer."
+
+You say, "I will post a simpler version later on tacked at the end of the log."
+
+You say, "So what you would do is: /ed obj/attr and it would place 
+	&attr obj=<stuff in attribute> into your input buffer so you can 
+	edit it easily. No nasty @edits :)"
+
+You say, "Now, the tf edit macro most of you have illustrates the tf-MUSH 
+	interaction and the next step of tinyfugue editing: triggers."
+
+You say, "Triggers are something that tf will look for when input is passed 
+	to it (from the MUSH) and allow you to process it any way you want."
+
+You say, "For example, if you wanted to hilite pages, you would use this macro:
+/def -ah -t'*pages:*'
+
+You say, "And, if you wanted to keep a list of all the people that paged you, 
+	you could do something like this:
+/def -ah -t'*pages*'=/set page_list=%page_list %1
+
+Orophin says, "Of course, that would miss the pose-pages...From afar..."
+
+You say, "Which brings me to variables in tf. Variables are set with /set 
+	and called using %, or %{variable}"
+
+You say, "Of course, Orophin, then you'd do something like this:"
+
+/def -ah -t'From afar,*'=/set page_list=%page_list %3
+
+Orophin nods, "Just checkin'" :)
+
+Glendor says, "But what I don't know how to deal with is that when you SAY 
+	to me `Paleran pages, "Go to class!"' the thing is hilited as a 
+	page :)"
+
+You say, "Note that the triggered phrase gets passed to the argument list 
+	whole. Not just the wildcard expression. So the name of the player 
+	that pages you is %3 in the pose-page and From is %1"
+
+You say, "Ah, that requires some nasty stuff."
+
+You say, "The easiest way is to set NOSPOOF, but usually, you can't avoid it."
+
+You say, "Remember, when you get set NOSPOOF, tinyfugue will interpret it as 
+	a whole line. So you'd have to account for the beginning dbref in a 
+	tf edit macro if you wanted to be NOSPOOF."
+
+You say, "Well, this is about the scope of the class that I wanted to cover. 
+	A brief introduction to tinyfugue coding and how to offload macros."
+
+Torn holds his hand up. "Does the  for example take the first word from 
+	the line the defined words are ?"
+
+You say, "Right now, I'd like to open up the floor."
+
+You say, "One moment..."
+
+You say, "Torn?"
+
+Torn says, "did you get that percentage sign ? =)"
+
+You say, "Ummm. Please escape out the variable :)"
+
+You say, "Use: %%0"
+
+Yarrow raises her hand with a question.
+
+Torn holds his hand up. "Does the %0  for example take the first word from the line the defined words are ?"
+
+Torn acks..."I mean %1" =)
+
+You say, "%1 takes the first word from the argument list."
+
+Torn says, "I mean with triggers"
+
+Paleran nods. With a /def <name>, though, the <name> is not passed into the 
+	argument list, only what comes after.
+
+You say, "Yarrow, you had a question?"
+
+Yarrow asks, "If there anyway to set up defs so that they only work in 
+	one particular world?...If you are several worlds at once this can 
+	be confusing."
+
+You say, "Yes, using the -w<world> option. Like I have a macro:
+/def -wtol2 elf=+who/cu *galad*
+
+You say, "Which will pass the text into the tol2 world (Elendor)."
+
+Yarrow says, "So the -wtol2 is the name...then define as usual. Okay."
+
+Paleran nods, "Right, Yarrow."
+
+You say, "Does anyone have a macro they would like to have me convert for 
+	them into tinyfugue?"
+
+Yarrow still looks confused...but is listening. :)
+
+Glendor converted all his macros, not it's time to convert FUNCTIONS :)
+
+You say, "I have one last example to show, then I'll let y'all go :)"
+
+You say, "It's the example I pointed out before concerning walking. You 
+	know, the macros you have that take you from point A to point B 
+	with one command."
+
+Yarrow says, "Say you had a random emit set up on a MUSH...could you set 
+	that up as a tf macro?"
+
+Martyn pages: My bbscan attr.
+
+You say, "Before I go on, though... Do you mean a random emit as in an 
+	emit thats sent at a random interval of time?"
+
+You paged Martyn with 'What dbref/obj?'.
+
+Martyn pages: Me. :)
+
+You paged Martyn with 'Attr? :)'.
+
+Martyn pages: bbscan
+
+BBSCAN [#17099v]: $bbscan:+bbscan [v(lastscan)];th [set(me,lastscan:[secs()])]
+
+Long distance to Martyn: Paleran ahs.
+
+Yarrow says, "No...an emit that draws from a list inside the object and 
+	emits one at random when you issue a command."
+
+You paged Martyn with 'Hold on, let me get Yarrow's question first :)'.
+
+Martyn pages: Okie.
+
+Yarrow says, "i.e.: 'strum guitar'...and then one of say 3 emits would happen."
+
+Yarrow says, "That would pose you strumming the guitar."
+
+You say, "okay, that would be simple:
+
+/def strum=:[v(guitar_[rand(2)])]
+
+You say, "Then you could have &guitar_0 me=First, &guitar_1 me=Second and &guitar_2 me=Third."
+
+Glendor says, "Well, if we are saving DB space, you should move the texts 
+	off-line too :)"
+
+Yarrow asks, "How do you set up the emits? Would it have to be on the object?
+
+You say, "You could also do that in tf. It has it's own rand()"
+
+Yarrow nods to Glendor. "How though?"
+
+Paleran hms.
+
+Paleran tries something for a moment.
+
+Glendor says, "I don't know if TF works as macroprocessor, i.e. if you can 
+	compose variable names from bits which are evaluated"
+
+Paleran doesn't think so, but I'm trying :)
+
+Yarrow nods and listens.
+
+Glendor says, "You can chain a bunch of /if's but that sucks :)"
+
+; Trying stuff here, but can't get anything to work :)
+
+You say, "This isn't an easy problem :) It requires manipulation of the 
+	/nth and rand() function calls... I'm not an expert tf coder 
+	myself which is why I'm having problems :)"
+
+You say, "You see, there's no easy way to grab text like that randomly."
+
+You say, "I'll figure out something after the class and post it to the 
+	end of the log."
+
+Yarrow says, "Bummer...this would really clean up my stuff elseMU too. :) I 
+	like the randomness factor...helps add to RP. Well...I can move the 
+	commands off anyway...it is a start."
+
+You say, "Now, Martyn wished me to show him the /def for his bbscan macro."
+
+Glendor says, "You can do it with /quote and shell scripts quite easily"
+
+You say, "Yeah, but that's shell scripts ;)"
+
+Glendor says, "And text will be stored in a file."
+
+You say, "Could you write that up for me, Glendor? I'm really lacking in 
+	shell scripts knowledge."
+
+Yarrow says, "That would work for songs...but not the random commands...
+	I'll have to keep studying."
+
+You say, "The macro online is: $bbscan:+bbscan [v(lastscan)];th 
+	[set(me,lastscan:[secs()])]"
+
+Glendor has a few shell scripts running around his TF :)
+
+Paleran says, "Offline in tf, the new command is:
+
+/def bbscan=+bbscan [v(lastscan)]%; \
+        /send think [set(me,lastscan:[secs()])]
+
+You say, "So you could type /bbscan and have the same exact effect occur."
+
+Glendor says, "Why nof @set?"
+
+Paleran shrugs, "That was his macro :)"
+
+Glendor says, "Ok, why /send? :)"
+
+You say, "/send is a safety clause that I like to use. You don't *have* to use it."
+
+You say, "It's habit for me to create macros that way :)"
+
+Glendor says, "What does it add safety-wise?"
+
+You say, "So TF doesn't try to interpret something the wrong way. Plus, it will send it directly to the host, instead of attempting to interpret it."
+
+Paleran shrugs, "Like I said, you don't have to use it :)"
+
+Glendor says, "Ok, why do you send +bbscan directly and think via /send?"
+
+Glendor says, "That's what confused me, actaully"
+
+Paleran was mixing it up... I did the /send without thinking. If I was to 
+	create that command, it would be like:
+/def bbscan=/send - +bbscan [v(lastscan)][set(me,lastscan:[secs()])]
+
+You say, "The hyphen indicates the end of options. Again, a safety clause 
+	so tinyfugue doesn't try to interpret anything as an option."
+
+Glendor nods
+
+You say, "It's good habit to use stuff like that so you use it when it's 
+	needed. In that /def, neither the - nor the /send is necessary."
+
+You say, "Also, it allows for extensions. If you wanted to use a variable 
+	in tf, you would just simple add it to the text. Stuff like that :)"
+
+You say, "Okay, but this is getting too far past what I wanted to cover 
+	here, so basically the class is over :) I will post the log (and 
+	Galdor will have it). It will have at the end a summary of what I 
+	covered. All the /defs and how to use them."
+
+Martyn says, "Kewl."
+
+You say, "Thanks to those that stuck the class out, and I hope y'all have 
+	a fun time coding in tf and offloading those globals!"
+
+Yarrow says, "Great. :) Thanks for the class, Paleran. :)"
+
+
+; Tf macros:
+
+/def ic=+set ic
+
+/def pub=+com public=%0
+
+/def com=+com %1=%-1
+
+/def dshield=+eqset %0/describe=text%; \
+	     +eqset %0/osucc=test%; \
+	     Etc...
+
+; Here are two versions of the edit command:
+; 
+; The first will use the MUSH to process input, so you can send this:
+; /ed object/attribute
+
+/def ed=think Edit : &[after(%0,/)] [before(%0,/)]=[xget(before(%0,/),after(%0,/)]
+
+; The second version allows you to type in the text like this:
+; /ed object attribute
+
+/def ed=think Edit : &%2 %1=[get(%1/%2)] 
+
+; This /def is needed for either version:
+
+/def -ag -t'Edit : *'=/grab %-2
+
+
+; Perhaps I'll get into more in-depth macros later like the random emit
+; Yarrow requested for. I can't quite figure that one out yet :) Using
+; functions in tinyfugue is a little obscure. They usually don't evaluate
+; the way you want them too ;)
+

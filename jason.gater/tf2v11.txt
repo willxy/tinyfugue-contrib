@@ -1,0 +1,509 @@
+--------------------------------------------------------
+
+OK, so you've read the Beginners guide. You know your aliases from your 
+hotkeys. You think you know all there is to know about targets; but you've 
+heard there is even more you can do, yet you don't know how...
+Well, to cater to popular demand, here is a (hopefully) user friendly guide 
+to programming Tinyfugue to suit you!
+
+Basically, things are going to get complicated from here on. It is not so 
+much a case of 'follow the instructions, get the answer', it is more 'here's 
+an example, see what you can come up with'. If you're not happy with this, 
+then don't worry. Tinyfugue at a basic level works as well as Avplay. 
+Anything more is a bonus, and simply personal taste. One day, I'm going to 
+see if I can program Tinyfugue to run a fight completely by itself... just to 
+see if it can be done!
+
+One last point. Most of the examples here will be very 'mage' skill 
+orientated. This is because most of the examples are lifted wholesale from, 
+or modified versions of my own tf files. This is a lot easier than trying to 
+think of examples pertinent to all guilds - at this kind of level of tf, the 
+commands are mostly specialised functions anyway, so you will have to think 
+for yourself of ways to use the commands to make YOUR life easier. If you want 
+to do it, tf probably can do it - you just have to find a way.
+
+
+
+Right, if you're still here, I take it you're willing to experiment a bit. 
+After all, you learn best by making mistakes, and correcting them. Here's 
+what I'm going to cover:
+
+[1] /set                Learn to use /set, and variables to their full 
+			potential
+					
+[2] .tfrc               Preloads files for you
+
+[3] /speedwalk.tf       Tf's answer to gallop
+
+[4] /repeat             Bulk repetition of commands, and one off time delays
+
+[5] /edit               Altering a macro from within the macro itself
+
+[6] /quote              Performs a list of commands, with a time delay at 
+			each step
+
+[7] /gag                Prevents lines being printed on screen
+
+[8] /log                Saves output to a log file 
+
+[9] /recall             Scrollback
+
+[10] /more              Turns output from continuous to page by page
+
+[11] Boolean            What the hell is that, I hear you ask...
+     Algebra    
+
+[12] /expr              A calculator
+
+[13] -b etc.            summary of /def options
+
+
+
+
+
+
+[1] /Set
+---------
+
+The first thing I'm going to introduce is an extension to the variables 
+system, which we used in a very limited way in the Beginners Guide to define 
+targets. It is a lot more powerful than this, and can improve combat 
+performance. It also can cut a lot of drudgery out of doing things.
+
+Now, I use a lot of potions. Around 15 at once, in fact. Since the colours 
+can be changed by a number of enemy attacks, I wanted a way to use potion 
+bottle numbers, without having to change the number in every list entry of 
+my triggers/hotkeys/aliases every single time I bought a replacement potion. 
+How do you do this, I hear you ask.
+What you do, is write another file which you load in when start up tf, 
+somewhat like your alias and macros files.
+
+The contents of this file looks something like this:
+
+/set %magenta=potion55843
+/set %vermillion=potion663
+/set %grey=potion93802
+/set %white=potion77748
+/set %red=potion2886
+etc., you get the idea.
+
+What you do, is set a load of variables to be your potions. So, let us take 
+one of your old hotkeys. It probably used to look something like this:
+
+(1)      /def -p1 -b'[112~' = drink magenta potion%;drink vermillion potion
+%;drink red potion
+
+or if you were fed up of having your potions being colour changed,
+
+(2)     /def -p1 -b'[112~' = drink potion55843%;drink potion663%;drink 
+potion2886
+
+And of course, every time you buy a new potion, you have to update this 
+hotkey by hand.
+
+But now, you rewrite it to look like this:
+
+(3)     /def -p1 -b'[112~' = drink %magenta %; drink %vermillion %; drink %red
+
+When tf sees (3), it will substitute the variables you defined earlier, and 
+actually send statement (2) to avalon. The difference is, your potion bottle 
+numbers are defined in this SEPARATE FILE, which you can load into your UNIX 
+texteditor, and edit there, quickly and easily. Then, just reload the edited 
+potions file, it will replace the old variables for the new, and no matter 
+how many times you've used %white in your triggers, they will all now use the 
+new number. It is so easy to edit potion bottle numbers, I have been known to 
+start using a new potion (when the old one ran out), edit my potions file, 
+and keep using my hotkeys, all in the middle of a fight!
+
+N.B. You will have to write your potions list in an external texteditor, and 
+use /load to put it into Tinyfugue, as I don't know a way to bulksave 
+variables to a file. You should be using an external editor by now anyway; 
+if you're anything like me, then your list of triggers and hotkeys will be 
+too unwieldy to mass edit using /undefn and /list anyway.
+
+
+
+Variables are extremely useful. Another way I have used them is to define a 
+variable for my two pipes - one hold megillos, the other arkasu. I then 
+define two macros, which light and smoke the relevant pipe variable. Then, 
+whenever I want to smoke, say megillos, in an autoresponse, I just call the 
+macro.
+
+I.e. in my external variables file, I have
+/set mpipe = pipe5555
+
+then, I can define things such as:
+/smpipe = light %mpipe%;smoke %mpipe
+
+then finally, 
+/bind [112~ = outp megillos%;put megillos in %mpipe%;outp arkasu%; etc
+/trig *a demonic pestilence gives you anorexia* = /smpipe
+
+
+
+
+
+
+Spod comment!! 
+- Here's something for you technobuffs out there: the %; indicator used to 
+split commands is in fact a variable, same as %t or %magenta. It just 
+substitutes a carriage return instead.
+
+
+
+
+
+
+
+
+[2] .tfrc
+----------
+
+Now would probably be a good time to introduce .tfrc
+This is a small file you keep in your tf.lib directory, and very useful it is 
+too. Instead of having to load in every file you need, every time you start 
+up tf (I have about 8 preload files, so it saves me a good deal of typing) 
+you put them into this hidden file. 
+
+Example contents of .tfrc file:
+/visual on
+/require speedwalk.tf
+/load macros
+/load aliases
+/load potions
+/telnet ibmpcug.co.uk
+
+since using this file takes the drudgery out of loading in your tf files, you 
+can make up even more files. Now, instead of having all your triggers,hotkeys 
+macros etc. in a single file, you can farm them out to separate files. Say, 
+have a separate file for your hotkeys, another for your poison defences etc. 
+This will make it easier to modify/add to your defences later, rather than 
+slog through your single massive file.
+
+
+[3] speedwalk.tf
+-----------------------
+
+Ok, you spotted me /requiring speedwalk.tf. What is it? Well, it's tf's 
+answer to gallop. Initialise it with /SPEEDWALK ON. from then on, 
+ordinary commands must be typed in caps. Anything in lower case is either 
+ignored, unless it's n,e,s or w. You can also have mutiple commands, such as 
+50n. This will go north 50 times. Useful in the labyrinth to azrilli!
+
+
+[4] /repeat
+--------------
+
+Here is one of tinyfugue's more advanced features, timed commands. The 
+/repeat command is tremendously versatile, so it's really up to you what you 
+think of to do with it. Here are a couple of examples:
+
+Let's say you are herb picking. Who wants to type 'pick iorthir' 20 times, 
+then 'prepare iorthir' 20 times, and then 'inp iorthir' ANOTHER 20 times?
+Now you don't have to...
+
+/repeat 20 pick iorthir%;prepare iorthir%;inp iorthir
+
+will do this set of commands 20 times - i.e. pick, prepare, inp, pick, 
+prepare etc.
+
+
+
+Now, let's say you are still herb picking, but now you are giving the herb 
+to someone else. In order to give them a chance to put it in their herbpouch, 
+you want a three second delay between the commands:
+
+/Repeat -3 20 give iorthir to hero
+will do the trick.
+
+
+Since it waits for the time delay before executing, this is a useful way for 
+executing a single command, with a time delay in front of it. For example:
+
+/alias 1 sketch all%;/repeat -3 1 dance power
+
+Allows for the time delay required for equilibrium between sketching and 
+dancing a ritual.
+
+N.B. The following command will NOT work:
+/alias 1 sketch all%;/repeat -3 1 dance power%;sketch all%;/repeat -3 
+1 dance convergence
+
+When tf sees the %; after a repeat, it ends the /repeat section, and treats 
+the next command as normal.
+So, what tf would do in this case is sketch all, sketch all, (wait 3 sec.) 
+dance power, dance convergence.
+
+There are several ways to get around this. The first that you will think of 
+(probably) is this:
+/alias 1 sketch all%;/repeat -3 1 dance power%;repeat -9 1 sketch all
+%;/repeat -12 1 dance convergence
+
+(If you didn't know, sketching requires 3 sec. to regain equilibrium, dancing 
+needs 6)
+
+However, this is a clumsy way of doing it. Imagine if you wanted to dance 12 
+rituals in sequence - this macro would be somewhat messy, to say the least! 
+The more streamlined way of doing this is to use another command called 
+/quote. For details, see later. 
+However, /repeat can also be useful for doing a string of commands, with a 
+single initial time delay. Let's look at a way to defend against 'sloth' 
+spells: 
+ 
+
+
+
+First, you define a way to break sloth. One way is to use speed (mauve) 
+potion. The first sloth dispels this, the second sloth slows command entry 
+down for a while. If you DO get slothed, speed will break you out of it 
+immediately, though there is a couple of seconds delay before you actually 
+perform the action of drinking. 
+
+/def speed = drink %mauve potion %; /edit -c0 speed 
+%; /repeat -5 1 /edit -c100 speed
+
+This command defines '/speed' to do the following actions:
+1) drink my mauve potion
+2) disable itself (so it won't be triggered again)
+3) re-enable itself after 5 seconds
+
+How does this work? Well, let's take a look at /edit...
+
+[5] /edit
+-----------
+
+/edit allows you to change the properties of a macro, from within the body of 
+a macro. You can change any of it's properties, such as -t (triggers) or 
+-h(hiliting). The property I have changed here is '-c' which is the 
+probability of the macro responding when it is called. The number following 
+-c is the percentage chance of it responding. A value of 100 means it will 
+always respond, (which is the default value), a value of 0 means that the 
+macro is effectively inactive, and a value of 50 means it will only trigger 
+half of the time. (I told you tf had a lot of weird commands! This isn't the 
+half of it)
+
+Therefore, by using /edit, -c and /repeat in combination, I can temporarily 
+disable a macro, from within the macro itself.
+
+
+
+/Repeat (continued)
+----------------------------
+
+Now, returning to /speed.
+
+So, why did I go to all this bother? Well, let's define some triggers that 
+will call speed.
+When you are slothed, here are SOME of the messages that avalon sends. 
+
+/def -p1 -mglob -t'You lurch into action.' = /speed
+/def -p1 -mglob -t'*to normal walking speed*' =drink %mauve
+/def -p1 -mglob -t'You shake away the effects of the idyll.' = drink %mauve
+
+Now, when you are slothed, and try to do something, you get the message 'you 
+lurch into action'. After several seconds, you actually perform the action. 
+If, in that time, you try to perform another action, your first act is 
+cancelled, the second act is initiated, and you have to wait for several 
+seconds for THAT action. Therefore, if you just put 'drink mauve potion' as a 
+response to the trigger 'you lurch into action', you will just stand there 
+trying to repeatedly drink, and resetting the 'lurch' message every time - 
+effectively immobilising you. Therefore you only want to drink ONCE, and 
+wait for it to work. Then, when you are moving at normal speed, you want the 
+trigger to be ready to go again,  in case you get slothed once more. 
+
+In this case, I have defined some extra triggers, so that when I recover from 
+sloth, I drink my mauve potion, and go to speeded motion. This means I have 
+to be slothed twice in order to actually be slothed. 
+
+
+
+[6] /quote
+--------------
+
+/repeat is not the only timed command. There is a second, called 
+(you guessed it) /quote.
+
+This command is very useful for doing a list of actions, with a time delay 
+between each one. On of it's primary uses is setting up standing, pre-combat 
+magical defences. With non-magical defences such as potions, you can just 
+stack them onto one macro, and perform the lot in one go. With magic however, 
+you have to wait for equilibrium, and thus build in a time delay between each 
+command.
+
+The best way to look at quote is an example:
+
+/quote -7  ' "rituals"
+
+
+Simple, isn't it!
+
+Here is how it works:
+
+the apostrophe tells /quote that it should read it's data from an external 
+file (From the start-up directory). The name of the file is enclosed in 
+quotes, and in this case is called rituals. (You might have noticed that 
+when it comes to naming files, I tend to follow the principle of calling a 
+spade a spade, not a 'General Issue Entrenching Device, or GIED' as the army 
+call it!)
+The -7 means that /quote will go down the list of entries in the file 
+'rituals' and send each one to avalon seven seconds apart. So, here is a 
+sample of what the file 'rituals' might contain -
+
+sketch all
+dance power
+sketch all
+dance fortification
+sketch all
+dance leech enemies
+etc.
+
+You could put in your file whatever avalon commands you want to repeat x 
+seconds apart. Here is another example:
+
+/alias start-up /quote -4 ' "startup"
+
+where the external text file startup contains:
+
+weave veil
+weave halo
+weave blur
+weave binding
+etc.
+
+You might note that for 3 second equilibrium spells I use 4 sec separation, 
+and 6 sec equilibrium, 7 sec separation. This is to account for minor lag 
+problems, and means I don't lose the odd spell, as I don't quite have 
+equilibrium for it yet.
+
+
+
+[7] /gag
+-----------
+
+This is a command similar to /hilite. Effectively, it removes messages from 
+the screen. This can be useful if you get regular annoying messages that you 
+don't need to see, but that just clog up your screen. E.g.
+
+/gag *A white dragon is too cumbersome to lift*
+
+
+
+
+[8] /log
+----------
+
+/log is relatively straightforward. Basically, it takes everything that tf 
+puts on screen, and puts it into a log file.
+
+/log (filename) will start logging, if you don't specify a filename, it 
+defaults to tf.log.
+
+/log off will turn logging off, and not add anything more to the text file.
+
+
+
+[9] /recall
+-------------
+
+This command basically allows you to scroll back. /recall (n) will recall the 
+last n lines of avalon output, up to a maximum of 1000. Note, if you do a 
+second recall, after the first, it doesn't count the first ones output as 
+avalon output. Therefore, if you do a recall, but it doesn't go back far 
+enough, you can do another, with more lines, with no problem.
+
+You can combine /recall with /log - let's say you were ambushed, and want a
+log of the action, after the events. First, you start logging, with 
+/log ambush. Then you /recall up to the start, say /recall 500. The 
+recalled lines will go into the log, then you just /log off, and read the
+text file ambush at your leisure.
+
+
+
+[10] /more
+---------------
+
+since /recall can zoom past pretty quickly, you might want to slow it down a 
+bit. Use /more on
+This will do page by page scrolling - when it has done a page, it wil wait 
+for you to press <TAB> before doing the next page. You can have /more at any 
+time - but t's only real use is when /recalling. Use /more off 
+to turn it off.
+
+
+
+
+[11] Boolean Algebra
+------------------------------
+
+OK, what the hell is Boolean algebra? Basically, it is a set of logic 
+operands, that allow the performing of logic operations.
+
+OK, what the hell is that in PLAIN ENGLISH?  :-)
+
+If you don't know what AND, OR logic is, then switch off now. If you do, 
+then that is what Boolean Algebra is - the combination of AND, OR and other 
+similar operators to solve logic operations. The most I'm going to say about 
+Boolean Algebra, is that tf supports it. I haven't yet found a combat use for 
+it. You might, so look at the on-line tf help files for more details. The 
+same applies to programming loops - for, while etc. They exist, but I haven't 
+found a need for them yet. This is because I like to use my client to cut 
+some of the drudgery, not take over the fight entirely. In the end of the 
+day, I'm faster, more flexible, and more intelligent than my client - or at 
+least, I hope I am!
+
+One possible use might be to only turn certain triggers on when you're
+in certain situations - For example, Shaitan used to have a trigger
+off Fiorella's name to burn the forest. Therefore, she found it hard to
+decompose him - he would enter the room, see her name in the room description,
+and automatically set fire to the trees! This would obviusly be rather
+awkward to have on all the time - imagine it going off every time you
+typed 'who'. So, you could define a variable, and set the trigger to only
+respond when both the trigger text is valid, and the variable logic high.
+
+
+
+[12] /expr
+--------------
+
+Handy little function for when you're comm gathering. Basically, it works 
+like a mini-calculator. For example, say there are 25 pieces of fruit, at 
+14gp each in isabella. How much gold do you need?
+/expr 25*14
+gives you the answer, 350.
+
+You can also use /expr to evaluate Boolean functions - if you want to...
+
+
+
+[13] summary of the /def options
+-----------------------------------
+
+You've probably noticed by now that tinyfugue uses /def for every single 
+hotkey, macro, trigger etc. It merely changes the options. Well, here's a 
+summary of the options you're most likely to run into.
+
+
+
+-p              determines the priority of a trigger
+-t'...'         triggers when ... text is passed from avalon to tf.
+-h'send ...'    triggers when ... <CR> is entered
+-b'...'         triggers when ... is entered
+-ah             highlights the triggering text 
+-mglob          defines method of matching trigger text
+-ag             'gags' i.e. hides triggering text
+-c ...          will trigger ...% of the times it is called
+
+
+
+Well, that's the end of the advanced guide. Hope it's been fun for you all...
+I'm sure I'll be editting this guide later - who knows, I might even produce
+the Ultimate guide to Tinyfugue... 
+
+N.b. here's a rather succinct command:
+/time
+
+Both terribly handy, and totally useless. Says everything about Tinyfugue 
+really.
+
+
+

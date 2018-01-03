@@ -1,0 +1,1734 @@
+      <h2>Please Note</h2>
+      
+      This document has been produced automatically from LaTeX source, and  has
+      not been edited. It uses different characters to  specify  various  fonts
+      (rather than various uses, as would be ideal), as follows:<br>
+      <i>Italic Text</i><br>
+      <b>Bold text</b><br>
+      <tt>Typewriter font text</tt><br>
+      <b>Small capitals</b><br>
+      <i>Serif Text</i><br>
+      Please be aware of this, and do not try to read these characters as  part
+      of the actual text.<br>
+      <br>
+      Also, no attempt has been made to divide the file into  pages.  You  can,
+      however, navigate by sections; each section starts with the text `Section
+      <n>:', and each appendix with the text `Appendix <n>:', where <n> is  the
+      number of the section or appendix, such as `2.2' or `B.1'.<P>
+      
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTMK 3.2//EN">
+<HTML>
+<HEAD>
+<TITLE>An Introduction to TinyFugue</TITLE>
+</HEAD>
+<BODY>
+ <P>
+
+<h1>An Introduction to TinyFugue</h1>
+<h2>Andy Mortimer (<tt>asm21@cam.ac.uk</tt>)</h2>
+<h2>Version 1.0 alpha 1</h2>
+<h2>Table of Contents</h2>
+
+
+1 <a href="#sec1">Introduction</a><br>
+1.1 <a href="#sec1.1">Things To Do</a><br>
+1.2 <a href="#sec1.2">Copyright</a><br>
+1.3 <a href="#sec1.3">Acknowledgements</a><br>
+2 <a href="#sec2">Getting Started</a><br>
+2.1 <a href="#sec2.1">Starting TinyFugue</a><br>
+2.2 <a href="#sec2.2">Editing</a><br>
+2.3 <a href="#sec2.3">TinyFugue commands and MUD commands</a><br>
+2.4 <a href="#sec2.4">Connecting to an online game</a><br>
+2.5 <a href="#sec2.5">Managing multiple worlds</a><br>
+2.6 <a href="#sec2.6">Fine-tuning TinyFugue</a><br>
+2.7 <a href="#sec2.7">Saving Your Configuration</a><br>
+2.8 <a href="#sec2.8">Using History and Logging</a><br>
+3 <a href="#sec3">The Building Blocks</a><br>
+3.1 <a href="#sec3.1">Setting and Viewing Variables</a><br>
+3.2 <a href="#sec3.2">A Brief Introduction to Macros</a><br>
+3.3 <a href="#sec3.3">Matching Text</a><br>
+4 <a href="#sec4">Reacting Automatically to MUD Output</a><br>
+4.1 <a href="#sec4.1">Hiliting MUD output</a><br>
+4.2 <a href="#sec4.2">Using Triggers</a><br>
+4.3  <a  href="#sec4.3">More  Flexible  Hilites  and  Triggers  using  Regular
+Expressions</a><br>
+4.4 <a href="#sec4.4">Changing the Attributes</a><br>
+4.5 <a href="#sec4.5">Redefining the Keyboard</a><br>
+4.6 <a href="#sec4.6">Using Hooks and Hiliting TinyFugue Output</a><br>
+4.7  <a  href="#sec4.7">Other  Useful  Switches  to  the  <tt>/def</tt>
+Command</a><br>
+A <a href="#secA">TinyFugue Supplemental Files</a><br>
+B <a href="#secB">Some Sample Macros</a><br>
+B.1 <a href="#secB.1">Automatic Reading of All Help Pages</a><br>
+B.2 <a href="#secB.2">A Complex Kill Trigger</a><br>
+<P>
+
+<h2><a name="sec1">Section 1: Introduction</a></h2>
+ <a name="labsec:intro"></a><P>
+
+TinyFugue, or `tf' for short, is a very flexible MUD client for UN*X and  OS/2.
+This flexibility, however, does have it's price, and TinyFugue is often seen as
+being very difficult to learn. This document is designed as a tutorial for  the
+beginner, to help this first step; the idea is that by the  end,  you  will  be
+able to use TinyFugue to almost  the  fullest  extent  possible  without  going
+deeply into macro programming, and certainly have some idea of how to go  about
+any given task and where to refer to in the help for more information.<P>
+
+You may notice that, for most of the document, I refer to the game to which you
+are connected as a `MUD'. This is not to say that TinyFugue is only useful  for
+MUDs---far from it---but that (from a quite-possibly-biased MUSHer's viewpoint)
+I tend to refer to the whole genre of text-based online games as MUDs.<P>
+
+It is a constantly evolving document, which I hope will grow and change as time
+(and  TinyFugue!)  goes  on,  so  if  you  have  any  comments,  criticisms  or
+contributions, please do email me and let me know. In particular, since I  have
+not used OS/2, most of the information in this document  is  based  around  the
+UN*X version. As far as I am aware, the program behaves the same, but I suspect
+some of the files are different. If anybody knows of  any  differences  between
+the two which  are  not  documented  here,  please  let  me  know  and  I  will
+incorporate them. Also, I am currently using TinyFugue version  3.5  alpha  19,
+and so any differences in earlier or later versions which you feel ought to  be
+mentioned would also be appreciated.<P>
+
+And finally, due to the nature of this document,  you  may  see  some  comments
+<i><| like this |></i> scattered through it. These are  reminders  and  remarks
+about places where I feel the document is not yet finished: it is probably safe
+to ignore these, but if you can answer the questions, please do get in touch! A
+not insignificant number of them are issues which I  have  no  way  of  solving
+myself, so your input would be appreciated.<P>
+
+<h3><a name="sec1.1">Section 1.1: Things To Do</a></h3>
+ <a name="labsec:todo"></a><P>
+
+These are the longer-term things which I still want to put in, or  which  I  am
+still wondering if I ought to put in.  Any  suggestions  for  addition  to  (or
+removal from!) this  list  would  be  appreciated,  as  would  submissions  for
+sections like `TinyFugue tips and tricks'. Any  submissions  of  code  will  be
+assumed to have been placed in the public domain; if  this  is  not  the  case,
+please state it on submission.<P>
+
+  <ul> <P>
+  
+  <li> Functions and Expressions <P>
+  
+  <li> Substitutions <P>
+  
+  <li> Control Statements and Conditional Evaluation <P>
+  
+  <li> TinyFugue tips and tricks <P>
+  
+  <li> Quick reference <P>
+  
+  <li> Using history and recalling text <P>
+  
+  <li> Further reading: where to start in <tt>/help</tt>; the  supplemental
+      files; <P>
+  
+  <li> Sample `<tt>.tfrc</tt>' <P>
+  
+  <li> Index! <P>
+  
+</ul> <P>
+
+<h3><a name="sec1.2">Section 1.2: Copyright</a></h3>
+ <a name="labsec:copyright"></a><P>
+
+This  document  is  copyright  1996  Andrew  Mortimer.  You  are  permitted  to
+distribute it freely, either electronically or as hardcopy, either  in  one  of
+the forms provided or in a different form, so long as the text of the  document
+is left in it's entirety, including this copyright notice, and  no  significant
+changes are made to the document structure; you may not charge for the document
+itself, although you may charge a handling fee.<P>
+
+Any example code contained herein, unless stated  otherwise,  is  free  of  all
+copyright and has been placed in the public domain by the author. If  the  name
+of an author is specified with the code, this name should be given also in  any
+redistributions of the code.<P>
+
+<h3><a name="sec1.3">Section 1.3: Acknowledgements</a></h3>
+ <a name="labsec:thanks"></a><P>
+
+In this first version of the document, thanks go mainly to Hawkeye for  writing
+TinyFugue!<P>
+
+<h2><a name="sec2">Section 2: Getting Started</a></h2>
+ <a name="labsec:start"></a><P>
+
+<h3><a name="sec2.1">Section 2.1: Starting TinyFugue</a></h3>
+ <a name="labsec:startup"></a><P>
+
+If TinyFugue is not already installed on your system, you will probably need to
+compile it first. I don't intend to go into this in any detail here, as  it  is
+well documented in the source package in  the  `<tt>README</tt>'  file,  but  I
+think I did ought to mention that under OS/2, you will require EMX  to  compile
+it.<P>
+
+To  run  TinyFugue,  simply  type  <tt>tf</tt>  from  a  command  prompt[<a
+href="#foot1">1</a>], if the TinyFugue program is on your  path.  If  not,  you
+will have to find out where it is installed and give the full  pathname  (under
+UN*X, this would usually be `<tt>/usr/games/tf</tt>'). As TinyFugue starts  up,
+it reads in it's standard library  file  `<tt>stdlib.tf</tt>',  a  file  called
+`<tt>local.tf</tt>' in the  same  directory  as  `<tt>stdlib.tf</tt>'  if  your
+system administrator has installed one, and finally your personal configuration
+file[<a href="#foot2">2</a>]. This file sets  up  various  parameters  for  the
+program, which will be  explained  in  more  detail  as  we  progress,  but  if
+TinyFugue behaves in a way which is very different to what is  described  here,
+you might wish to check if you have this file. For now, you don't  need  to  do
+anything with it.<P>
+
+<a name="foot1">[1] I have no idea if this is valid under OS/2 as well, but  it
+seems a reasonable guess.</a><P>
+
+<a name="foot2">[2] This is the file `<tt>.tfrc</tt>' in  your  home  directory
+under UN*X; under OS/2 it can also be called `<tt>tfrc</tt>' if you use  a  FAT
+filesystem, and your home directory is  that  pointed  to  by  the  environment
+variable <tt>HOME</tt></a><P>
+
+When TinyFugue starts up, there are two different screens which you might  see,
+depending on which version you have. Versions before 3.5 alpha  17  default  to
+what is called <i>non-visual mode</i>, where output scrolls up the  screen  and
+you type on the bottom line (see figure <A  HREF="#labfig:startup">1</A>),  and
+versions 3.5 alpha 17 and above default to <i>visual mode</i>, where  TinyFugue
+sections off the bottom few lines of the screen for you to type  in,  and  uses
+most of the screen for output only. In visual mode, you will also see a  status
+bar separating the two areas, with various information about the current  state
+of TinyFugue. There is a command to change between these two modes, detailed in
+section <A HREF="#labsec:tuning">2.6</A>; in this document, I will give all the
+examples in non-visual mode as it is easier to represent!<P>
+
+
+<hr width="33%">
+<a name="fig1">
+ <P>
+
+<pre>
+  TinyFugue version 3.5 alpha 19
+  Copyright (C) 1993, 1994, 1995, 1996 Ken Keys (hawkeye@tcp.com)
+  Type `/help copyright' for more information.
+  Regexp package is Copyright (c) 1986 by University of Toronto.
+  Type `/help', `/help topics', or `/help intro' for help.
+  Type `/quit' to quit tf.
+  
+  \% Loading commands from /usr/lib/games/tf/tf-35a19-lib/stdlib.tf.
+  \% Loading commands from /usr/lib/games/tf/tf-35a19-lib/local.tf.
+  ---- No world ----
+</pre>
+ <P>
+
+Figure  1:  Sample  TinyFugue  startup,  in  non-visual  mode<a
+name="labfig:startup"></a><P>
+
+</a><hr width="33%">
+ <P>
+
+To round off this section, I should probably note that to quit  TinyFugue,  you
+can  simply  type  <tt>/quit</tt>,  as  it  says  at  startup  in  figure  <A
+HREF="#labfig:startup">1</A>, which will close all open connections and  return
+you to the shell prompt.<P>
+
+<h3><a name="sec2.2">Section 2.2: Editing</a></h3>
+ <a name="labsec:editing"></a><P>
+
+For those of you who have been using UN*X for a while, especially programs such
+as Emacs and Bash which use what seems to have become a `standard' set of keys,
+the basic editing in TinyFugue will be a breeze, although there are some slight
+differences and many of the more obscure  functions  have  moved  totally.  For
+those of you who haven't got used to it, though, and for those of you  who  use
+OS/2 and have never had the chance to use UN*X (or,  I  suppose,  never  wanted
+to?), this section will summarise the major editing keys  in  TinyFugue.  <i><|
+What's in `<tt>kb-os2.tf</tt>'? Does it use all the standard (home,  end,  etc)
+keys? |></i> But first, a quick note about the <tt>Meta</tt>  key:  under  UN*X
+<i><|  and  OS/2?  |></i>,  there  is  a  key  called  `<tt>Meta</tt>'  or
+`<tt>Alt</tt>', which can be used in the same way as the control key.  However,
+it can also be `used' by pressing the `<tt>Escape</tt>' or  `<tt>Esc</tt>'  key
+<b>before</b> the letter or whatever you wish to type. So  if  you  see  a  key
+called `<tt>Meta-D</tt>', say, this can be entered either by holding  down  the
+key labelled `<tt>Alt</tt>' or `<tt>Meta</tt>' and then pressing  `<tt>D</tt>',
+or by pressing `<tt>Esc</tt>' followed by `<tt>D</tt>'.<P>
+
+First of all, cursor movement. You can use the cursor keys to  get  around,  so
+that won't be a problem, but there are some others which will  make  your  life
+easier. The `<tt>Ctrl-A</tt>' and `<tt>Ctrl-E</tt>' keys go  to  the  beginning
+and end of the line, respectively,  and  the  `<tt>Ctrl-F</tt>'  (forward)  and
+`<tt>Ctrl-B</tt>' (backward) keys move by  words[<a  href="#foot3">3</a>].  You
+can also move about in the `history' of lines you have already typed using  the
+`<tt>Ctrl-P</tt>' and `<tt>Ctrl-N</tt>' keys.<P>
+
+<a name="foot3">[3] Emacs users take note: that was with the control  key,  not
+the meta key!</a><P>
+
+Deletion of single characters can  be  done  with  the  backspace  key  or  the
+`<tt>Ctrl-D</tt>' key, which deletes the character under the cursor. Words  can
+be deleted backwards (ie, normally) with `<tt>Ctrl-W</tt>',  or  forwards  (the
+word under the cursor) with `<tt>Meta-D</tt>', and the line can be deleted from
+the cursor  to  the  end  with  `<tt>Ctrl-K</tt>',  or  the  entire  line  with
+`<tt>Ctrl-U</tt>'. And finally, if the screen gets messed up,  you  can  redraw
+it[<a href="#foot4">4</a>] using the `<tt>Ctrl-L</tt>' key.<P>
+
+<a name="foot4">[4] To some extent; it will look right, but  TinyFugue  removes
+all the output currently on the screen.</a><P>
+
+If you can't remember all that, don't worry; it's there for  you  to  refer  to
+later on. But you should at  least  have  some  idea  how  to  edit  things  in
+TinyFugue now.<P>
+
+<h3><a name="sec2.3">Section 2.3: TinyFugue commands and MUD commands</a></h3>
+ <a name="labsec:commintro"></a><P>
+
+Before we get onto any specific commands, though, I ought to  mention  the  way
+commands are processed in TinyFugue. All communication with the program is done
+by typing in the data entry area (ie, in the bottom window in visual  mode,  or
+on the bottom line in non-visual mode), and so  TinyFugue  needs  some  way  to
+distinguish it's own commands from those which you wish to send on to the  MUD.
+It does this by starting all it's commands with a slash, `<tt>/</tt>'. So,  for
+example, to get help about TinyFugue you would type <tt>/help</tt>, but to  get
+help about your MUD you might type <tt>help</tt> (obviously,  this  depends  on
+whether your MUD supports a <tt>help</tt> command!).<P>
+
+<h3><a name="sec2.4">Section 2.4: Connecting to an online game</a></h3>
+ <a name="labsec:connect"></a><P>
+
+There are two ways to connect to a remote host on which your  MUD  is  running.
+The first is almost like the <tt>telnet</tt> command, in that it simply takes a
+host name and a port number and connects to the game running there. This is the
+easiest type to use if you wish to try out a  MUD,  or  indeed  TinyFugue,  and
+don't want to go to all the hassle of setting up a world for it (see later). To
+use this method, type <tt>/connect <i>host</i> <i>name</i> <i>port</i></tt>.<P>
+
+This method does have quite a few disadvantages for MUDs you visit  often,  not
+least of which is the fact that you have to remember the  address  of  the  MUD
+every time you want to log into it. Wouldn't it be nice if you could give  each
+different game a descriptive name, and get TinyFugue to  remember  things  like
+the address? And while we're at it, why not take it one step further and  store
+the name of your character as well,  and  get  TinyFugue  to  connect  to  that
+character every time you visit that  game?  Sound  far-fetched?  No?  Oh,  well
+...<P>
+
+As you probably guessed, TinyFugue can indeed do this,  using  the  concept  of
+<i>worlds</i>. Worlds are defined using the <tt>/addworld</tt> command, in  one
+of the following ways:<P>
+
+  <dl> <P>
+  
+  <dt><tt>/addworld <i>name</i> <i>host</i> <i>port</i></tt>
+  <dd>  Adds  a  world  called  <tt><i>name</i></tt>,  on  the  given
+      <tt><i>host</i></tt> and <tt><i>port</i></tt>. This is the  simplest  way
+      of using the command, but it doesn't know anything about  your  character
+      unless you give a default character  as  well,  using  the  <tt>/addworld
+      default</tt> command (see later).<P>
+  
+  <dt><tt>/addworld <i>name</i> <i>character</i> <i>password</i> <i>host</i>
+      <i>port</i></tt>
+  <dd> This adds a world exactly as above, but also records information about
+      your character. This information will be used to log you in as the  named
+      character, whenever you open a connection to that world.<P>
+  
+  <dt><tt>/addworld default <i>name</i> <i>password</i></tt>
+  <dd> Sets the default character name and password for worlds where they are
+      not specified.<P>
+  
+</dl> <P>
+
+All of these forms take an optional argument to specify the type of the  world,
+by  putting  ``<tt>-T<i>type</i></tt>''  after  <tt>/addworld</tt>  above.  The
+<tt><i>type</i></tt> field is used to work out how to log you in, and can  have
+one of the following values:<P>
+
+  <dl> <P>
+  
+  <dt>tiny
+  <dd>  TinyMud  login  format  (sends  ``<tt>connect  <i>name</i>
+      <i>password</i></tt>'' to the game) <P>
+  
+  <dt>lp
+  <dd> LP/Diku login format (sends ``<tt><i>name</i></tt>''  on  one  line,
+      followed by ``<tt><i>password</i></tt>'' on  the  next),  and  looks  for
+      prompts from the MUD.<P>
+  
+  <dt>aber
+  <dd> As <b>lp</b> above. <P>
+  
+  <dt>diku
+  <dd> As <b>lp</b> above. <P>
+  
+  <dt>lpp
+  <dd> As <b>lp</b> above, but it assumes any prompts sent by the server are
+      terminated by either the END-OF-RECORD or GOAHEAD  sequences,  which  are
+      defined by the telnet protocol[<a href="#foot5">5</a>]. This makes prompt
+      handling nicer if you have it, but I think many places do not.<P>
+  
+  <a name="foot5">[5] If this means nothing to you, don't worry about it. You
+      may want to ask somebody on the MUD, but the <b>lp</b> type  (or  one  of
+      the others) will work fine.</a><P>
+  
+</dl> You can also define the world type  as  one  of  the  types  given  above
+followed  by  a  period  and  a  subtype,  for  example  <b>tiny.mush</b>  or
+<b>tiny.muck</b>. These worlds will be treated the same as a <b>tiny</b>  world
+by TinyFugue, but you can add your own macros which differentiate between  then
+(see section <A HREF="#labsec:macros">3.2</A> for more details).<P>
+
+Note that, although it is strictly speaking optional to specify a  world  type,
+it is a good idea. If you don't, TinyMud login format is assumed,  but  prompts
+etc are not necessarily handled correctly. It is also  possible  to  specify  a
+macro file to load when you connect to that world; see <tt>/help  addworld</tt>
+for more details on this and on the command in general.<P>
+
+Having defined the  world,  you  can  connect  to  it  using  the  <tt>/connect
+<i>world</i></tt> command, in exactly the same way as above.<P>
+
+Once connected to a world, by either method, you  can  type  any  commands  you
+like, which TinyFugue will then send to  the  MUD[<a  href="#foot6">6</a>].  In
+order to disconnect again from the world, you  can  either  tell  the  game  to
+disconnect using a command such as <tt>QUIT</tt> on  a  TinyMUSH,  or  use  the
+<tt>/dc</tt> command which hangs up TinyFugue's end. It is recommended that you
+use the first method if it is available, however[<a href="#foot7">7</a>].<P>
+
+<a name="foot6">[6] Except, as mentioned earlier, commands which begin  with  a
+slash, which TinyFugue interprets itself. If you must send a command like this,
+look at <tt>/help send</tt>.</a><P>
+
+<a name="foot7">[7] If you disconnect this way, it calls what  is  known  as  a
+<i>disconnect hook</i>, which can be set up to do something when you finish  in
+a world. If you use the <tt>/dc</tt> command, this hook is not called.</a><P>
+
+<i><| /listworlds, /unworld, etc |></i><P>
+
+<h3><a name="sec2.5">Section 2.5: Managing multiple worlds</a></h3>
+ <a name="labsec:multworld"></a><P>
+
+Unlike telnet, or many similar programs, TinyFugue allows  you  to  connect  to
+more than one world at the same time, and to switch between them at  will.  The
+world which you are displaying and typing to at  any  point  is  known  as  the
+<i>active</i>  or  <i>foreground  world</i>,  and  any  others  are  known  as
+<i>background worlds</i>. If you are in visual mode, the name of the foreground
+world is displayed in the status bar  above  the  input  area.  When  something
+happens in a background world, then rather than displaying it mixed it with the
+output from the foreground world, which would be confusing to  say  the  least,
+TinyFugue displays `<tt>% Activity in world <i>name</i></tt>', and lets you  go
+back  to  it  at  your  leisure.  In  visual  mode,  the  text  `<tt>(Active:
+<i>n</i>)</tt>' is also displayed in the status bar, where <tt><i>n</i></tt> is
+the number of worlds from which have output you have not yet seen.<P>
+
+Connecting  to  more  than  one  world  is  easy:  you  simply  give  one
+<tt>/connect</tt> command for each world, when you want to open it. In order to
+switch between open worlds, you use the <tt>/fg <i>name</i></tt> command, which
+makes the named world the foreground world  and  displays  anything  which  has
+arrived from that world while it  was  in  the  background.  There  is  also  a
+<tt>/world <i>name</i></tt>  command,  which  combines  the  functions  of  the
+<tt>/connect</tt> and <tt>/fg</tt> commands: if you are currently connected  to
+a world, it brings it to the  foreground,  or  if  you  are  not  connected  it
+connects you (and then brings it to the foreground).<P>
+
+There is one other command which is useful when you have many worlds open,  and
+that is <tt>/listsockets</tt>, which  prints  a  table  listing  all  the  open
+worlds, as well as which is the foreground world, how many  lines  are  waiting
+for you, and some other information.<P>
+
+One of the supplemental files supplied  as  standard  with  TinyFugue  is  also
+useful here. I will go into these  in  more  detail  later,  but  if  you  type
+<tt>/require world-q.tf</tt>, it will record whenever something  arrives  in  a
+background world, and add it to a list of active worlds. It will  also  set  up
+the key <tt>Meta-W</tt>, otherwise known as <tt>Alt-W</tt>  or  <tt>ESC-W</tt>,
+to go to the next world on this list, or the  previous  world  you  visited  if
+there are no remaining active worlds. I personally find this invaluable.<P>
+
+<h3><a name="sec2.6">Section 2.6: Fine-tuning TinyFugue</a></h3>
+ <a name="labsec:tuning"></a><P>
+
+Having hopefully got TinyFugue up and running, it is time to start  fine-tuning
+our  working  environment.  There  are  a  lot  of  variables  and  commands[<a
+href="#foot8">8</a>] in TinyFugue which change small aspects of  the  program's
+behaviour. I have listed here a few of the more important ones,  together  with
+examples; more information can be found in various places in the <tt>/help</tt>
+if you need it. Note that setting a variable to a given  value  is  done  using
+<tt>/set <i>variable</i>=<i>value</i></tt>, so for example to  get  a  24  hour
+clock you would type <tt>/set clock=24-hour</tt>; more details of this  are  in
+section <A HREF="#labsec:variables">3.1</A>.<P>
+
+<a name="foot8">[8] In fact, most of these commands simply change the value  of
+an associated variable, but using the commands is usually  a  better  idea.  In
+some circumstances, however (such as the  <tt>/more</tt>  command,  which  also
+prints a message), you may wish to set the variables yourself; if  you  get  to
+this stage, I suggest you read the relevant <tt>/help</tt> pages.</a><P>
+
+  <dl> <P>
+  
+  <dt>/cleardone
+  <dd> This flag defaults to `<tt>off</tt>'; if it is set to `<tt>on</tt>' by
+      typing <tt>/cleardone on</tt>, the input window in visual mode is cleared
+      whenever return is pressed, rather than scrolling.<P>
+  
+  <dt>clock
+  <dd> If set to `<tt>12-hour</tt>' (the default), gives a 12 hour clock on the
+      status line in  visual  mode,  or  gives  a  24  hour  clock  if  set  to
+      `<tt>24-hour</tt>'.<P>
+  
+  <dt>emulation
+  <dd> By default, TinyFugue strips ANSI codes from the text it gets  sent,
+      converting the colours into it's own internal format and  discarding  the
+      rest. This variable changes this behaviour; see <tt>/help  emulation</tt>
+      if you run into problems with this. Otherwise, it  is  probably  safe  to
+      leave it alone.<P>
+  
+  <dt>/isize
+  <dd> Use this command to set the number of lines displayed in the input area,
+      if you want more or  less  than  the  default  of  3.  It  is  called  as
+      <tt>/isize <i>n</i></tt>, where <tt><i>n</i></tt> is the number of  lines
+      you require.<P>
+  
+  <dt>/more
+  <dd> Use this command to make TinyFugue pause after  every  screenful  of
+      output, to give you time  to  read  it  before  continuing.  Unlike  most
+      pagers, TinyFugue uses the <tt>TAB</tt> key to go onto the next  page  to
+      let you keep typing;  if  you  really  can't  cope  with  this,  look  at
+      `<tt>spc-page.tf</tt>'  in  the  library  directory.  You  can  also  use
+      <tt>Meta-H</tt> to scroll half a  screen,  <tt>Meta-L</tt>  to  scroll  a
+      single line, and <tt>Meta-J</tt> to junk all the remaining text which you
+      haven't seen.<P>
+  
+  <dt>/quitdone
+  <dd> Normally, if you close the last open  world,  TinyFugue  will  print
+      `<tt>---- No World ----</tt>' and wait for you to do something  else.  If
+      you set this to `<tt>on</tt>',  using  <tt>/quitdone  on</tt>,  TinyFugue
+      will exit altogether when you close the last world.<P>
+  
+  <dt>/visual
+  <dd> This is the command that determines whether you are in visual mode or
+      not. Visual mode, as mentioned above, separates the input from the output
+      and adds a status bar, and  is  highly  recommended.  It  is  enabled  by
+      default in versions of TinyFugue after 3.5  alpha  17;  if  you  have  an
+      earlier version than that, you can turn it on using <tt>/visual  on</tt>.
+      Note that visual mode is not available on all terminal types.<P>
+  
+  <dt>wraplog
+  <dd> By default, TinyFugue will attempt to word wrap all incoming text to fit
+      on the screen (use <tt>/wrap off</tt> to disable this), but  not  in  log
+      files. If you set  this  variable  to  `<tt>on</tt>',  it  will  wrap  in
+      logfiles as well.<P>
+  
+  <dt>/wrapspace
+  <dd> If you have wrapping enabled, this variable sets the indentation of any
+      wrapped lines, excluding the first. This makes it much easier to separate
+      paragraphs, especially if you hang around with people who tend to type  a
+      lot at a time. It defaults to zero; use <tt>/wrapspace  <i>n</i></tt>  to
+      set it to <tt><i>n</i></tt> (I use 2).<P>
+  
+  <dt><i><| Anyone else got any favourites? |></i>
+  <dd> <P>
+  
+</dl> <P>
+
+<h3><a name="sec2.7">Section 2.7: Saving Your Configuration</a></h3>
+ <a name="labsec:saveload"></a><P>
+
+Having gone to all the trouble of setting it up, you  don't  want  to  have  to
+retype everything whenever you reload TinyFugue. This section tells you how  to
+go about saving all the configuration which you have done so far.<P>
+
+There are two places you can put this sort of  information:  in  your  personal
+configuration file (usually called `<tt>.tfrc</tt>', or `<tt>tfrc</tt>' on OS/2
+with a FAT filesystem, and stored in your home directory), or in a  file  which
+is  automatically  generated  by  TinyFugue  itself,  and  the  two  are  not
+interchangeable. Most of the things which you create, as opposed  to  changing,
+can be saved automatically: this includes the worlds you have defined, as  well
+as macro definitions, bindings, hilites, gags,  triggers  and  hooks,  more  of
+which later.<P>
+
+First,  the  automatic  ones.  Worlds  are  saved  using  the  command
+<tt>/saveworld</tt>, hilites  with  <tt>/savehilite</tt>,  etc  (see  table  <A
+HREF="#labtab:autosaves">1</A>);  they  are  loaded  again  using  the  command
+<tt>/loadworld</tt>, etc. The filenames used depend on whether you are  running
+UN*X or OS/2, by default. If <tt><i>ident</i></tt> is the `filename identifier'
+given in table <A HREF="#labtab:autosaves">1</A>, then the filename under  UN*X
+is  `<tt>tiny.<i>ident</i></tt>',  and  under  OS/2  it  is
+`<tt><i>ident</i>.tf</tt>'.  These  defaults  can  be  changed,  however,  by
+redefining the `name macro', which is simply a macro the body of which  is  the
+name of the file[<a href="#foot9">9</a>], in your `<tt>.tfrc</tt>'  file.  Note
+that  if  you  decide  to  use  this  method,  you  have  to  include
+<tt>/load<i>suffix</i></tt> commands in your `<tt>.tfrc</tt>' file for all  the
+types you decide to save; they will not get reloaded automatically.<P>
+
+<a name="foot9">[9] For example, to store world definitions in  a  file  called
+`<tt>world.tf</tt>' under  UN*X,  you  would  give  the  command  <tt>/edit  -i
+WORLDFILE=world.tf</tt>. This is in fact the preferred  way  of  naming  files;
+this old UN*X way is for backwards compatibility.</a><P>
+
+
+<hr width="33%">
+<a name="tab1">
+ <P>
+
+<center>
+ <P>
+
+<P>
+
+<table border>
+<tr><td>Type             <td>Command Suffix <td>Filename Identifier<td>Name macro          
+<tr><td>World Definitions<td><tt>worlds</tt><td><tt>world</tt>    
+<td><tt>/WORLDFILE</tt> 
+<tr><td>Macro Definitions<td><tt>def</tt>   <td><tt>macros</tt>   
+<td><tt>/MACROFILE</tt> 
+<tr><td>Key Bindings     <td><tt>bind</tt>  <td><tt>bind</tt>      <td><tt>/BINDFILE</tt>  
+<tr><td>Hilites          <td><tt>hilite</tt><td><tt>hilite</tt>    <td><tt>/HILITEFILE</tt>
+<tr><td>Gags             <td><tt>gag</tt>   <td><tt>gag</tt>       <td><tt>/GAGFILE</tt>   
+<tr><td>Triggers         <td><tt>trig</tt>  <td><tt>trig</tt>      <td><tt>/TRIGFILE</tt>  
+<tr><td>Hooks            <td><tt>hook</tt>  <td><tt>hook</tt>      <td><tt>/HOOKFILE</tt>  
+</table>
+<P>
+
+Table 1: The different automatic save files  and  their  associated  commands<a
+name="labtab:autosaves"></a><P>
+
+</center> <P>
+
+</a><hr width="33%">
+ <P>
+
+One final note about using the <tt>/saveworld</tt> command on later  UN*X-based
+versions of TinyFugue[<a href="#foot10">10</a>]: since version  3.5  alpha  14,
+you will be warned whenever a password is loaded from a world-readable file. If
+you get this message, you will  need  to  execute  the  command  <tt>chmod  go=
+<i>filename</i></tt> from the shell prompt, where  <tt><i>filename</i></tt>  is
+the file in which your world definitions are saved, which  will  ensure  nobody
+else will be able to access the file.<P>
+
+<a name="foot10">[10] Some OS/2 versions also give this  message,  but  as  you
+cannot change file permissions in OS/2, it is irrelevant. Either ignore it,  or
+upgrade your version of TinyFugue.</a><P>
+
+Now we come on to your personal configuration file, often referred to as simply
+your `<tt>.tfrc</tt>' file. You can do just about anything in  here,  including
+defining worlds, hilites, etc, although it is  recommended  that  you  use  the
+automatically saved files instead if you  can,  and  certainly  do  not  define
+something in your `<tt>.tfrc</tt>'  file  which  you  are  actually  using  the
+automatic files for! Other than these, there are a number of things you can  do
+in this file which you cannot do anywhere else, including:<P>
+
+  <ul> <P>
+  
+  <li> Load other TinyFugue source files. If it is a file you wrote yourself,
+      you will probably want to use the <tt>/load <i>filename</i></tt> command,
+      but in the more usual case of a library file, the best command to use  is
+      <tt>/require <i>filename</i></tt>, which loads the named  file  from  the
+      TinyFugue  library  directory  if  it  is  not  already  loaded[<a
+      href="#foot11">11</a>].<P>
+  
+  <a name="foot11">[11] This doesn't work for your own files, though, unless
+      you've set them up specially.</a><P>
+  
+  <li> Load the automatic files detailed above. <P>
+  
+  <li>  Set  global  variables  and  options,  as  in  section  <A
+      HREF="#labsec:tuning">2.6</A>. Just add the commands to the file just the
+      same as when you type them in TinyFugue.<P>
+  
+  <li> If your file gets very long, you may well want to put some comments in
+      to remind you what the different parts do, or simply to make it easier to
+      read. In order to do this, you  can  begin  the  line  with  a  semicolon
+      `<tt>;</tt>', and anything you type after that will be ignored.<P>
+  
+</ul> <P>
+
+<h3><a name="sec2.8">Section 2.8: Using History and Logging</a></h3>
+ <a name="labsec:history"></a><P>
+
+TinyFugue stores many different types of text, including what you  have  typed,
+the output from each world, and everything output  by  TinyFugue,  in  what  is
+called <i>history buffers</i>. You can access all of these  buffers  using  the
+<tt>/recall</tt> command, although the history of things  you  have  typed  can
+more easily be accessed using the `<tt>Ctrl-P</tt>' and `<tt>Ctrl-N</tt>'  keys
+to move through it.<P>
+
+The <tt>/recall</tt> command is very powerful; I shall only  skim  the  surface
+here. It can be called as <tt>/recall  <i>buffer-switch</i>  <i>range</i></tt>,
+where <tt><i>range</i></tt> is a plain number, in which case it means to recall
+that many lines, or something  of  the  form  `<tt><i>from</i>-<i>to</i></tt>',
+where <tt><i>from</i></tt> and <tt><i>to</i></tt> are line numbers in  history,
+either  or  both  of  which  may  be  omitted.  If  you  leave  out  the
+<tt><i>from</i></tt> parameter, you will have to put `<tt>--</tt>' before it in
+order to stop it being processed  as  a  switch,  for  example  as  <tt>/recall
+Legends -- -30</tt>.<P>
+
+The <tt><i>buffer-switch</i></tt> parameter can be any of the following:<P>
+
+  <dl> <P>
+  
+  <dt>`<tt>-w</tt>' or blank
+  <dd> Recall from the history of output from the current world. <P>
+  
+  <dt>`<tt>-w<i>world</i></tt>'
+  <dd> Recall from the history of output from the named world. <P>
+  
+  <dt>`<tt>-l</tt>'
+  <dd> Recall from TinyFugue output. <P>
+  
+  <dt>`<tt>-g</tt>'
+  <dd> Recall from global output, which includes output from all worlds and
+      from TinyFugue. <P>
+  
+  <dt>`<tt>-i</tt>'
+  <dd> Recall from input history, ie the list of things you have typed. <P>
+  
+</dl> <P>
+
+It is also possible to include a pattern after the range, in  which  case  only
+lines  matching  the  pattern  are  displayed.  See  section  <A
+HREF="#labsec:matching">3.3</A> for more details on patterns; if you are  using
+a pattern, you may prefer to give  the  range  as  `<tt>/<i>n</i></tt>',  which
+means the last <tt><i>n</i></tt> lines which match the pattern.<P>
+
+You can also save the output from a world in a file on disc, using the <tt>/log
+<i>buffer-switch</i> <i>state</i></tt>, where <tt><i>buffer-switch</i></tt>  is
+exactly as for the <tt>/recall</tt> command, except that you  cannot  leave  it
+blank, and <tt><i>state</i></tt> is either `<tt>ON</tt>', to turn  logging  on,
+`<tt>OFF</tt>', to turn logging off, or a filename, to turn logging on and  log
+to that file. Only one file may be open for each <tt><i>buffer-switch</i></tt>.
+If you switch logging on without specifying a filename, it  goes  to  the  file
+named by the <tt>LOGFILE</tt> macro, which defaults to `<tt>tiny.log</tt>'.<P>
+
+<i><| <tt>/relog</tt>? |></i><P>
+
+<h2><a name="sec3">Section 3: The Building Blocks</a></h2>
+ <a name="labsec:varblsnmacros"></a><P>
+
+This section introduces some of the concepts which will be useful in  the  next
+section, when we go on to defining macros and triggers.<P>
+
+<h3><a name="sec3.1">Section 3.1: Setting and Viewing Variables</a></h3>
+ <a name="labsec:variables"></a><P>
+
+A <i>variable</i> is, quite simply, a `slot' in which  you  store  information.
+The sort of variables we  will  discuss  here  are  what  is  called  <i>global
+variables</i>, which is to say that setting them inside a macro is exactly  the
+same as setting them directly[<a  href="#foot12">12</a>].  The  way  to  set  a
+variable called <tt><i>var</i></tt> to have the value <tt><i>val</i></tt> is to
+type <tt>/set <i>var</i>=<i>val</i></tt>, either directly or as part of a macro
+(see section <A HREF="#labsec:macros">3.2</A>). You can see what  the  variable
+is set to by typing <tt>/set <i>var</i></tt> on it's own.<P>
+
+<a name="foot12">[12] The other type are called <i>local variables</i>, and  if
+set inside a macro are not usable outside of it; these are only  really  useful
+when you get on to reasonably advanced macro programming. In  a  lot  of  ways,
+though, they are the same, but they use the command <tt>/let</tt>  rather  than
+<tt>/set</tt> to define them.</a><P>
+
+There is also another way to access variables which can only  usually  be  used
+easily from macros[<a href="#foot13">13</a>], which is to use what is called  a
+<i>percent substitution</i>. There are many different types of these,  but  the
+one that concerns us here has the format  <tt>%{<i>var</i>}</tt>,  which  in  a
+macro  body  would  be  replaced  by  the  value  of  the  variable  named
+<tt><i>var</i></tt>.  For  more  details  of  this,  type  <tt>/help
+substitution</tt>, and make sure you have set <tt>/more</tt> on!<P>
+
+<a name="foot13">[13] Usually, to use  this  directly,  you  would  prefix  the
+command by <tt>/eval</tt>;  for  instance,  <tt>/eval  /echo  %  The  TinyFugue
+library directory is  %{TFLIBDIR}.</tt>  would  display  `<tt>%  The  TinyFugue
+library directory is /usr/lib/games/tf/tf-35a19/.</tt>' on my system.</a><P>
+
+<h3><a name="sec3.2">Section 3.2: A Brief Introduction to Macros</a></h3>
+ <a name="labsec:macros"></a><P>
+
+I won't go into the details of writing macros here, but some of the basics  are
+well worth knowing before we start to discuss triggers and other  such  things.
+In essence, a macro is a way of defining your own TinyFugue  commands,  and  in
+fact a large  proportion  of  the  standard  TinyFugue  commands  are  actually
+implemented as macros. Macros can have a name, a <i>body</i>, which is the list
+of commands which it executes, a maximum number of times it can be executed,  a
+chance of happening, a set of conditions  under  which  it  will  automatically
+execute, and more besides, but in this section we  will  look  only  at  simple
+macros which you have to call yourself, and which don't do anything fancy.<P>
+
+The simplest macro is one whose body is not a TinyFugue  command  at  all,  but
+just some text which is sent to the current world. For example,  the  following
+command: <blockquote><tt>/def insultmary=say  Mary  is  really  quite  a  silly
+person</tt></blockquote> would send the text `<tt>say Mary is  really  quite  a
+silly  person</tt>'  to  the  game  whenever  you  typed  <tt>/insultmary</tt>,
+presumably resulting in output similar to `<tt>Rolo says "Mary is really  quite
+a silly person"</tt>'.<P>
+
+This has quite a few drawbacks  (not  to  mention  the  likelihood  of  getting
+frowned at by Mary!), but the most major of these comes if you are very grumpy,
+and want to be able to insult lots of different people. Of  course,  you  could
+define commands called <tt>/insultfrodo</tt>, <tt>/insultmortitia</tt>, and  so
+on, but it would be much easier and more flexible to be  able  to  type  simply
+<tt>/insult Rhubarb</tt> and have TinyFugue put the name in the right place for
+you. This is done, again, through percent substitution, but instead of the name
+of a variable you put the position where the text is expected to  appear  after
+the command, as a number. So in the above example, where  we  only  wanted  one
+word,  we  could  define  our  <tt>/insult</tt>  command  as  follows:
+<blockquote><tt>/def  insult=say  %1  is  really  quite  a  silly
+person</tt></blockquote><P>
+
+This would get boring after a while, though; it would be nice  to  be  able  to
+choose our insult. Given the  comments  above,  we  would  be  tempted  to  try
+something like <blockquote><tt>/def comment=say %1 is  %2</tt></blockquote>  in
+order to allow us to type `<tt>/comment Custard the wrong colour</tt>' and have
+it transmit `<tt>say Custard is the wrong colour</tt>', but unfortunately  this
+doesn't work. The reason? The `<tt>%2</tt>' would take only  the  second  word,
+rather than everything that remains, and so we would only say  `<tt>Custard  is
+the</tt>'. Instead, we must replace this with <blockquote><tt>/def  comment=say
+%1 is %{-1}</tt></blockquote> where  `<tt>%{-<i>n</i>}</tt>'  stands  for  `all
+words except the first <tt><i>n</i></tt>'.<P>
+
+The other thing which is worth mentioning at this point is regexp substitution,
+which is (you guessed it!) another type of percent  substitution.  It  is  only
+really  worthwhile  when  using  triggers  (see  section  <A
+HREF="#labsec:triggers">4.2</A>), but this would seem the logical place to talk
+about it. If you define a macro which, at any point, uses a regular  expression
+(this is usually in the pattern of a trigger, but can be  for  example  in  the
+<tt>regmatch()</tt> function), you can  use  parentheses  to  denote  different
+parts of the regexp which can then be extracted later. So, for example, if  you
+define  a  macro  which  triggers  on  the  regular  expression
+`<tt>(Flopsy|Mopsy|Cottontail)  has  arrived.</tt>',  your  macro  can  include
+`<tt>say Hello, %{P1}</tt>' in the body in order to automatically greet Flopsy,
+Mopsy  or  Cottontail  whenever  they  arrive[<a  href="#foot14">14</a>].  This
+explanation has been deliberately left vague, because of complications in using
+regexp matching; triggers are explained in  much  more  detail  in  section  <A
+HREF="#labsec:triggers">4.2</A> below.<P>
+
+<a name="foot14">[14] Although these so-called `auto-greet' macros are  popular
+examples, they quickly become annoying  and  are  not  recommended  for  actual
+use!</a><P>
+
+The astute among you will have noticed that so far, I haven't mentioned how  to
+use TinyFugue commands inside a macro. To start with, you are  less  likely  to
+want to do this, but there will probably come a time when you want to  do  more
+in your macros than just output text. The solution is simple, however,  as  you
+may have already guessed: enter them just like when you type them in  directly!
+(In other words, TinyFugue macros are always preceded by a slash,  which  tells
+TinyFugue to process the command itself rather than sending it to the MUD.)  In
+order to enter more than one command---or to send more than  one  line  to  the
+MUD---you  can  separate  them  with  the  string  `<tt>%;</tt>'[<a
+href="#foot15">15</a>]: <blockquote><tt>/def insult=say %1 is  really  quite  a
+silly  person%;/duck</tt></blockquote>  would  execute  the  TinyFugue  command
+<tt>/duck</tt> whenever you insulted anybody.<P>
+
+<a name="foot15">[15] Note that this does not work if you enter it directly. If
+you wish to do this (so you can repeat the command  using  the  <tt>Ctrl-P</tt>
+key, for instance), either define a macro to do it or precede the  entire  line
+with the <tt>/eval</tt> command.</a><P>
+
+It is  possible  to  see  the  definition  of  a  macro,  using  the  <tt>/list
+<i>name</i></tt>  command,  which  displays  the  definition  of  the  command
+<tt><i>name</i></tt>,  or  all  (non-invisible)  defined  macros  if
+<tt><i>name</i></tt>  is  not  given.  You  can  also  give  switches  to
+<tt>/list</tt>, just like to <tt>/def</tt>, which will  make  it  display  only
+those macros defined  using  those  switches.  So,  for  example,  the  command
+<tt>/list -t</tt> would display all trigger macros. In order to change a  macro
+which  you  have  written,  you  cannot  just  use  <tt>/def</tt>[<a
+href="#foot16">16</a>], but instead you have to use the <tt>/edit</tt> command.
+This has exactly the same syntax as <tt>/def</tt>, but can only  be  used  when
+the named macro already exists. If you must use <tt>/def</tt>,  though,  or  if
+you  wish  to  simply  get  rid  of  a  macro,  the  command  is  <tt>/undef
+<i>name</i></tt>,  which  removes  the  definition  of  the  macro
+<tt><i>name</i></tt>.<P>
+
+<a name="foot16">[16] In fact  you  can  do  this,  if  you  set  the  variable
+<tt>redef</tt> to `<tt>on</tt>'; this is disabled by default,  however,  and  I
+would recommend that you leave it like  this  unless  you  know  what  you  are
+doing.</a><P>
+
+And finally, a note about defining commands with no  name.  This  is  perfectly
+possible to do, and can be quite useful when defining triggers etc to save  you
+having to come up with unique names for them all, but as soon  as  you  try  to
+edit or remove it,  you  will  run  into  problems.  However,  if  you  give  a
+<tt>/list</tt> command with appropriate arguments, you will  be  able  to  find
+it's macro number (see figure <A HREF="#labfig:listnums">2</A>), which  can  be
+used to refer to it in the commands <tt>/undefn  <i>num</i></tt>  or  <tt>/edit
+#<i>num</i></tt> which act just like their named counterparts.<P>
+
+
+<hr width="33%">
+<a name="fig2">
+ <P>
+
+<pre>
+  % 410: /def -p1 -P1BCgreen -mregexp -F -t'([Ff]es(ber)*(ter)*)' 
+  % 411: /def -p1 -P1Cyellow -mregexp -F -t'([Ll]ath(en)*)' 
+  % 412: /def -p1 -P1Cyellow -mregexp -F -t'([Tt](ie(mar)*|ack))' 
+  % 413: /def -p1 -P1Cyellow -mregexp -F -t'([Aa]q(uila)*)' 
+</pre>
+ <P>
+
+Figure 2: Sample output from a  <tt>/list</tt>  command,  showing  some  macros
+without names<a name="labfig:listnums"></a><P>
+
+</a><hr width="33%">
+ <P>
+
+<h3><a name="sec3.3">Section 3.3: Matching Text</a></h3>
+ <a name="labsec:matching"></a><P>
+
+There are a lot of times when you want to compare some text  (perhaps  received
+from a MUD, or typed in by the user, or whatever) against  a  certain  pattern,
+and act differently according to whether it matches or not. TinyFugue has three
+different types of pattern, which I will explain in this here. What I will  not
+do  is  to  give  any  examples  of  code,  but  all  of  section  <A
+HREF="#labsec:trighil">4</A> is about matching text, and doing  various  things
+with it.  The  three  matching  styles  are  known  as  <b>simple  matching</b>
+(`<tt>simple</tt>'), <b>glob  matching</b>  (`<tt>glob</tt>'),  and  <b>regular
+expression matching</b> (`<tt>regexp</tt>').<P>
+
+<h4>Simple Matching</h4>
+<P>
+
+As the name implies, this is the simplest of the lot, and just compares the two
+strings character-by-character, treating uppercase and lowercase characters  as
+being  different.  As  a  quick  example,  `<tt>text</tt>'  would  match
+`<tt>text</tt>', but not `<tt>Text</tt>' or `<tt>more text</tt>'.<P>
+
+<h4>Glob Matching</h4>
+<P>
+
+Those of you who are used to the UN*X shell may have come across the name `glob
+patterns' before, referring to the way the shell does  it's  pattern  matching,
+and indeed glob matching in TinyFugue is very similar  to  this.  There  are  a
+small number of special characters, listed below, and apart from these few  any
+character stands for itself, uppercase and lowercase being considered to be the
+same for these purposes. The special characters are:<P>
+
+  <dl> <P>
+  
+  <dt><tt>*</tt>
+  <dd> The asterisk matches any number of characters,  including  none.  So
+      `<tt>A*</tt>' would match any word beginning with the letter A (uppercase
+      or lowercase), or  `<tt>*  pages:  *</tt>'  would  match  any  line  like
+      `<tt>Jimbo pages: I'm coming in to land, Chief</tt>'.<P>
+  
+  <dt><tt>?</tt>
+  <dd>  The  question  mark  matches  any  single  character,  for  example
+      `<tt>c?t</tt>' would match `<tt>cat</tt>'  and  `<tt>cot</tt>',  but  not
+      `<tt>coot</tt>' or `<tt>ct</tt>'.<P>
+  
+  <dt><tt>[<i>chars</i>]</tt>
+  <dd> A pair of square brackets containing characters will match a  single
+      character if it is  the  same  as  any  of  the  characters  between  the
+      brackets. Ranges can be given using a hyphen, `<tt>-</tt>', so you  could
+      use  `<tt>[0-9]</tt>'  instead  of  `<tt>[0123456789]</tt>':
+      `<tt>[a-z]*</tt>' would match any line beginning with a letter,  but  not
+      something like `<tt>10000 bottles of beer on the wall</tt>'.<P>
+  
+  <dt><tt>[^<i>chars</i>]</tt>
+  <dd> If the first character in the set of square brackets is a caret, the
+      matching is reversed and a character is matched if it  is  <b>not</b>  in
+      the set. A pattern `<tt>[^a-z]*</tt>' would  therefore  match  `<tt>10000
+      bottles of beer on the wall</tt>', but not `<tt>ten thousand  bottles  of
+      beer on the wall</tt>'.<P>
+  
+  <dt><tt>{<i>pattern1</i>|<i>pattern2</i>|...}</tt>
+  <dd> A set of patterns in curly braces matches if one of the patterns matches
+      <b>a single, whole word</b>. That  is  to  say,  `<tt>{soft|loud}ly</tt>'
+      would  not  match  either  `<tt>softly</tt>'  or  `<tt>loudly</tt>',  but
+      `<tt>{one|two} more</tt>' would match either of `<tt>one  more</tt>'  and
+      `<tt>two more</tt>'. Note that you can have as many different patterns as
+      you wish: zero (ie, the pattern `<tt>{}</tt>') matches the empty  string,
+      and one (eg `<tt>{word}</tt>') matches just a  single  word.  This  is  a
+      better way of doing it than putting spaces at either end, which would not
+      match at the beginning or the end of a line. Note also  that  you  cannot
+      put more than one word inside each set of curly braces.<P>
+  
+  <dt>\The backslash can be used to remove the special meaning of a special
+      character, including itself, so in order  to  match  `<tt>[\*]</tt>'  you
+      would use the pattern `<tt>\[\\\*\]</tt>'.<P>
+  
+</dl> <P>
+
+Note that, unlike regular  expressions,  the  pattern  must  match  the  entire
+string. So to match one word in the middle of a line, you must put an  asterisk
+at either end of your  pattern,  like  `<tt>*Dark  Avenger*</tt>'  rather  than
+`<tt>Dark Avenger</tt>'. To match a word at the beginning of a  line  only,  of
+course, you would use a pattern such as `<tt>Pusspuss *</tt>'.<P>
+
+<h4>Regular Expression Matching</h4>
+<P>
+
+Regular expressions are even more complicated than that. I  will  only  give  a
+summary here; the TinyFugue help about them is pretty complete, so you can look
+at <tt>/help regexp</tt> for more information. I have tried to put in a lot  of
+examples, but if you can't understand it on your first read through  I  suggest
+you skip it, and come back later.<P>
+
+Regular expressions can be thought of as a sequence of `things', which we  will
+refer to as <i>atoms</i>. The  simplest  atom  is  a  single  character,  which
+(unless it's a special character, more of which later)  matches  itself.  Atoms
+can be put one after  the  other  to  make  the  regexp,  and  so  the  pattern
+`<tt>abcd</tt>' would match `<tt>abcd</tt>'. Note  that  a  regular  expression
+matches a line of text if it matches anything within the line, as distinct from
+a glob pattern which must match the  whole  line,  so  the  regular  expression
+`<tt>abcd</tt>' above would also match  `<tt>abcdefg</tt>'  and  `<tt>The  slug
+said "abcd"</tt>'.<P>
+
+In addition to these, there are some other single-character atoms,  which  have
+special meanings inside a regular expression:<P>
+
+  <dl> <P>
+  
+  <dt><tt>.</tt>
+  <dd> A period or full stop matches any single character in the string, very
+      much like the `<tt>?</tt>' character in a glob pattern;  using  the  same
+      example as above, the regular expression `<tt>c.t</tt>' would  match  any
+      line containing `<tt>cot</tt>' or `<tt>cut</tt>', but not one  containing
+      `<tt>coat</tt>' or `<tt>ct</tt>' (unless it also contains a  string  that
+      matches; for example, the string `<tt>I have cut my  coat  in  half</tt>'
+      would be matched, but `<tt>I have ripped my coat up</tt>' would not).<P>
+  
+  <dt><tt>^</tt>
+  <dd> A caret matches the beginning of the line: `<tt>^Helen</tt>' would match
+      the string `<tt>Helen</tt>' at the start of the line, such as  `<tt>Helen
+      waves</tt>', but nowhere else.<P>
+  
+  <dt><tt>$</tt>
+  <dd>  Similarly,  a  dollar  sign  matches  the  end  of  the  line,  so
+      `<tt>^Helen$</tt>' would match only a line consisting of  only  the  word
+      `<tt>Helen</tt>'.<P>
+  
+</dl> To remove the special meaning of these (or any other) characters, precede
+them with a backslash. So `<tt>mat\.$</tt>' would match `<tt>The cat sat on the
+mat.</tt>', but not `<tt>the cat sat on the mat!</tt>'.<P>
+
+There are some characters you can add to the end of any atom to change the  way
+it matches. You can only add one of these characters to each atom. They are:<P>
+
+  <dl> <P>
+  
+  <dt><tt>*</tt>
+  <dd> The asterisk matches zero or more successive occurrences of the atom,
+      for  example  `<tt>baaa*</tt>'  would  match  `<tt>baa</tt>'  and
+      `<tt>baaaaaaaa</tt>', or `<tt>^My.* valentine\.$</tt>'  would  match  any
+      sentence  starting  with  `<tt>My</tt>'  and  ending  with
+      `<tt>valentine.</tt>', such as  `<tt>My  funny  valentine</tt>',  `<tt>My
+      valentine</tt>',  `<tt>Mycroft's  valentine</tt>'  or  `<tt>My  Irish
+      Wolfhound is your valentine.</tt>'.<P>
+  
+  <dt><tt>+</tt>
+  <dd> An atom followed by a plus  sign  matches  one  or  more  successive
+      occurrences of the atom. For example, `<tt>baa+</tt>'  would  also  match
+      `<tt>baa</tt>' and `<tt>baaaaa</tt>' (note there is one less `<tt>a</tt>'
+      in this version!), or `<tt>a+r+g+h+</tt>' could  be  used  to  tell  when
+      people fall off buildings (can you see what it would match?).  Note  that
+      `<tt>^My.+ valentine\.$</tt>' would not  match  `<tt>My  valentine</tt>',
+      although it would match if there were two spaces instead of one.<P>
+  
+  <dt><tt>?</tt>
+  <dd> Finally, the question mark matches one or zero  occurrences  of  the
+      preceeding atom: for  example,  to  match  the  words  `<tt>cot</tt>'  or
+      `<tt>coot</tt>', you could use `<tt>coo?t</tt>', where the question  mark
+      tells TinyFugue that the second `<tt>o</tt>' is optional.<P>
+  
+</dl> <P>
+
+And finally, there are some longer  atoms  which  you  can  use.  These  behave
+exactly the same as the single-character atoms given above, but  remember  that
+if you add a <tt>*</tt>, <tt>+</tt> or <tt>?</tt> to the end it applies to  the
+entire atom, not just the last character. These longer atoms are:<P>
+
+  <dl> <P>
+  
+  <dt>\<tt><i>c</i></tt>
+  <dd> As mentioned above, the backslash removes any special meaning from the
+      character <tt><i>c</i></tt>. You can use a backslash on a character which
+      has no special meaning, and it will still count as a single atom; to  get
+      a backslash, use `<tt>\\</tt>'.<P>
+  
+  <dt><tt>[<i>chars</i>]</tt> and <tt>[^<i>chars</i>]</tt>
+  <dd> As in the glob patterns above, a set  of  characters  within  square
+      brackets matches any one of those characters, or any character  which  is
+      not in the set if the first character in the set is a caret. However,  in
+      a regular expression this is much more flexible, as you  can  combine  it
+      with the `<tt>*</tt>', `<tt>+</tt>' and `<tt>?</tt>' characters  in  ways
+      such  as  `<tt>[0-9]+</tt>',  which  matches  any  number,  or
+      `<tt>^[^A-Z]*$</tt>', which  would  match  any  line  which  contains  no
+      uppercase characters.<P>
+  
+  <dt><tt>(<i>regexp1</i>|<i>regexp2</i>|...)</tt>
+  <dd>  This  construction,  in  a  similar  way  to  the
+      `<tt>{<i>pattern1</i>|<i>pattern2</i>|...}</tt>' construction in  a  glob
+      pattern, matches any one of the regular expressions in the list, although
+      it does not stipulate that it should be a whole word. However, it has the
+      same advantage as the `<tt>[...]</tt>' given above, in that you  can  use
+      the `<tt>*</tt>',  `<tt>+</tt>'  and  `<tt>?</tt>'  characters  to  build
+      really quite  complicated  regular  expressions.  So,  for  example,  the
+      regular expression `<tt>Fes(ber|ter)?</tt>' would  match  `<tt>Fes</tt>',
+      `<tt>Fesber</tt>'  or  `<tt>Fester</tt>',  or  `<tt>((one|(apples?||  and
+      |\.))+</tt>' would match  a  simple  shopping  list  such  as  `<tt>three
+      apples, three oranges and a pear</tt>'.<i><| This probably  ought  to  be
+      checked at some stage ...! |></i> There is also  a  completely  different
+      use for this same construction, although you can use it for both purposes
+      at the same time, and that is in regexp  substitution,  as  mentioned  in
+      section <A HREF="#labsec:macros">3.2</A>. Each expression in  parentheses
+      like this gets given a number, starting from the left with  1,  and  then
+      you can reference the text that was in that set later; this can  be  used
+      to extract the name of the person who has just arrived in order to  greet
+      them, for instance, using the regular expression `<tt>^([^ ]*)  has  just
+      arrived</tt>'.<P>
+  
+</dl> <P>
+
+And that is---finally---it. The TinyFugue online help  (<tt>/help  regexp</tt>)
+gives a more technical description  of  regular  expressions,  and  I  think  a
+slightly more complete one, as  well  as  a  very  useful  comparison  of  glob
+patterns and regular expressions.<P>
+
+<h2><a name="sec4">Section 4: Reacting Automatically to MUD Output</a></h2>
+ <a name="labsec:trighil"></a><P>
+
+Having waded through all that, we now come on to the useful bits:  how  to  get
+TinyFugue to notice what comes from the MUD, or from other places, and to react
+accordingly. This  is  done---you  guessed  it!---using  the  pattern  matching
+methods which you have already met.<P>
+
+For a lot of the things mentioned below, there is a special command to  do  it,
+like the <tt>/hilite</tt> command which marks the entire  line  containing  the
+text. However, all of these commands are actually  macros,  which  are  exactly
+equivalent  to  certain  forms  of  the  <tt>/def</tt>  command  (<tt>/hilite
+<i>pattern</i></tt>  simply  does  <tt>/def  -ah  -t"<i>pattern</i>"</tt>,  for
+example), and we will have to use these more complicated forms in order to  get
+different styles of highlighting. For  now,  though,  I  will  simply  give  in
+passing these equivalences, and you can refer back to them later.<P>
+
+There  are  two  global  variables  which  control  the  way  hiliting  works:
+<tt>matching</tt> and <tt>hiliteattr</tt>. <tt>matching</tt> can  take  one  of
+the  values  `<tt>simple</tt>',  `<tt>glob</tt>'  or  `<tt>regexp</tt>',  and
+determines  the  default  matching  style  used  by  commands  such  as
+<tt>/hilite</tt>; this defaults to `<tt>glob</tt>', and I shall assume this  in
+all the examples which follow. <tt>hiliteattr</tt> changes the <i>attribute</i>
+(effect or colour) used by these commands, and defaults to bold (see  <tt>/help
+hiliteattr</tt> and <tt>/help attributes</tt> for details on how to change this
+variable).  Both  of  these  can  be  overridden  using  the  more  complicated
+<tt>/def</tt> forms of the commands, which we will see how to do in section  <A
+HREF="#labsec:defhilite">4.4</A>.<P>
+
+<h3><a name="sec4.1">Section 4.1: Hiliting MUD output</a></h3>
+ <a name="labsec:hilite"></a><P>
+
+To start with, when you use TinyFugue, all the output will  come  up  the  same
+colour. This is usually fine, except that when there is a lot of spam,  it  can
+be quite difficult to read it  all.  For  this  reason,  TinyFugue  provides  a
+mechanism whereby you can spot certain strings in  the  text  coming  from  the
+game, and hilite the  entire  line  which  contains  them.  This  is  done,  as
+mentioned above, using the <tt>/hilite <i>pattern</i></tt>  command,  which  is
+equivalent to  <tt>/def  -ah  -t"<i>pattern</i>"</tt>.  <tt><i>pattern</i></tt>
+uses the matching style given in the <tt>matching</tt> variable.<P>
+
+For example, to hilite whenever anybody  pages  you[<a  href="#foot17">17</a>],
+you  would  give  the  command  <blockquote><tt>/hilite  {*}  pages:
+*</tt></blockquote> (or <tt>/def -ah -t"{*} pages: *"</tt>) and to  hilite  any
+line which contains `<tt>Apeman</tt>', often because it is your name, you would
+use <blockquote><tt>/hilite *Apeman*</tt></blockquote><P>
+
+<a name="foot17">[17] In fact, there is a command  <tt>/hilite_page</tt>  which
+does this for many different  paging  styles,  which  you  would  probably  use
+instead of doing it this way.</a><P>
+
+Hiliting the entire line  is  quite  limiting,  though,  especially  if  you're
+talking quite a lot or if you want to notice some other  people's  names  being
+mentioned  as  well,  and  so  there  is  an  alternative  called  <i>partial
+highlighting</i> which highlights only the text matched  by  the  pattern.  The
+command for this is <tt>/partial <i>pattern</i></tt>, which  is  equivalent  to
+<tt>/def -Ph -F  -t"<i>pattern</i>"</tt>.  Now,  you  may  remember  that  glob
+matching and simple matching can only match entire lines, so we can't use  them
+here:  what's  left  is  regular  expression  matching,  so  the
+<tt><i>pattern</i></tt> must be a regular expression. The highlighted  part  is
+that covered by the entire regular expression.<P>
+
+For example, if as above you were called Apeman, or Ape to  your  friends,  you
+could give the command <blockquote><tt>/partial  [Aa]pe(man)?</tt></blockquote>
+and your name would be hilited whenever it appeared, even if whoever  typed  it
+forgot the capital letter. This is also useful for `chat channels' or whatever:
+<blockquote><tt>/partial  ^KewlKroo></tt></blockquote>  would  hilite  the
+`<tt>KewlKroo></tt>' prefix on any line on the Kewl Kroo's chat channel, rather
+than the whole line like <tt>/hilite</tt>  would,  which  makes  it  much  less
+intrusive.<P>
+
+<h3><a name="sec4.2">Section 4.2: Using Triggers</a></h3>
+ <a name="labsec:triggers"></a><P>
+
+The major reason for using hilites, as demonstrated  above,  is  to  draw  your
+attention to important information which you might otherwise  miss.  There  are
+some things in this category, though, which simply require you to do  something
+in return; for example, if somebody tries to kill  you,  or  just  if  somebody
+waves and you want to wave back. This is what triggers are for.<P>
+
+A  trigger  is  just  like  a  normal  macro  (see  section  <A
+HREF="#labsec:macros">3.2</A>), except that rather than waiting for you to  run
+it, it is executed automatically whenever certain text  is  received  from  the
+MUD. The command to do this is  <tt>/trig  <i>pattern</i>=<i>body</i></tt>  (or
+<tt>/def -t<i>pattern</i>=<i>body</i></tt>), where  <tt><i>pattern</i></tt>  is
+the text you want to trigger on, in the style given  by  the  <tt>matching</tt>
+variable, and <tt><i>body</i></tt> is just like the body of a normal macro. For
+example, if you are on many games at once and there  is  a  lot  of  background
+noise, you need to know immediately if somebody starts trying to kill you.  The
+command <blockquote><tt>/trig {*} tried to kill you!=/echo !!! Attempted murder
+!!!</tt></blockquote> would set  up  a  trigger  to  warn  you,  but  not  very
+helpfully; better would be the command <blockquote><tt>/trig {*} tried to  kill
+you!=/eval /echo !!! Attempted murder !!!%; /fg ${world_name}</tt></blockquote>
+which would also switch to the offending world[<a href="#foot18">18</a>]. It is
+not, unfortunately, possible to easily extract and use the name of  the  person
+using the <tt>/trig</tt> command, but it can be done  with  the  more  flexible
+<tt>/def</tt> command: see section <A HREF="#labsec:moretrigs">4.3</A>.<P>
+
+<a name="foot18">[18] The <tt>${world_name}</tt> construction inserts the value
+of the `special macro' <tt>world_name</tt>, which  contains  the  name  of  the
+current  world.  You  can  also  use  <tt>world_character</tt>,
+<tt>world_password</tt>,  <tt>world_host</tt>,  <tt>world_port</tt>,
+<tt>world_type</tt> and <tt>world_mfile</tt>. I  call  these  `special  macros'
+because the <tt>${...}</tt> construction is that used to substitute the body of
+a macro, but you cannot run these macros.</a><P>
+
+There are, however, some other forms of the <tt>/trig</tt> command which  allow
+you to modify it's behaviour  somewhat.  The  first,  <tt>/trigc  <i>chance</i>
+<i>pattern</i>=<i>body</i></tt>,  gives  the  trigger  a  certain
+<tt><i>chance</i></tt> out of 100 of executing when the text which  it  matches
+arrives, and is otherwise exactly the same as the <tt>/trig</tt>  command.  The
+<tt>/trigc</tt>  command  is  equivalent  to  <tt>/def  -c<i>chance</i>
+-t<i>pattern</i>=<i>body</i></tt>.<P>
+
+The other change you can make is to give the  trigger  a  <i>priority</i>  over
+other triggers. This usually defaults to 0, but can be set to any  value  below
+about 2147483647! When a piece of text arrives, TinyFugue searches through  the
+macros which match it in order of this priority, and executes the first one  it
+comes across. If there are more than one of the same priority, one is chosen at
+random. This allows you to exclude certain cases from matching, by  defining  a
+(possibly empty) trigger of higher priority, as in the following example  which
+would wave back to anyone who waved, unless it was  you:  <blockquote><tt>/trig
+{*} waves=:waves<br>
+/trigp 1 Apeman waves</tt></blockquote><P>
+
+You  can  also  change  both  these  things  at  once,  using  the  <tt>/trigpc
+<i>priority</i> <i>chance</i> <i>pattern</i> = <i>body</i></tt> command.<P>
+
+<h3><a name="sec4.3">Section 4.3: More  Flexible  Hilites  and  Triggers  using
+Regular Expressions</a></h3>
+ <a name="labsec:moretrigs"></a><P>
+
+Recall the trigger in section <A HREF="#labsec:triggers">4.2</A>,  which  would
+print up a message and switch worlds whenever somebody tried to kill  you,  but
+could not  attack  them  back.  There  is  in  fact  a  way  to  do  this,  but
+unfortunately it requires a regular expression pattern, and so we cannot do  it
+with  the  simple  <tt>/trig</tt>  command  (unless  we  set
+<tt>matching=regexp</tt>), but must use <tt>/def</tt> instead.<P>
+
+The <tt>/def</tt> command has a switch which will set the matching style for  a
+particular  trigger,  the  `<tt>-m<i>style</i></tt>'  switch,  where  the
+<tt><i>style</i></tt>s  are  the  same  as  those  for  the  <tt>matching</tt>
+variable. So, for example, the command <blockquote><tt>/def -t"^[^  ]+  waves$"
+-mregexp=:waves</tt></blockquote> would catch whenever anybody waves  and  wave
+back,  just  like  the  trigger  <blockquote><tt>/trig  {*}
+waves=:waves</tt></blockquote> in  section  <A  HREF="#labsec:triggers">4.2</A>
+above, if rather less efficiently (note that both of these  still  need  to  be
+overridden for the case `<tt><i>yourname</i> waves</tt>').<P>
+
+The use of regular expressions, in particular, has  one  major  advantage:  the
+ability to extract certain parts of the pattern and re-use them in  your  macro
+(see  sections  <A  HREF="#labsec:matching">3.3</A>  and  <A
+HREF="#labsec:macros">3.2</A>), by enclosing them in parentheses and using  the
+`<tt>%{P<i>n</i>}</tt>' substitution, where <tt><i>n</i></tt> is the number  of
+the particular set of parentheses. So, for example, the following trigger would
+wave back  to  anyone  who  waved:  <blockquote><tt>/def  -t"^([^  ]+)  waves$"
+-mregexp =  :waves  to  %{P1}</tt></blockquote>  or,  finally,  we  can  attack
+somebody back when they start trying to kill us:  <blockquote><tt>/def  -t"^([^
+]+) tried to kill you!$" -mregexp = kill %{P1}</tt></blockquote> Note that this
+would only try once for each of their tries, which is still not ideal,  but  it
+would give you a bit of time. See  appendix  <A  HREF="#labsec:sampmacs">??</A>
+for a more sophisticated trigger to deal with this situation.<P>
+
+This sort of thing can also be done with partial highlighting, using a  special
+form  of  the  `<tt>-P</tt>'  switch.  Recall  that  in  section  <A
+HREF="#labsec:hilite">4.1</A>, we said that the <tt>/partial</tt>  command  was
+equivalent to the <tt>/def -Ph -F -t<i>regexp</i></tt> command. If, instead  of
+`<tt>-Ph</tt>', we use `<tt>-P<i>n</i>h</tt>', where <tt><i>n</i></tt>  is  the
+number of our parenthesised expression, it will hilite only that  part  of  the
+regular expression[<a href="#foot19">19</a>]. For example, <i><| there must  be
+a better example?  |></i>  on  a  TinyMUSH  game,  objects  are  referenced  by
+<i>dbref</i> numbers, written as `<tt>#123</tt>', but when  you  look  at  some
+objects it also tells you the flags which are used by  the  object,  as  single
+letters, for example `<tt>#123Rh</tt>'  indicates  that  object  #123  has  the
+<tt>ROOM</tt> and <tt>HALTED</tt> flags set on it. The following  command  will
+hilite these  flags[<a  href="#foot20">20</a>]:  <blockquote><tt>/def  -F  -P1h
+-t"#[0-9]+([A-Za-z]+)"</tt></blockquote><P>
+
+<a name="foot19">[19] Notice the lack of the `<tt>-mregexp</tt>' switch in  the
+above command; it will not do any harm to  include  it,  but  as  mentioned  in
+section <A HREF="#labsec:hilite">4.1</A>, partial hiliting requires  a  regular
+expression anyway.</a><P>
+
+<a name="foot20">[20] In itself, this is not very  useful,  but  when  combined
+with a command to hilite the dbref  in  a  different  colour  (see  section  <A
+HREF="#labsec:defhilite">4.4</A>)  it  can  make  displays  much  easier  to
+read.</a><P>
+
+<h3><a name="sec4.4">Section 4.4: Changing the Attributes</a></h3>
+ <a name="labsec:defhilite"></a><P>
+
+
+<hr width="33%">
+<a name="tab2">
+ <P>
+
+<center>
+ <P>
+
+<P>
+
+<table border>
+<tr><td>Code                   <td>Name     <td>Meaning                                                               
+<tr><td>n                      <td>normal   <td>Do not apply any other attributes to this                             
+<tr><td>g                      <td>gag      <td>Do not display                                                        
+<tr><td>G                      <td>norecord <td>Do not record in history                                              
+<tr><td>u                      <td>underline<td>Underline this text                                                   
+<tr><td>r                      <td>reverse  <td>Display this text in reverse video                                    
+<tr><td>f                      <td>flash    <td>Make this text flash                                                  
+<tr><td>d                      <td>dim      <td>Display this text dimmed                                              
+<tr><td>B                      <td>Bold     <td>Display this text brightened or made bold                             
+<tr><td>b                      <td>bell     <td>Beep when this text is displayed                                      
+<tr><td>h                      <td>hilite   <td>Display this text using the attributes in
+<tt>hiliteattr</tt>         
+<tr><td>C<tt><i>colour</i></tt><td>Colour   <td>Display this text coloured (see
+table <A HREF="#labtab:colours">3</A>)
+</table>
+<P>
+
+Table  2:  The  available  attributes  and  their  one-letter  codes<a
+name="labtab:attrs"></a><P>
+
+</center> <P>
+
+</a><hr width="33%">
+ <P>
+
+
+<hr width="33%">
+<a name="tab3">
+ <P>
+
+<center>
+ <P>
+
+<P>
+
+<table border>
+<tr><td>Foreground<td>Background
+<tr><td>black     <td>bgblack   
+<tr><td>red       <td>bgred     
+<tr><td>green     <td>bggreen   
+<tr><td>yellow    <td>bgyellow  
+<tr><td>blue      <td>bgblue    
+<tr><td>magenta   <td>bgmagenta 
+<tr><td>cyan      <td>bgcyan    
+<tr><td>white     <td>bgwhite   
+</table>
+<P>
+
+Table  3:  Colour  names  for  use  with  the  `<tt>C</tt>'  attribute<a
+name="labtab:colours"></a><P>
+
+</center> <P>
+
+</a><hr width="33%">
+ <P>
+
+When hiliting text, you are not stuck with just  the  one  way  to  do  it.  Of
+course, if you only have a monochrome display, you will  not  be  able  to  use
+colour, but if your terminal supports it you can still gag text (tell TinyFugue
+not to display it), put it in reverse video, beep when  it  arrives,  underline
+it, make it flash, and more. A complete list of all available attributes is  in
+table <A HREF="#labtab:attrs">2</A>.<P>
+
+These attributes are entered using the `<tt>-a<i>attr</i></tt>' (for  hiliting)
+or  the  `<tt>-P<i>attr</i></tt>'  and  `<tt>-P<i>n</i><i>attr</i></tt>'  (for
+partial hiliting) switches to <tt>/def</tt>, using the forms of these  commands
+given in section <A HREF="#labsec:hilite">4.1</A>. More than one attribute  may
+be entered by simply listing their characters one after the other,  except  for
+the normal (`<tt>n</tt>') attribute, which is rather pointless to combine  with
+any other, and  the  Colour  attribute  `<tt>C<i>colour</i></tt>',  which  must
+always be the last  named  so  TinyFugue  can  read  the  name  of  the  colour
+properly.<P>
+
+For example, the following would highlight the name `<tt>Anna</tt>' in bold red
+whenever it appeared as a word on it's own:  <blockquote><tt>/def  -F  -P2BCred
+-t"([^A-Za-z0-9]|^A-Za-z0-9]|$)"</tt></blockquote> or to make any whispers show
+up  in  reverse  video  and  beep  when  they  are  displayed,  you  might  use
+<blockquote><tt>/def -arb -t"{*} whispers*"</tt></blockquote><P>
+
+<h3><a name="sec4.5">Section 4.5: Redefining the Keyboard</a></h3>
+ <a name="labsec:keybindings"></a><P>
+
+Although TinyFugue comes with it's own set of  built-in  key  bindings,  it  is
+possible to define your own, and to change the  existing  ones,  quite  easily,
+using the <tt>/bind <i>sequence</i> = <i>command</i></tt>  command.  Any  legal
+macro body is valid  for  the  <tt><i>command</i></tt>,  so  you  can  use  key
+sequences to send strings  to  the  current  world,  to  execute  any  existing
+TinyFugue command or macro, and as a macro themselves to do complex operations,
+although it is usually better to write the macro seperately and then just  bind
+a key to  call  that  macro.  To  remove  the  binding  again,  just  call  the
+<tt>/unbind <i>sequence</i></tt> command with the same key sequence.<P>
+
+The key sequence can be anything you can type, although it is strongly  advised
+that it does not begin with a common character such as a letter, since once you
+type a key which starts a keybinding, nothing is displayed until what you  have
+typed could no longer match the binding.  For  example,  if  I  bound  the  key
+sequence `<tt>john</tt>'  to  enter  `<tt>John_The_Fish</tt>'  into  the  input
+buffer, then while I was typing `<tt>johan</tt>' I would have to wait until the
+`<tt>a</tt>' before anything was  displayed!  Instead,  I  should  bind  a  key
+sequence such as `<tt>~john</tt>', or  `<tt>Ctrl-X  john</tt>',  or  even  just
+`<tt>Ctrl-X  j</tt>',  which  I  would  not  want  to  type  under  any  other
+circumstances.<P>
+
+The <tt><i>sequence</i></tt> parameter to the <tt>/bind</tt> command can be any
+string, but in order to allow you to easily include control characters  in  the
+sequence, the following conversions are applied to it:<P>
+
+  <ul> <P>
+  
+  <li> Any pair of characters of the form `<tt>^<i>c</i></tt>' is converted to
+      the key combination `<tt>Ctrl-<i>c</i></tt>', if possible. (In  order  to
+      enter a literal `<tt>^</tt>' character, you can use  `<tt>\94</tt>';  see
+      below.)  For  example,  the  escape  character  could  be  entered  as
+      `<tt>^[</tt>'.<P>
+  
+  <li> A number preceded by a backslash, which does not begin with a zero, is
+      treated as a decimal character code; in this way, the escape character is
+      `<tt>\27</tt>'.<P>
+  
+  <li> A number preceded by a backslash which does begin with a zero is treated
+      as an octal character code, so `<tt>\033</tt>' also represents the escape
+      character.<P>
+  
+  <li> The string `<tt>\0x</tt>' is followed by a hexadecimal number, and again
+      represents a character code, making `<tt>\0x1B</tt>' represent the escape
+      character.<P>
+  
+</ul> In order to bind to a  character  together  with  the  <tt>Meta</tt>  (or
+<tt>Alt</tt>) key, precede the character with an escape character.<P>
+
+There are two other TinyFugue commands which are very  useful  for  binding  to
+keys:  the  <tt>/input</tt>  and  <tt>/dokey</tt>  commands.  The  <tt>/input
+<i>string</i></tt> command simply inserts the <tt><i>string</i></tt>  into  the
+input buffer as if you had just typed it; for  instance,  <blockquote><tt>/bind
+^xj=/input  John_The_Fish</tt></blockquote>  would  make  the  key  sequence
+`<tt>Ctrl-X  j</tt>'  be  the  same  as  typing  `<tt>John_The_Fish</tt>'.  The
+<tt>/dokey <i>name</i></tt> command performs the  function  of  the  predefined
+editing key <tt><i>name</i></tt>; see <tt>/help dokey</tt> for a list of  these
+and  some  examples.  This  is  mostly  for  redefining  the  basic  TinyFugue
+bindings.<P>
+
+<h3><a  name="sec4.6">Section  4.6:  Using  Hooks  and  Hiliting  TinyFugue
+Output</a></h3>
+ <a name="labsec:hooks"></a><P>
+
+In the course of a session, TinyFugue will do lots of things for you,  such  as
+connecting or disconnecting from a world, changing the current world, loading a
+file, etc. It can sometimes be useful to be able to execute a command  whenever
+one of these events happen, and the mechanism by which you do  this  is  called
+<i>hooking</i>. TinyFugue provides 30 or so different parts of  it's  execution
+which you can hook into and execute your own commands, using the <tt>/hook</tt>
+command.<P>
+
+This command has the syntax <tt>/hook  <i>hook</i>  =  <i>body</i></tt>,  where
+<tt><i>body</i></tt> is a standard macro body, and <tt><i>hook</i></tt> is  the
+name of the hook to catch, optionally followed by a pattern.  This  command  is
+equivalent to <tt>/def -h"<i>hook</i>" =  <i>body</i></tt>.  The  name  of  the
+hook, and the format of the pattern, can be found under  <tt>/help  hooks</tt>,
+but just to whet your appetite, here are some examples:<P>
+
+  <dl> <P>
+  
+  <dt>`<tt>WORLD</tt>'
+  <dd> This hook is called whenever the foreground world (ie, the one you are
+      looking at) changes. <P>
+  
+  <dt>`<tt>WORLD FarSide</tt>'
+  <dd> A hook with this text would be called whenever the foreground  world
+      became equal to `<tt>FarSide</tt>'.<P>
+  
+  <dt>`<tt>DISCONNECT</tt>'
+  <dd> Called if the game closes the connection (but not  if  you  use  the
+      <tt>/dc</tt> command). <P>
+  
+  <dt>`<tt>ACTIVITY</tt>'
+  <dd> Called whenever something happens in a world. Some  people  like  to
+      <tt>/hook ACTIVITY=/fg %1</tt> to automatically switch to any world where
+      something happens.<P>
+  
+</dl> <P>
+
+Hooks have another use, which is perhaps not so well documented,  which  is  to
+change the attributes of a lot of the messages which TinyFugue displays to you.
+This can be done quite simply, using the <tt>/def</tt>  form  and  including  a
+`<tt>-a</tt>'  switch  exactly  as  for  hiliting  in  section  <A
+HREF="#labsec:defhilite">4.4</A>.  You  do  not  need  to  include  a
+<tt><i>body</i></tt> if you are doing this.  For  instance,  to  make  all  the
+`<tt>---- World <i>world</i> ----</tt>' messages come out bold, you  would  use
+<blockquote><tt>/def -hWORLD -aB</tt></blockquote> and to hide all  the  `<tt>%
+Loading commands  from  file  <i>filename</i></tt>'  messages,  you  could  use
+<blockquote><tt>/def -hLOAD -ag</tt></blockquote><P>
+
+<h3><a name="sec4.7">Section 4.7: Other Useful Switches  to  the  <tt>/def</tt>
+Command</a></h3>
+ <a name="labsec:defswitches"></a><P>
+
+A lot of the switches which the <tt>/def</tt> command takes, and which we  have
+given above, can be used together; for example,  it  is  quite  permissible  to
+define a macro which hilites a piece of text as well  as  acting  on  it  as  a
+trigger (the macro above which notices when you get killed would seem to  be  a
+prime candidate for this). However, there are more  switches  to  <tt>/def</tt>
+which we haven't mentioned above, or which we have touched on only briefly, and
+I would like to tell you about  some  of  them  here.  As  ever,  though,  read
+<tt>/help def</tt> for more information about these, and about the others which
+I won't mention here.<P>
+
+  <dl> <P>
+  
+  <dt>`<tt>-n<i>shots</i></tt>'
+  <dd> Makes the macro a <i>multi-shot</i> macro, which  will  be  executed
+      <tt><i>shots</i></tt> times and then deleted. If <tt><i>shots</i></tt> is
+      zero, the default, it will be a permanent macro.<P>
+  
+  <dt>`<tt>-w<i>world</i></tt>'
+  <dd> Useful for triggers, hilites and hooks, this switch makes the  macro
+      triggerable  only  by  text  or  events  from  the  named  world
+      <tt><i>world</i></tt>.<P>
+  
+  <dt>`<tt>-T<i>type</i></tt>'
+  <dd> Just like the `<tt>-w</tt>' switch, but applies to a world type instead
+      of a single world (see section <A HREF="#labsec:connect">2.4</A>).<P>
+  
+  <dt>`<tt>-F</tt>'
+  <dd> Again, this is mostly useful for triggers and hooks (and is in  fact
+      recommended for most of these), and means that the macro  does  not  mask
+      any with a lower priority.<P>
+  
+</dl> <P>
+
+<P>
+
+<h2><a name="secA">Appendix A: TinyFugue Supplemental Files</a></h2>
+ <a name="labsec:suppfiles"></a><P>
+
+As well as `<tt>stdlib.tf</tt>', the  file  containing  many  of  the  standard
+TinyFugue commands, TinyFugue comes with a lot of other  files  which  you  can
+load and use. Some of these are  useful,  and  some  are  just  to  demonstrate
+various aspects of coding; it is the useful ones which I have listed  here.  If
+you are interested in coding, I suggest you look through your library directory
+to see what else is in there. Most of the files have instructions  or  comments
+in them, to tell you what they do.<P>
+
+  <dl> <P>
+  
+  <dt>`<tt>alias.tf</tt>'
+  <dd> Provides a way of calling simple macros without a leading slash, making
+      them appear like MUD commands.<P>
+  
+  <dt>`<tt>at.tf</tt>'
+  <dd> Execute a given command at a given time. <P>
+  
+  <dt>`<tt>complete.tf</tt>'
+  <dd> Like filename completion in Bash etc, this allows you to type part of a
+      word, and then press a special key and have TinyFugue fill  in  the  rest
+      for you.<P>
+  
+  <dt>`<tt>filexfer.tf</tt>'
+  <dd> Provides facilities for transferring files between TinyFugue and a MUCK
+      or LP-Mud. See <tt>/help putfile</tt> and <tt>/help getfile</tt>.<P>
+  
+  <dt>`<tt>finger.tf</tt>'
+  <dd> Just like UN*X finger, allows you to get information about a user on a
+      remote host. <P>
+  
+  <dt>`<tt>kb-bash.tf</tt>'
+  <dd> Keyboard bindings like the Bash shell for UN*X. <P>
+  
+  <dt>`<tt>kb-emacs.tf</tt>'
+  <dd> Keyboard bindings like the Emacs editor. <P>
+  
+  <dt>`<tt>kbstack.tf</tt>'
+  <dd> Defines `<tt>ESC-DOWN</tt>' and `<tt>ESC-UP</tt>' to push and pop the
+      contents of the current input line onto a stack. This is  useful  if  you
+      are in the middle of typing a long line and you want to wave to somebody,
+      or similar!<P>
+  
+  <dt>`<tt>map.tf</tt>'
+  <dd> Remembers and replays movement commands, similar to TinTin. <P>
+  
+  <dt>`<tt>quoter.tf</tt>'
+  <dd> Utilities to quote text from various sources; a simplified interface to
+      the <tt>/quote</tt> command. <P>
+  
+  <dt>`<tt>relog.tf</tt>'
+  <dd> Starts logging to a file, and performs a recall to the file. <P>
+  
+  <dt>`<tt>rwho.tf</tt>'
+  <dd> Get an RWHO list from a MUDWHO server. Must be loaded <b>after</b> you
+      define your worlds. <P>
+  
+  <dt>`<tt>spc-page.tf</tt>'
+  <dd> Allows you to press space at a `<tt>--More--</tt>' prompt, rather than
+      tab. <P>
+  
+  <dt>`<tt>spedwalk.tf</tt>'
+  <dd> Implements ``speedwalking'' a  la  tintin:  you  can  type  multiple
+      single-letter directions on the commandline, optionally  preceeded  by  a
+      number, and it will execute them seperately for you the  required  number
+      of times.<P>
+  
+  <dt>`<tt>spell.tf</tt>'
+  <dd> Lets you type `<tt>ESC-S</tt>' and TinyFugue  will  spell-check  the
+      current  input  line.  Requires  the  <tt>spell</tt>  program  on  your
+      system.<P>
+  
+  <dt>`<tt>tfrc</tt>'
+  <dd> Sample `<tt>.tfrc</tt>' file. <P>
+  
+  <dt>`<tt>tick.tf</tt>'
+  <dd> `Tick counting', similar to tintin, useful on Diku MUDs. Don't ask me
+      what it is, though...<i><| anyone? |></i> <P>
+  
+  <dt>`<tt>tintin.tf</tt>'
+  <dd> Emulates most of the commands from tintin++, to varying  degrees  of
+      accuracy. <P>
+  
+  <dt>`<tt>tools.tf</tt>'
+  <dd> Various small but useful macros, including <tt>/reedit</tt> to get the
+      definition  of  a  macro  into  the  input  buffer  for  editing,  and
+      <tt>/xtitle</tt> to change the title of an xterm  window.  See  <tt>/help
+      tools</tt>.<P>
+  
+  <dt>`<tt>watch.tf</tt>'
+  <dd> Tells you when a player logs onto the MUD. <P>
+  
+  <dt>`<tt>world-q.tf</tt>'
+  <dd> Constructs a queue of worlds which have become active in the background,
+      and defines `<tt>ESC-w</tt>' to switch to the next one. Very useful.<P>
+  
+</dl> <P>
+
+<h2><a name="secB">Appendix B: Some Sample Macros</a></h2>
+ <a name="labsec:sampmacs"></a><P>
+
+The aim of this appendix is to give some slightly more comprehensive and useful
+macros than the ones which are used as examples in the text. I  have  tried  to
+attach a reasonable commentary to each one, but you may find you have  to  look
+at the <tt>/help</tt> for some of the commands.<P>
+
+<i><| If anybody has any reasonably simple macros which  they  think  would  go
+nicely in here, please feel free to send them to  me  and  I'll  put  them  in.
+|></i><P>
+
+<h3><a name="secB.1">Appendix B.1: Automatic Reading of All Help Pages</a></h3>
+<P>
+
+The following macro, still quite a simple one, was written because the TinyMUSH
+help text is mostly split up into 25-line chunks for those  who  don't  have  a
+MUSH client, but I got bored with having to keep typing more as I read  through
+the help, and it really seemed a shame not to use TinyFugue's  paging  instead.
+It looks for lines of the format <P>
+
+      <blockquote> <P>
+      
+      `<tt>{ '<i>command</i>' for more }</tt>' <P>
+      
+</blockquote> and executes the <tt><i>command</i></tt>, so it is not limited to
+help. <blockquote><tt>/def -T(tiny\.mush(\..*)?) -ag  -mregexp  -t'^{  \]+)\for
+more }' = %{P1}</tt></blockquote> Notice that it is set to only work for worlds
+of type `<tt>tiny.mush</tt>' or subtypes thereof, and that it gags the line  so
+it is not displayed.<P>
+
+<h3><a name="secB.2">Appendix B.2: A Complex Kill Trigger</a></h3>
+<P>
+
+This  is  an  extension  of  the  examples  given  in  sections  <A
+HREF="#labsec:triggers">4.2</A>  and  <A  HREF="#labsec:moretrigs">4.3</A>,  to
+notice when somebody is trying to kill you and try to kill them. It is  a  long
+way from perfect---in particular, it requires a message from  the  game  before
+each try, in order to prevent it totally spamming the game and  leaving  twenty
+commands in the queue when you get killed, it gives an ugly message  about  the
+<tt>att_<i>name</i>_retry</tt> macro not being  found,  and  it  will  probably
+crash and burn horribly if somebody with the same name attacks you in more than
+one world at once, or  if  more  than  one  person  attacks  you  in  the  same
+world---but it should at least serve as a starting point, and it illustrates  a
+few techniques of macro programming. You may have to change the message  format
+for your server. Note, though, that due to the network transmission  not  being
+instantaneous, you should never use this macro in your own  home  (or  wherever
+you get sent when you die), as there will quite probably be a command still  in
+the queue when one of you dies, and if it is you who dies, the fight will  just
+go on!<P>
+
+Since some of these are long macros, I have  split  them  over  several  lines,
+terminating each line with a backslash. You will not be able to type it in like
+this, but if you put it straight  into  a  `<tt>.tf</tt>'  file,  you  can  use
+<tt>/load <i>file</i>.tf</tt> and it will be read fine.<P>
+
+<pre>
+  /def -mregexp -ah -t'^([^ ]*) tried to kill you!$' = \
+    /if /eval /test $${att_%{P1}_retry} =~ ""%; /then \
+      /attack %{P1}%; \
+    /endif
+  
+  /def attack=\
+    /def -msimple -t"Your murder attempt failed." att_%1_retry=kill %1%; \
+    /def -mglob -t"You killed %1!" att_%1_done=/att_%1_stop%; \
+    /def -mglob -t"%1 killed you!" att_%1_dead=/att_%1_stop%; \
+    /def att_%1_stop=/undef att_%1_retry%%; \
+      /undef att_%1_done%%; \
+      /undef att_%1_dead%%; \
+      /undef att_%1_stop%; \
+    /att_%1_retry
+</pre>
+ <P>
+
+This is rather more complicated than any you may have met before, so I shall go
+through it step-by-step. The trigger defined by the first <tt>/def</tt>  simply
+waits for somebody to try to kill you, and then (unless you're already  in  the
+middle of a fight) calls the <tt>/attack</tt> command  with  the  name  of  the
+person who just attacked you. The attack command define a trigger for when  you
+fail to kill somebody, which simply tries again. It also defines  triggers  for
+when you kill them, and when they kill you, which both call the  final  command
+which removes all the commands the <tt>/attack</tt> command has  just  defined.
+And finally, it starts the ball rolling by trying  to  kill  them  (by  calling
+directly the trigger we defined earlier).<P>
+
+As an example, suppose we have two people called Alice and  Bob.  Alice,  being
+really rather cunning, has installed this set  of  macros,  but  Bob  has  not.
+Unfortunately for him,  Bob  then  tries  to  kill  Alice,  and  the  following
+happens:<P>
+
+  <ol> <P>
+  
+  <li> If Bob manages to kill Alice first time, nothing triggers. Otherwise,
+      Alice's TinyFugue catches the `<tt>Bob tried to kill you!</tt>'  message,
+      and  because  she  isn't  already  attacking  him,  executes  <tt>/attack
+      Bob</tt>,  which  defines  macros  <tt>/att_Bob_retry</tt>,
+      <tt>/att_Bob_done</tt>,  <tt>/att_Bob_dead</tt>,  and
+      <tt>/att_Bob_stop</tt>, and then executes <tt>/att_Bob_retry</tt>.<P>
+  
+  <li> <a name="labatt:retry"></a> The <tt>/att_Bob_retry</tt> command sends
+      the string `<tt>kill Bob</tt>' to the MUSH. <P>
+  
+  <li> If Bob has tried again to kill Alice, and failed, then the  original
+      trigger notices that Alice is  already  attacking  Bob,  and  doesn't  do
+      anything.  If  he  succeeds,  Alice  gets  the  string  `<tt>Bob  killed
+      you!</tt>' from  the  MUSH,  which  triggers  the  <tt>/att_Bob_dead</tt>
+      command, which calls the <tt>/att_Bob_stop</tt> command, and she goes  to
+      step <A HREF="#labatt:stop">6</A>.<P>
+  
+  <li> If Alice doesn't manage to kill Bob, she gets back the string `<tt>Your
+      murder  attempt  failed.</tt>',  which  then  triggers  the
+      <tt>/att_Bob_retry</tt>  command  again,  and  we  go  back  to  step  <A
+      HREF="#labatt:retry">2</A>.<P>
+  
+  <li> Otherwise, she gets the string  `<tt>You  killed  Bob!</tt>',  which
+      triggers the <tt>/att_Bob_done</tt> command,  which  in  turn  calls  the
+      <tt>/att_Bob_stop</tt> command.<P>
+  
+  <li> <a name="labatt:stop"></a> The <tt>/att_Bob_stop</tt> command undefines
+      all the Bob-specific triggers, and then  stops.  This  means  that  Alice
+      won't keep trying to kill Bob, and also that next time Bob tries to  kill
+      her, she won't get a  load  of  messages  about  commands  being  already
+      defined.<P>
+  
+</ol> <P>
+
+<i><| This macro hasn't been particularly well tested. As I said  before,  it's
+far from perfect, but if anyone happens to find any major bugs in it, please do
+let me know, and I'll try to correct them. |></i><P>
