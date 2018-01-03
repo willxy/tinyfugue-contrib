@@ -5,22 +5,22 @@ no longer maintained and risk disappearing entirely from the web.
 
 ### Files
 
- - Mailing list archive in mbox files, from 1996-2014
+ - Mailing list archive in mbox files, from 1996-2014:
    - [mailing-list](mailing-list/)
 
- - Files by Andrew "Andy" Mortimer (various tf code, Intro to TF Guide)
+ - Files by Andrew "Andy" Mortimer (various tf code, Intro to TF Guide):
    - [andy.mortimer](andy.mortimer/)
 
- - Files by Jason Gator (Beginner's Guide and Advanced Guide)
+ - Files by Jason Gator (Beginner's Guide and Advanced Guide):
    - [jason.gater](jason.gater/)
 
- - Files from goldmooneachna
+ - Files from goldmooneachna:
    - [goldmooneachna](goldmooneachna/)
 
- - Files by Karen Etheridge (histories, database)
+ - Files by Karen Etheridge (histories, database):
    - [karen.etheridge](karen.etheridge/)
 
- - Files by Vashti (various tf code)
+ - Files by Vashti (various tf code):
    - [vashti](vashti/)
 
 ### Links
