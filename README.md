@@ -43,7 +43,8 @@ no longer maintained and risk disappearing entirely from the web.
  - Gwen Morse's Wiki -- lots and lots of links, scripts, and info:
    - http://www.gwen-morse.com/wiki/index.php/Tinyfugue
    - http://www.gwen-morse.com/wiki/index.php/Gwen%27s_Complete_TFRC
-   - and more
+   - Gwen's domain is no longer online; at least partial archive here:
+     - https://github.com/warmstarter/MUSHarchive/tree/main/www.gwen-morse.com/wiki
 
  - Mushcode archive:
    - http://www.mushcode.com/File/Intro-to-TinyFugue
